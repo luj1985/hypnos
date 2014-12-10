@@ -1,10 +1,31 @@
 <template name="layout">
+  <aside class="ui left vertical inverted labeled icon sidebar menu">
+    <a class="item">
+      <i class="home icon"></i>
+      Home Page
+    </a>
+    <a class="item">
+      <i class="block layout icon"></i>
+      Some menu display here
+    </a>
+    <a class="item">
+      <i class="smile icon"></i>
+      收藏夹
+    </a>
+  </aside>
+  <div class="pusher">
+    <div class="ui transparent inverted main menu">
+      <div class="container">
+        <a class="launch item">
+          <i class="icon list layout"></i>
+          Toggle side bar
+        </a>
+      </div>
+    </div>
 
-  <nav>
-  <a href="#">{{> loginButtons}}</a>
-  </nav>
-  <section>
-    <h4>This is the main workspace</h4>
-    {{> yield }}
-  </section>
+    <section>
+      <h4>This is the main workspace</h4>
+      {{> yield }}
+    </section>
+  </div>
 </template>

@@ -8,6 +8,7 @@ iron:router
 less
 alethes:pages
 accounts-password
-bootstrap
 accounts-weibo
+nooitaf:semantic-ui
 accounts-ui
+
