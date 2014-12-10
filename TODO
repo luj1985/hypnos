@@ -1,2 +1,3 @@
+0. disable google fonts (since it is not avaible in China)
 1. switch cordova-android wrapper with crosswalk
 2. enable cordova plugin to support weibo/wexin sso login
