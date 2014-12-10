@@ -7,4 +7,7 @@ meteor-platform
 iron:router
 less
 alethes:pages
-
+accounts-password
+bootstrap
+accounts-weibo
+accounts-ui

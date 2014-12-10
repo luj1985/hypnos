@@ -1,6 +1,15 @@
 Meteor.startup(function () {
+  if (Dealers.find().count() === 0) {
+    var dealers = [{
+      name : "某某经销商",
+      location : "上海XXX"
+    }];
+    _.each(dealers, function(d) {
+      Dealers.insert(d);
+    });
+  }
   if (Products.find().count() === 0) {
-    var data = [{
+    var products = [{
       family : "INA",
       no : "", // 原厂号
       sno : "5300067090", // 舍弗勒号
@@ -35,7 +44,7 @@ Meteor.startup(function () {
       end : "2008-09-01"
     }];
 
-    _.each(data, function(d) {
+    _.each(products, function(d) {
       Products.insert(d);
     });
   }
