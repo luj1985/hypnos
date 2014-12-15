@@ -1,8 +1,15 @@
+
 <template name="showproducts">
-  <button id="myfilter">Choose num &gt; 30</button>
+  {{> searchProduct }}
   {{> products }}
 </template>
 
+<template name="searchProduct">
+  <input type="search" name="product">
+</template>
+<template name="productCriteria">
+
+</template>
 <template name="products">
   {{> pages}}
 </template>
