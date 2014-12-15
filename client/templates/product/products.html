@@ -1,8 +1,12 @@
 <template name="showproducts">
+  <button id="myfilter">Choose num &gt; 30</button>
   {{> products }}
 </template>
 
 <template name="products">
   {{> pages}}
-  {{> pagesNav}}
+</template>
+
+<template name="product">
+  <div> {{num}} </div>
 </template>
