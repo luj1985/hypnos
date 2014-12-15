@@ -1,12 +1,8 @@
-<template name="products">
-This is the products view
-<ul class="lists-show">
-{{#each products this}}
-  {{> product}}
-{{/each}}
-</ul>
+<template name="showproducts">
+  {{> products }}
 </template>
 
-<template name="product">
-  <li>{{ family }}</li>
+<template name="products">
+  {{> pages}}
+  {{> pagesNav}}
 </template>
