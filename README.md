@@ -7,4 +7,4 @@ Install Meteor:
 Run it:
 
     cd hypnos
-    meteor
+    meteor reset && meteor
