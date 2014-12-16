@@ -8,11 +8,9 @@ iron:router
 less
 alethes:pages
 accounts-password
-accounts-weibo
-accounts-ui
 meteorhacks:npm
 
 
 npm-container
 jquery-waypoints
-
+tap:i18n
