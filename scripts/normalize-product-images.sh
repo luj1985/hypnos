@@ -6,6 +6,21 @@ ORIG_DIR="../public/products/original"
 ROOT_DIR="../public/products/images"
 THUMB_DIR="../public/products/thumbnails"
 
+for d in $(find $ORIG_DIR -type d); do
+  if [[ "$d" != "$ORIG_DIR" ]]
+  then
+    index=1
+    for f in $(find $d -type f -name "*.jpg"); do
+      newname="$(dirname $f)/${index}.jpg"
+      mv $f $newname
+      let index=index+1
+    done
+    index=1
+  fi
+done
+
+rm -rf $ROOT_DIR
+rm -rf $THUMB_DIR
 mkdir -p $ROOT_DIR
 mkdir -p $THUMB_DIR
 
