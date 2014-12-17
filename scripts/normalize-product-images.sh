@@ -2,9 +2,10 @@
 # Imagemagick is required
 # convert image to fixed width 640px, and create thumbnails with width 100px
 
-ORIG_DIR="../public/products/original"
-ROOT_DIR="../public/products/images"
-THUMB_DIR="../public/products/thumbnails"
+RELATIVE="../public"
+ORIG_DIR="$RELATIVE/products/original"
+ROOT_DIR="$RELATIVE/products/images"
+THUMB_DIR="$RELATIVE/products/thumbnails"
 
 for d in $(find $ORIG_DIR -type d); do
   if [[ "$d" != "$ORIG_DIR" ]]
@@ -33,8 +34,13 @@ done
 
 for image in $(find $ORIG_DIR -type f -name "*.jpg"); do
   path=${image##$ORIG_DIR/}
+  tmp=${path%/*.jpg}
+  sid=${tmp%.jpg}
+  
   target="$ROOT_DIR/$path"
   thumb_target="$THUMB_DIR/$path"
   convert $image -resize 640x $target
   convert $image -resize 100x $thumb_target
+  
+  echo "$sid,${target##$RELATIVE/},${thumb_target##$RELATIVE/}"
 done
