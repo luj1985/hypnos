@@ -32,6 +32,8 @@ for directory in $(find $ORIG_DIR -type d); do
   mkdir -p "$THUMB_DIR/$name"
 done
 
+echo "sid,image,thumbnail"
+
 for image in $(find $ORIG_DIR -type f -name "*.jpg"); do
   path=${image##$ORIG_DIR/}
   tmp=${path%/*.jpg}
@@ -41,6 +43,6 @@ for image in $(find $ORIG_DIR -type f -name "*.jpg"); do
   thumb_target="$THUMB_DIR/$path"
   convert $image -resize 640x $target
   convert $image -resize 100x $thumb_target
-  
+
   echo "$sid,${target##$RELATIVE/},${thumb_target##$RELATIVE/}"
 done

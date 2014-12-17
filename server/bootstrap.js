@@ -18,5 +18,23 @@ Meteor.startup(function () {
     _.each(products, function(product) {
       Products.insert(product);
     });
+
+    var icsv = Assets.getText("images.csv");
+    var images = new CSV(icsv, { header:true }).parse();
+
+    _.each(images, function(d) {
+      Products.update({sid: d.sid}, {
+        images : {
+          $push : {
+            image : d.image,
+            thumbnail : d.thumbnail
+          }
+        }
+      }, true);
+    });
+
+    
   }
+
+
 });
