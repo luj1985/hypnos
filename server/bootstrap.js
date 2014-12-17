@@ -8,33 +8,22 @@ Meteor.startup(function () {
     }];
   }
   if (Products.find().count() === 0) {
-    var pcsv = Assets.getText("products.csv");
-    var products = new CSV(pcsv, {
+    var images = new CSV(Assets.getText("images.csv"), { header:true }).parse();
+    var groups = _.groupBy(images, 'sid');
+
+    var products = new CSV(Assets.getText("products.csv"), {
       header: true,
       cast: false,
       line: "\n"
     }).parse();
 
     _.each(products, function(product) {
+      var sid = product.sid;
+      var images = groups[sid];
+      if (images) {
+        product.images = _.map(images, function(image) { return _.omit(image, 'sid'); });
+      }
       Products.insert(product);
     });
-
-    var icsv = Assets.getText("images.csv");
-    var images = new CSV(icsv, { header:true }).parse();
-
-    _.each(images, function(d) {
-      Products.update({sid: d.sid}, {
-        images : {
-          $push : {
-            image : d.image,
-            thumbnail : d.thumbnail
-          }
-        }
-      }, true);
-    });
-
-    
   }
-
-
 });
