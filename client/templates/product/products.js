@@ -14,6 +14,13 @@ Template.searchProduct.events({
   }
 });
 
+Template.images.rendered = function () {
+  var el = this.findAll('.swipebox');
+  $(el).click(function(e) {
+    e.preventDefault();
+  });
+};
+
 Deps.autorun(function() {
   var filters = Session.get('product-filters') || {};
   PagedProducts.set('filters', filters);

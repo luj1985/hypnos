@@ -5,7 +5,7 @@
 </template>
 
 <template name="searchProduct">
-  <input type="search" class="search" name="product">
+  <input type="search" class="search" value="6203156090" name="product">
 </template>
 <template name="productCriteria">
 
@@ -15,5 +15,18 @@
 </template>
 
 <template name="product">
-  <div> {{num}} </div>
+  <div class="product"> 
+  {{name}} - {{oid}} - {{sid}}
+  {{#if images}}
+    {{> images}}
+  {{/if}}
+  </div>
+</template>
+
+<template name="images">
+<div class="gallery">
+{{#each images}}
+<a href="{{image}}" class="swipebox"><img src="{{thumbnail}}" alt="image"></a>
+{{/each}}
+</div>
 </template>
