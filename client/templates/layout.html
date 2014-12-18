@@ -1,10 +1,12 @@
 <template name="layout">
-  <nav>
-    <a href="{{pathFor 'showproducts'}}">Products</a>
-    <a href="{{pathFor 'dealers'}}">Dealers</a>
-  </nav>
-  <main>
+  <header>
+    <nav>
+      <a href="{{pathFor 'showproducts'}}">Products</a>
+      <a href="{{pathFor 'dealers'}}">Dealers</a>
+    </nav>
+  </header>
+  <div>
     {{> yield}}
-  </main>
+  </div>
 </template>
 
