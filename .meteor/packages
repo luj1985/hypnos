@@ -6,7 +6,6 @@
 meteor-platform
 iron:router
 less
-alethes:pages
 accounts-password
 meteorhacks:npm
 
@@ -14,3 +13,5 @@ meteorhacks:npm
 npm-container
 horka:swipebox
 semantic-ui
+jquery-waypoints
+meteor-pages

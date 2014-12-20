@@ -1,6 +1,5 @@
 accounts-base@1.1.3
 accounts-password@1.0.5
-alethes:pages@1.7.1
 application-configuration@1.0.4
 autoupdate@1.1.4
 base64@1.0.2
@@ -32,6 +31,7 @@ iron:middleware-stack@1.0.6
 iron:router@1.0.6
 iron:url@1.0.6
 jquery@1.0.2
+jquery-waypoints@1.0.2
 json@1.0.2
 launch-screen@1.0.1
 less@1.0.12
@@ -39,6 +39,7 @@ livedata@1.0.12
 localstorage@1.0.2
 logging@1.0.6
 meteor@1.1.4
+meteor-pages@1.7.1
 meteor-platform@1.2.1
 meteorhacks:async@1.0.0
 meteorhacks:npm@1.2.2

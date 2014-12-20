@@ -15,8 +15,8 @@ Template.showProducts.helpers({
 });
 
 Template.images.rendered = function () {
-  var el = this.findAll('.swipebox');
-  $(el).click(function(e) {
+  var swipebox = this.findAll('.swipebox');
+  $(swipebox).click(function(e) {
     e.preventDefault();
   });
 };

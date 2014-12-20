@@ -1,19 +1,17 @@
 
 <template name="showProducts">
   <div class="ui search">
-    <div class="ui icon input">
+    <div class="ui icon input ">
       <input class="prompt" type="text" id="productSearch" value="{{keyword}}" 
       placeholder="输入舍弗勒号或原厂号">
       <i class="search icon"></i>
     </div>
-    {{> products }}
   </div>
+  {{> products }}
 </template>
 
 <template name="products">
-  <div class="ui segment">
   {{> pages}}
-  </div>
 </template>
 
 <template name="product">
