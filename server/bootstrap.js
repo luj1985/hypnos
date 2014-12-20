@@ -25,6 +25,9 @@ Meteor.startup(function () {
           return _.omit(image, 'sid');
         });
       }
+      // record cleanup
+      product.oid = (product.oid || '').replace(/ /g, '');
+      product.sid = (product.sid || '').replace(/ /g, '');
       Products.insert(product);
     });
   }
