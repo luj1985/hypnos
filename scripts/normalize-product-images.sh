@@ -42,7 +42,7 @@ for image in $(find $ORIG_DIR -type f -name "*.jpg"); do
   target="$ROOT_DIR/$path"
   thumb_target="$THUMB_DIR/$path"
   convert $image -resize 640x $target
-  convert $image -resize 100x $thumb_target
+  convert $image -resize x100 $thumb_target
 
   echo "$sid,${target##$RELATIVE/},${thumb_target##$RELATIVE/}"
 done
