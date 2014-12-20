@@ -1,5 +1,5 @@
 App.info({
-  name: 'Schaeffler Assistant',
+  name: 'hypnos',
   description: 'Schaeffler Assistant',
   author: 'Lu, Jun',
   email: 'luj1985@gmail.com',
