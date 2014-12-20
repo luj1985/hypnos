@@ -2,13 +2,13 @@ var updateFilters = _.debounce(function(keyword) {
   Session.set('product-keyword', keyword);
 }, 350);
 
-Template.searchProduct.events({
-  'keyup .search' : function(e) {
+Template.showProducts.events({
+  'keyup #productSearch' : function(e) {
     updateFilters($(e.target).val());
   }
 });
 
-Template.searchProduct.helpers({
+Template.showProducts.helpers({
   keyword: function () {
     return Session.get('product-keyword') || '';
   }
