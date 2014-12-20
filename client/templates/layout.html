@@ -4,48 +4,24 @@
       <i class="home icon"></i>
       Home
     </a>
-    <a class="item">
+    <a class="item" href="{{pathFor 'showProducts'}}">
       <i class="block layout icon"></i>
-      Topics
+      产品搜索
     </a>
-    <a class="item">
+    <a class="item" href="{{pathFor 'dealers'}}">
       <i class="smile icon"></i>
-      Friends
-    </a>
-    <a class="item">
-      <i class="calendar icon"></i>
-      History
-    </a>
-    <a class="item">
-      <i class="mail icon"></i>
-      Messages
-    </a>
-    <a class="item">
-      <i class="chat icon"></i>
-      Discussions
-    </a>
-    <a class="item">
-      <i class="trophy icon"></i>
-      Achievements
-    </a>
-    <a class="item">
-      <i class="shop icon"></i>
-      Store
-    </a>
-    <a class="item">
-      <i class="settings icon"></i>
-      Settings
+      经销商搜索
     </a>
   </aside>
 
   <div class="pusher">
-    <header class="ui inverted menu">
+    <header class="ui inverted green menu">
       <a class="launch item" href="#">
         <i class="content icon"></i>
-        Schaeffler
+        SCHAEFFLER
       </a>
-      <a class="item" href="{{pathFor 'showProducts'}}">Products</a>
-      <a class="item" href="{{pathFor 'dealers'}}">Dealers</a>
+      <a class="item" href="{{pathFor 'showProducts'}}">产品搜索</a>
+      <a class="item" href="{{pathFor 'dealers'}}">经销商搜索</a>
     </header>
     {{> yield}}
   </div>

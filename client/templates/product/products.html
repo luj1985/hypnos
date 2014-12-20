@@ -15,18 +15,22 @@
 </template>
 
 <template name="product">
-  <div class="product"> 
-  {{name}} - {{oid}} - {{sid}}
-  {{#if images}}
-    {{> images}}
-  {{/if}}
-  </div>
+<section class="product">
+<div class="ui divided selection list">
+  <a class="item"><span class="ui horizontal label">制造商</span>{{manufacturer}}</a>
+  <a class="item"><span class="ui horizontal label">舍弗勒号</span>{{sid}}</a>
+  <a class="item"><span class="ui horizontal label">原厂号</span>{{oid}}</a>
+</div>
+{{> images}}
+</section>
 </template>
 
 <template name="images">
-<div class="gallery">
-{{#each images}}
-<a href="{{image}}" class="swipebox"><img src="{{thumbnail}}" alt="image"></a>
-{{/each}}
-</div>
+{{#if images}}
+  <div class="gallery">
+  {{#each images}}
+    <a href="{{image}}" class="swipebox"><img src="{{thumbnail}}" alt="image"></a>
+  {{/each}}
+  </div>
+{{/if}}
 </template>
