@@ -15,9 +15,12 @@
 </template>
 
 <template name="product">
-<section class="ui column">
-  <h2 class="ui header">{{name}}</h2>
-  <table class="ui definition table unstackable product">
+<section class="ui column product">
+  <h2 class="ui header">
+    {{name}}
+    <span class="ui label favorite"><i class="icon star"></i>收藏</span>
+  </h2>
+  <table class="ui definition table unstackable">
     <tbody>
       <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
       <tr><td>原厂号</td><td>{{oid}}</td></tr>

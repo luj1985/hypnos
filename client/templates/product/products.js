@@ -14,6 +14,13 @@ Template.showProducts.helpers({
   }
 });
 
+Template.product.events({
+  'click .favorite' : function(e) {
+    var id = this._id;
+    console.log('save ' + id + ' into favorite');
+  }
+});
+
 Template.images.rendered = function () {
   var swipebox = this.findAll('.swipebox');
   $(swipebox).click(function(e) {
