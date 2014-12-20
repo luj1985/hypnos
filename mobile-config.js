@@ -38,3 +38,6 @@ App.launchScreens({
   'android_xhdpi_portrait': 'resources/splash/splash-800x1234.jpg',
   'android_xhdpi_landscape': 'resources/splash/splash-800x1234.jpg'
 });
+
+App.setPreference('StatusBarOverlaysWebView', 'false');
+App.setPreference('StatusBarBackgroundColor', '#000000');
