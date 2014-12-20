@@ -16,11 +16,14 @@
 
 <template name="product">
 <section class="product">
-<div class="ui divided selection list">
-  <a class="item"><span class="ui horizontal label">制造商</span>{{manufacturer}}</a>
-  <a class="item"><span class="ui horizontal label">舍弗勒号</span>{{sid}}</a>
-  <a class="item"><span class="ui horizontal label">原厂号</span>{{oid}}</a>
-</div>
+<table class="">
+  <tbody>
+    <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
+    <tr><td>原厂号</td><td>{{oid}}</td></tr>
+    <tr><td>制造商</td><td>{{manufacturer}}</td></tr>
+    <tr><td>排量</td><td>{{cc}}</td></tr>
+  </tbody>
+</table>
 {{> images}}
 </section>
 </template>
