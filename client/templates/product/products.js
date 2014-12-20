@@ -1,16 +1,16 @@
-var filterUpdater = _.debounce(function(filters) {
-  Session.set('product-filters', filters);
-}, 200);
+var updateFilters = _.debounce(function(keyword) {
+  Session.set('product-keyword', keyword);
+}, 350);
 
 Template.searchProduct.events({
   'keyup .search' : function(e) {
-    var search = $(e.target), 
-        keyword = search.val(),
-        filters = keyword ? { $or : [ 
-          {sid: { $regex : keyword }}, 
-          {oid: { $regex : keyword }} 
-        ]} : {};
-    filterUpdater(filters);
+    updateFilters($(e.target).val());
+  }
+});
+
+Template.searchProduct.helpers({
+  keyword: function () {
+    return Session.get('product-keyword') || '';
   }
 });
 
@@ -22,6 +22,10 @@ Template.images.rendered = function () {
 };
 
 Deps.autorun(function() {
-  var filters = Session.get('product-filters') || {};
+  var keyword = Session.get('product-keyword');
+  var filters = keyword ? { $or : [ 
+    {sid: { $regex : keyword }}, 
+    {oid: { $regex : keyword }} 
+  ]} : {};
   PagedProducts.set('filters', filters);
 });
