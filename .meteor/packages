@@ -8,8 +8,6 @@ iron:router
 less
 accounts-password
 meteorhacks:npm
-
-
 npm-container
 horka:swipebox
 semantic-ui
