@@ -1,0 +1,3 @@
+[submodule "packages/semantic-ui"]
+	path = packages/semantic-ui
+	url = https://github.com/luj1985/meteor-semantic-ui.git

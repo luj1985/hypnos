@@ -1,4 +1,7 @@
 ## Environment setup
+Clone:
+
+    git clone --recursive https://github.com/luj1985/hypnos.git
 
 Install Meteor:
 
