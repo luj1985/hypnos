@@ -1,15 +1,15 @@
 <template name="layout">
   <aside class="ui left vertical inverted green labeled icon sidebar menu">
-    <a class="item">
+    <a class="item" href="{{pathFor 'home'}}">
       <i class="home icon"></i>
       Home
     </a>
     <a class="item" href="{{pathFor 'showProducts'}}">
-      <i class="block layout icon"></i>
+      <i class="search icon"></i>
       产品搜索
     </a>
     <a class="item" href="{{pathFor 'dealers'}}">
-      <i class="smile icon"></i>
+      <i class="shop icon"></i>
       经销商搜索
     </a>
   </aside>
@@ -20,8 +20,6 @@
         <i class="content icon"></i>
         SCHAEFFLER
       </a>
-      <a class="item" href="{{pathFor 'showProducts'}}">产品搜索</a>
-      <a class="item" href="{{pathFor 'dealers'}}">经销商搜索</a>
     </header>
     {{> yield}}
   </div>
