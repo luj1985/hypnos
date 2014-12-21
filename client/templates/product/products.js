@@ -28,7 +28,7 @@ Template.product.rendered = function () {
   });
 };
 
-Template.images.rendered = function () {
+Template.productImages.rendered = function () {
   var swipebox = this.findAll('.swipebox');
   $(swipebox).click(function(e) {
     e.preventDefault();
