@@ -1,6 +1,6 @@
 [submodule "packages/semantic-ui"]
-	path = packages/semantic-ui
-	url = https://github.com/luj1985/meteor-semantic-ui.git
+  path = packages/semantic-ui
+  url = https://github.com/luj1985/meteor-semantic-ui.git
 
 [submodule "packages/meteor-pages"]
   path = packages/meteor-pages
