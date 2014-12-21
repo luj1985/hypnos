@@ -8,14 +8,12 @@ Meteor.publish('favorites', function() {
 
 Meteor.methods({
   toggleFavorite : function(pid) {
-    var favorite = Favorites.findOne({
-      userId : this.userId,
-      pid : pid
-    });
+    var doc = { userId : this.userId, pid : pid };
+    var favorite = Favorites.findOne(doc);
     if (favorite) {
-      Favorites.remove(favorite);
+      Favorites.remove(doc);
     } else {
-      Favorites.insert({ userId : this.userId, pid : pid });
+      Favorites.insert(doc);
     }
   }
 });
