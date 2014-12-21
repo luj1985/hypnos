@@ -1,0 +1,12 @@
+<template name="resellers">
+<h5>登陆后和查询经销商信息</h5>
+<ul class="resellers">
+{{#each resellers this}}
+  <li>{{> reseller }}</li>
+{{/each}}
+</ul>
+</template>
+
+<template name="reseller">
+  <a href="#">{{ name }}</a>
+</template>
