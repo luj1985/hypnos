@@ -1,6 +1,8 @@
 var BAIDU_PLACE_API_AK="EFjt6oKsiZ1lejOMPCQnE0DA";
 
 Meteor.startup(function() {
+  Resellers._ensureIndex({ location : "2d" });
+
   if (Resellers.find().count() === 0) {
     var CSV = Meteor.npmRequire('comma-separated-values');
     var resellers = new CSV(Assets.getText("resellers.csv"), {

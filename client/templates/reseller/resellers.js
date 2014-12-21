@@ -7,13 +7,21 @@ Template.showResellers.events({
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(p) {
-        var coords = [p.coords.latitude, p.coords.longitude].join(","); 
-        message.text(coords);
+        var coords = [p.coords.latitude, p.coords.longitude];
+        message.text('当前位置：' + coords.join(','));
+        Session.set('current-coords', coords);
       }, function(error) {
         message.addClass('error').text(error.message);
       });
     } else {
       message.addClass('error').text('不支持地理位置');
     }
+  }
+});
+
+Deps.autorun(function() {
+  var coords = Session.get('current-coords');
+  if (coords) {
+    PagedResellers.set('filters',  { location : { $near : coords } });
   }
 });
