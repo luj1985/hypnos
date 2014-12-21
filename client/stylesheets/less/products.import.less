@@ -1,23 +1,21 @@
+
 .product {
   opacity: 0;
+  overflow: scroll;
   -webkit-transition: opacity 500ms ease-in-out;
-          transition: opacity 500ms ease-in-out;
-
-  overflow: scroll;        
+          transition: opacity 500ms ease-in-out;   
   .icon.star.active {
     color: gold;
   }
   table tr > td:first-child {
-    width: 7.6em; 
+    width: 7.6rem; 
+    min-width: 7.6rem;
   }
 }
 .product.visible {
   opacity: 1;
 }
 
-.ui.column.product {
-  display: none;
-}
 
 .gallery {
   white-space: nowrap;
@@ -27,5 +25,11 @@
     border: 1px solid #CCC;
     border-radius: 5px;
     margin: 5px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.stackable.grid > .product.column {
+    padding: 1rem !important;
   }
 }
