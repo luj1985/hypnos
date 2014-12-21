@@ -1,4 +1,3 @@
-
 <template name="showResellers">
   <div class="ui search">
     <div class="ui icon input ">
@@ -7,8 +6,7 @@
       <i class="search icon"></i>
     </div>
     <button class="ui icon button" id="useLocation">
-      <i class="icon location arrow"></i>
-      使用当前位置
+      <i class="map marker icon"></i>附近
     </button>
     <div class="ui hidden message" id="currentLocation">
       <i class="ui inline mini active loader"></i>
@@ -24,11 +22,10 @@
 
 <template name="reseller">
 <section class="item">
-  <i class="map marker icon"></i>
+  <i class="icon location arrow"></i>
   <div class="content">
     <a class="header">{{reseller}}</a>
     <div class="description">{{address}}</div>
   </div>
-  
 </section>
 </template>
