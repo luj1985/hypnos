@@ -5,11 +5,3 @@ Meteor.publish('favorites', function() {
     this.ready();
   }
 })
-
-Meteor.publish('resellers', function() {
-  if (this.userId) {
-    return Resellers.find({});
-  } else {
-    this.ready();
-  }
-});
