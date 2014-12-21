@@ -1,16 +1,17 @@
 .product {
   opacity: 0;
-  overflow: scroll;
   -webkit-transition: opacity 500ms ease-in-out;
           transition: opacity 500ms ease-in-out;   
 
   .favorite.active > .icon {
     color: gold;
   }
+
   table tr > td:first-child {
     width: 7.6rem; 
     min-width: 7.6rem;
   }
+  
   &.visible {
     opacity: 1;
   }
@@ -31,5 +32,10 @@
 @media only screen and (max-width: 767px) {
   .ui.stackable.grid > .product.column {
     padding: 1rem !important;
+  }
+  .product {
+    .container {
+      overflow-x: scroll;
+    }
   }
 }

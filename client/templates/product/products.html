@@ -18,8 +18,9 @@
 <section class="ui column product">
   <h2 class="ui header">
     {{name}}
-    <span class="ui label favorite"><i class="icon star"></i>收藏</span>
+    <span class="ui label favorite {{favorite}}"><i class="icon star"></i>收藏</span>
   </h2>
+  <div class="container">
   <table class="ui definition table unstackable">
     <tbody>
       <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
@@ -33,6 +34,7 @@
       <tr><td>备注</td><td>{{comment}}</td></tr>
     </tbody>
   </table>
+  </div>
   {{> productImages}}
 </section>
 </template>

@@ -16,8 +16,14 @@ Template.showProducts.helpers({
 
 Template.product.events({
   'click .favorite' : function(e) {
-    var id = this._id;
-    console.log('save ' + id + ' into favorite');
+    Meteor.call('toggleFavorite', this._id);
+  }
+});
+
+Template.product.helpers({
+  favorite: function () {
+    var favorite = Favorites.findOne({pid : this._id});
+    return favorite ? 'active' : '';
   }
 });
 
