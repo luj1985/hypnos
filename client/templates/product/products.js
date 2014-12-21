@@ -22,6 +22,7 @@ Template.product.events({
 
 Template.product.helpers({
   favorite: function () {
+    // TODO: this may cause performance downgrade
     var favorite = Favorites.findOne({pid : this._id});
     return favorite ? 'active' : '';
   }

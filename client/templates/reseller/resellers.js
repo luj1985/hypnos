@@ -2,6 +2,7 @@ Template.showResellers.events({
   'click #useLocation' : function() {
     var message = $('#currentLocation')
       .removeClass('error')
+      .html('<i class="ui inline mini active loader"></i>正在获取位置...')
       .transition('fade in');
 
     if (navigator.geolocation) {
@@ -12,7 +13,7 @@ Template.showResellers.events({
         message.addClass('error').text(error.message);
       });
     } else {
-      message.addClass('error').text('无法获得地理位置');
+      message.addClass('error').text('不支持地理位置');
     }
   }
 });
