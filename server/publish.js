@@ -6,9 +6,9 @@ Meteor.publish('favorites', function() {
   }
 })
 
-Meteor.publish('dealers', function() {
+Meteor.publish('resellers', function() {
   if (this.userId) {
-    return Dealers.find({});
+    return Resellers.find({});
   } else {
     this.ready();
   }

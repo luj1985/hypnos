@@ -1,12 +1,30 @@
+
+<template name="showResellers">
+  <div class="ui search">
+    <div class="ui icon input ">
+      <input class="prompt" type="text" id="resellerSearch" value="{{address}}" 
+      placeholder="输入经销商名称">
+      <i class="search icon"></i>
+    </div>
+    <button class="ui icon button" id="currentLocation">
+      <i class="icon location arrow"></i>
+      使用当前位置
+    </button>
+  </div>
+  {{> resellers }}
+</template>
+
 <template name="resellers">
-<h5>登陆后和查询经销商信息</h5>
-<ul class="resellers">
-{{#each resellers this}}
-  <li>{{> reseller }}</li>
-{{/each}}
-</ul>
+  {{> pages}}
 </template>
 
 <template name="reseller">
-  <a href="#">{{ name }}</a>
+<section class="item">
+  <i class="map marker icon"></i>
+  <div class="content">
+    <a class="header">{{reseller}}</a>
+    <div class="description">{{address}}</div>
+  </div>
+  
+</section>
 </template>
