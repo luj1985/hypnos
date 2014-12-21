@@ -21,6 +21,11 @@ Template.product.events({
   }
 });
 
+Template.product.rendered = function () {
+  var product = this.findAll('.product');
+  $(product).transition('fade in');
+};
+
 Template.images.rendered = function () {
   var swipebox = this.findAll('.swipebox');
   $(swipebox).click(function(e) {

@@ -1,9 +1,13 @@
 Template.layout.rendered = function () {
   var header = this.find('header.menu');
-  $(header).waypoint({
-    handler: function(direction) {
-      console.log(direction);
-    }
+  $(header).waypoint(function(direction) {
+    // if (direction == 'down') {
+    //   $(this).addClass('fixed');
+    // } else {
+    //   $(this).removeClass('fixed');
+    // }
+  }, {
+    offset : -20
   });
 };
 
