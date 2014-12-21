@@ -1,8 +1,8 @@
 Meteor.startup(function () {
 
   var CSV = Meteor.npmRequire('comma-separated-values');
-  if (Dealers.find().count() === 0) {
-    var dealers = [{
+  if (Resellers.find().count() === 0) {
+    var resellers = [{
       name : "某某经销商",
       location : "上海XXX"
     }];

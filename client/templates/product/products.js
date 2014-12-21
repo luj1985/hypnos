@@ -22,8 +22,10 @@ Template.product.events({
 });
 
 Template.product.rendered = function () {
-  var product = this.findAll('.product');
-  $(product).transition('fade in');
+  var product = this.find('.product');
+  Meteor.defer(function() {
+    $(product).addClass('visible');
+  });
 };
 
 Template.images.rendered = function () {
