@@ -29,15 +29,13 @@ Template.product.helpers({
 });
 
 Template.product.rendered = function () {
-  var product = this.find('.product');
   Meteor.defer(function() {
-    $(product).addClass('visible');
-  });
+    this.$('.product').addClass('visible');
+  }, this);
 };
 
 Template.productImages.rendered = function () {
-  var swipebox = this.findAll('.swipebox');
-  $(swipebox).click(function(e) {
+  this.$('.swipebox').click(function(e) {
     e.preventDefault();
   });
 };

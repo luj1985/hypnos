@@ -11,10 +11,10 @@ meteorhacks:npm
 npm-container
 horka:swipebox
 semantic-ui
-jquery-waypoints
 meteor-pages
 semantic-ui-accounts
 accounts-weibo
 mrt:accounts-t9n
 http
 fastclick
+jquery-waypoints
