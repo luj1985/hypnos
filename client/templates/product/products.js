@@ -28,12 +28,6 @@ Template.product.helpers({
   }
 });
 
-Template.product.rendered = function () {
-  Meteor.defer(function() {
-    this.$('.product').addClass('visible');
-  }, this);
-};
-
 Template.productImages.rendered = function () {
   this.$('.swipebox').click(function(e) {
     e.preventDefault();

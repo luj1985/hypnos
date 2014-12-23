@@ -1,8 +1,4 @@
-.product {
-  opacity: 0;
-  -webkit-transition: opacity 500ms ease-in-out;
-          transition: opacity 500ms ease-in-out;   
-
+.product {  
   .favorite.active > .icon {
     color: gold;
   }
@@ -11,11 +7,19 @@
     width: 7.6rem; 
     min-width: 7.6rem;
   }
-  
-  &.visible {
-    opacity: 1;
+
+
+
+  opacity: 1;
+  -webkit-transition: opacity 500ms ease-in-out;
+          transition: opacity 500ms ease-in-out; 
+
+  &.animate {
+    opacity: 0;
   }
+  
 }
+
 
 
 .gallery {

@@ -15,7 +15,8 @@
 </template>
 
 <template name="product">
-<section class="ui column product">
+{{#Animate}}
+<section class="ui column product animate">
   <h2 class="ui header">
     {{name}}
     <span class="ui label favorite {{favorite}}"><i class="icon star"></i>收藏</span>
@@ -37,6 +38,7 @@
   </div>
   {{> productImages}}
 </section>
+{{/Animate}}
 </template>
 
 <template name="productImages">

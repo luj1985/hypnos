@@ -33,7 +33,8 @@
 </template>
 
 <template name="reseller">
-<a href="maps:q={{address}}" class="item reseller">
+{{#Animate}}
+<a href="maps:q={{address}}" class="item reseller animate">
   <i class="icon location arrow"></i>
   <div class="content">
     <h5 class="header">{{reseller}}</h5>
@@ -41,4 +42,5 @@
     <p class="debug">lat: {{location.lat}}, lng: {{location.lng}}</p>
   </div>
 </a>
+{{/Animate}}
 </template>
