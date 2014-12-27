@@ -1,5 +1,5 @@
 <template name="layout">
-  <aside class="ui left vertical inverted green sidebar large menu">
+  <aside class="ui left vertical inverted green large menu sidebar uncover">
     <div class="item">
       <a class="ui logo icon image">
         <img src="/logo.png"/>
@@ -23,14 +23,16 @@
     </a>
   </aside>
 
+  <header class="ui fixed inverted menu green">
+    <a class="launch item" href="#">
+      <i class="content icon"></i>
+      SCHAEFFLER
+    </a>
+  </header>
   <div class="pusher">
-    <header class="ui inverted green menu large">
-      <a class="launch item" href="#">
-        <i class="content icon"></i>
-        SCHAEFFLER
-      </a>
-    </header>
-    {{> yield}}
+    <div class="main container">
+      {{> yield}}
+    </div>
   </div>
 </template>
 
