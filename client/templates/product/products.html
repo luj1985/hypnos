@@ -16,10 +16,37 @@
 
 <template name="product">
 {{#Animate}}
-<section class="ui column product animate">
+{{#linkTo route="productDetail" class="item product animate"}}
+<h5 class="header">{{name}}</h5>
+<div class="content">
+舍弗勒号: {{sid}} <br>
+原厂号: {{oid}} <br>
+制造商: {{manufacturer}} <br>
+品牌: {{brand}} <br>
+引擎: {{engine}} <br>
+排量: {{cc}} <br>
+</div>
+{{/linkTo}}
+{{/Animate}}
+</template>
+
+<template name="productImages">
+{{#if images}}
+  <div class="gallery">
+  {{#each images}}
+    <a href="{{image}}" class="swipebox"><img src="{{thumbnail}}" alt="image"></a>
+  {{/each}}
+  </div>
+{{/if}}
+</template>
+
+
+<template name="productDetail">
+{{#Animate}}
+<article class="ui product animate">
   <h2 class="ui header">
     {{name}}
-    <span class="ui label favorite {{favorite}}"><i class="icon star"></i>收藏</span>
+    <span class="ui label favorite"><i class="icon star"></i>收藏</span>
   </h2>
   <div class="container">
   <table class="ui definition table unstackable">
@@ -37,16 +64,6 @@
   </table>
   </div>
   {{> productImages}}
-</section>
+</article>
 {{/Animate}}
-</template>
-
-<template name="productImages">
-{{#if images}}
-  <div class="gallery">
-  {{#each images}}
-    <a href="{{image}}" class="swipebox"><img src="{{thumbnail}}" alt="image"></a>
-  {{/each}}
-  </div>
-{{/if}}
 </template>

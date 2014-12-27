@@ -20,25 +20,25 @@ Template.product.events({
   }
 });
 
-Template.product.helpers({
-  favorite: function () {
-    // TODO: this may cause performance downgrade
-    var favorite = Favorites.findOne({pid : this._id});
-    return favorite ? 'active' : '';
-  }
-});
-
 Template.productImages.rendered = function () {
   this.$('.swipebox').click(function(e) {
     e.preventDefault();
   });
 };
 
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
 Deps.autorun(function() {
-  var keyword = Session.get('product-keyword');
-  var filters = keyword ? { $or : [ 
-    {sid: { $regex : keyword }}, 
-    {oid: { $regex : keyword }} 
-  ]} : {};
-  PagedProducts.set('filters', filters);
+  var keyword = Session.get('product-keyword') || '';
+  if(keyword) {
+    var pattern = '^' + escapeRegExp(keyword);
+    PagedProducts.set('filters', { $or : [ 
+      {sid: { $regex : pattern }}, 
+      {oid: { $regex : pattern }} 
+    ]});
+  } else {
+    PagedProducts.set('filters', {});
+  }
 });
