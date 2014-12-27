@@ -1,10 +1,9 @@
 <template name="productDetail">
-{{#linkTo route="products" class="ui link"}}
-<i class="left chevron icon"></i>返回
-{{/linkTo}}
-
 {{#Animate}}
-  <article class="ui segment slide in animate">
+  <article class="ui slide in animate">
+  {{#linkTo route="products" class="ui link"}}
+  <i class="left chevron icon"></i>返回
+  {{/linkTo}}
     <h2 class="ui header">
       {{name}}
       <span class="ui label favorite"><i class="icon star"></i>收藏</span>

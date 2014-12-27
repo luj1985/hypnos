@@ -1,28 +1,8 @@
-<template name="showResellers">
-  {{> resellerSearch}}
-  {{> resellers }}
-</template>
-
-<template name="locationAccessor">
-  {{#if ready}}
-    当前位置：{{location}}
-  {{else}}
-    {{#if message}}
-      {{message}}
-    {{else}}
-      <i class="ui inline mini active loader"></i>
-      正在获取位置...
-    {{/if}}
-  {{/if}}
-</template>
-
 <template name="resellers">
 {{> pages}}
 </template>
 
 <template name="reseller">
-
-{{#Animate out=false}}
 <a href="maps:q={{address}}" class="item reseller slide in animate">
   <i class="icon location arrow"></i>
   <div class="content">
@@ -31,5 +11,4 @@
     <p class="debug">lat: {{location.lat}}, lng: {{location.lng}}</p>
   </div>
 </a>
-{{/Animate}}
 </template>

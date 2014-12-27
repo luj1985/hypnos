@@ -13,3 +13,16 @@
     </div>
   </div>
 </template>
+
+<template name="locationAccessor">
+  {{#if ready}}
+    当前位置：{{location}}
+  {{else}}
+    {{#if message}}
+      {{message}}
+    {{else}}
+      <i class="ui inline mini active loader"></i>
+      正在获取位置...
+    {{/if}}
+  {{/if}}
+</template>

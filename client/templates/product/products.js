@@ -1,3 +1,7 @@
+Template.products.rendered = function() {
+  Animation.attach(this, '.products');
+};
+
 Template.product.events({
   'click .favorite' : function(e) {
     Meteor.call('toggleFavorite', this._id);

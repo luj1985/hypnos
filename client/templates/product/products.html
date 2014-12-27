@@ -1,14 +1,8 @@
-<template name="showProducts">
-  {{> productSearch }}
-  {{> products }}
-</template>
-
 <template name="products">
 {{> pages}}
 </template>
 
 <template name="product">
-{{#Animate out=false}}
 {{#linkTo route="productDetail" class="item product slide in animate"}}
 <h3 class="header">{{name}}</h3>
 <div class="content">
@@ -20,6 +14,5 @@
 <span class="name">排量:</span> {{cc}} <br>
 </div>
 {{/linkTo}}
-{{/Animate}}
 </template>
 
