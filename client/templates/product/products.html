@@ -6,9 +6,16 @@
       placeholder="输入舍弗勒号或原厂号">
       <i class="search icon"></i>
     </div>
-    <button class="ui icon button">
+    <button class="ui icon button" id="productFilter">
       <i class="icon filter"></i>
     </button>
+  </div>
+
+  <div class="ui popup" id="productFilterContent">
+    <a class="ui label">FAG</a>
+    <a class="ui label">Ruville</a>
+    <a class="ui label">LuK</a>
+    <a class="ui label">INA</a>
   </div>
   {{> products }}
 </template>

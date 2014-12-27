@@ -14,6 +14,15 @@ Template.showProducts.helpers({
   }
 });
 
+Template.showProducts.rendered = function () {
+  $('#productFilter').popup({
+    popup : '#productFilterContent',
+    position : 'bottom right',
+    on    : 'click',
+    transition : 'fade down'
+  });
+};
+
 Template.product.events({
   'click .favorite' : function(e) {
     Meteor.call('toggleFavorite', this._id);
