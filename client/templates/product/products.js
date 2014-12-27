@@ -35,8 +35,8 @@ Deps.autorun(function() {
   if(keyword) {
     var pattern = '^' + escapeRegExp(keyword);
     PagedProducts.set('filters', { $or : [ 
-      {sid: { $regex : pattern }}, 
-      {oid: { $regex : pattern }} 
+      {sid: { $regex : pattern, '$options' : 'i' }}, 
+      {oid: { $regex : pattern, '$options' : 'i' }} 
     ]});
   } else {
     PagedProducts.set('filters', {});
