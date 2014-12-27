@@ -13,9 +13,9 @@ Template.layout.rendered = function () {
 
 Template.layout.events({
   'click .launch': function () {
-    $('.menu.sidebar').sidebar('show');
+    $('.sidebar').sidebar('show');
   },
   'click .sidebar > a.item' : function() {
-    $('.menu.sidebar').sidebar('hide');
+    $('.sidebar').sidebar('hide');
   }
 });
