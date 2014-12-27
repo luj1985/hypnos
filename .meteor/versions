@@ -18,7 +18,6 @@ ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
-frozeman:animation-helper@0.2.6
 geojson-utils@1.0.2
 handlebars@1.0.2
 horka:swipebox@1.0.2
@@ -43,6 +42,7 @@ livedata@1.0.12
 localstorage@1.0.2
 logging@1.0.6
 meteor@1.1.4
+meteor-animation-helper@0.2.6
 meteor-pages@1.7.1
 meteor-platform@1.2.1
 meteorhacks:async@1.0.0

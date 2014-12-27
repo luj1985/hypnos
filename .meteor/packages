@@ -18,4 +18,4 @@ mrt:accounts-t9n
 http
 fastclick
 jquery-waypoints
-frozeman:animation-helper
+meteor-animation-helper

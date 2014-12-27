@@ -4,11 +4,12 @@
 </template>
 
 <template name="products">
-  {{> pages}}
+{{> pages}}
 </template>
 
 <template name="product">
-{{#linkTo route="productDetail" class="item product"}}
+{{#Animate out=false}}
+{{#linkTo route="productDetail" class="item product slide in animate"}}
 <h3 class="header">{{name}}</h3>
 <div class="content">
 <span class="name">舍弗勒号:</span> {{sid}} <br>
@@ -19,5 +20,6 @@
 <span class="name">排量:</span> {{cc}} <br>
 </div>
 {{/linkTo}}
+{{/Animate}}
 </template>
 

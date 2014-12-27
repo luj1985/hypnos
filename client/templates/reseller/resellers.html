@@ -1,17 +1,5 @@
 <template name="showResellers">
-  <div class="ui search">
-    <div class="ui icon input ">
-      <input class="prompt" type="text" id="resellerSearch" value="{{address}}" 
-      placeholder="输入地址或经销商名称">
-      <i class="search icon"></i>
-    </div>
-    <button class="ui icon button" id="useLocation">
-      <i class="map marker icon"></i>附近
-    </button>
-    <div class="ui hidden message" id="currentLocation">
-      {{> locationAccessor}}
-    </div>
-  </div>
+  {{> resellerSearch}}
   {{> resellers }}
 </template>
 
@@ -29,11 +17,12 @@
 </template>
 
 <template name="resellers">
-  {{> pages}}
+{{> pages}}
 </template>
 
 <template name="reseller">
-{{#Animate}}
+
+{{#Animate out=false}}
 <a href="maps:q={{address}}" class="item reseller slide in animate">
   <i class="icon location arrow"></i>
   <div class="content">

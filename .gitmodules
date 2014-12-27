@@ -8,3 +8,6 @@
 [submodule "packages/semantic-ui-accounts"]
 	path = packages/semantic-ui-accounts
 	url = https://github.com/luj1985/meteor-semantic-ui-accounts.git
+[submodule "packages/animation-helper"]
+	path = packages/animation-helper
+	url = https://github.com/luj1985/meteor-animation-helper.git

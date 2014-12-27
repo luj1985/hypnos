@@ -1,0 +1,15 @@
+<template name="resellerSearch">
+  <div class="ui search">
+    <div class="ui icon input ">
+      <input class="prompt" type="text" id="resellerSearch" value="{{address}}" 
+      placeholder="输入地址或经销商名称">
+      <i class="search icon"></i>
+    </div>
+    <button class="ui icon button" id="useLocation">
+      <i class="map marker icon"></i>附近
+    </button>
+    <div class="ui hidden message" id="currentLocation">
+      {{> locationAccessor}}
+    </div>
+  </div>
+</template>
