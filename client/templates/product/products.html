@@ -6,6 +6,9 @@
       placeholder="输入舍弗勒号或原厂号">
       <i class="search icon"></i>
     </div>
+    <button class="ui icon button">
+      <i class="icon filter"></i>
+    </button>
   </div>
   {{> products }}
 </template>
@@ -45,7 +48,7 @@
 返回
 {{/linkTo}}
 {{#Animate}}
-<article class="ui segment appears animate">
+<article class="ui segment slide in animate">
   <h2 class="ui header">
     {{name}}
     <span class="ui label favorite"><i class="icon star"></i>收藏</span>
