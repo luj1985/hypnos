@@ -8,15 +8,7 @@
     min-width: 7.6rem;
   }
 
-  opacity: 1;
-  -webkit-transition: all 350ms ease-in-out;
-          transition: all 350ms ease-in-out; 
-
-  &.animate {
-    opacity: 0;
-    -webkit-transform: translate(8rem,0);
-    transform: translate(8rem, 0);
-  }
+  .schaeffler-in()
 }
 
 .gallery {
@@ -39,4 +31,10 @@
       overflow-x: auto;
     }
   }
+}
+
+.name {
+  width: 5rem;
+  display: inline-block;
+  text-align: right;
 }

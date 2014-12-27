@@ -15,19 +15,17 @@
 </template>
 
 <template name="product">
-{{#Animate}}
-{{#linkTo route="productDetail" class="item product animate"}}
-<h5 class="header">{{name}}</h5>
+{{#linkTo route="productDetail" class="item product"}}
+<h3 class="header">{{name}}</h3>
 <div class="content">
-舍弗勒号: {{sid}} <br>
-原厂号: {{oid}} <br>
-制造商: {{manufacturer}} <br>
-品牌: {{brand}} <br>
-引擎: {{engine}} <br>
-排量: {{cc}} <br>
+<span class="name">舍弗勒号:</span> {{sid}} <br>
+<span class="name">原厂号:</span> {{oid}} <br>
+<span class="name">制造商:</span> {{manufacturer}} <br>
+<span class="name">品牌:</span> {{brand}} <br>
+<span class="name">引擎:</span> {{engine}} <br>
+<span class="name">排量:</span> {{cc}} <br>
 </div>
 {{/linkTo}}
-{{/Animate}}
 </template>
 
 <template name="productImages">
@@ -42,6 +40,10 @@
 
 
 <template name="productDetail">
+{{#linkTo route="showProducts" class="ui link"}}
+<i class="left chevron icon"></i>
+返回
+{{/linkTo}}
 {{#Animate}}
 <article class="ui segment product animate">
   <h2 class="ui header">
