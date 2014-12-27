@@ -3,9 +3,9 @@
 # convert image to fixed width 640px, and create thumbnails with width 100px
 
 RELATIVE="../public"
-ORIG_DIR="$RELATIVE/products/original"
-ROOT_DIR="$RELATIVE/products/images"
-THUMB_DIR="$RELATIVE/products/thumbnails"
+ORIG_DIR="$RELATIVE/original"
+ROOT_DIR="$RELATIVE/images"
+THUMB_DIR="$RELATIVE/thumbnails"
 
 for d in $(find $ORIG_DIR -type d); do
   if [[ "$d" != "$ORIG_DIR" ]]
@@ -44,5 +44,5 @@ for image in $(find $ORIG_DIR -type f -name "*.jpg"); do
   convert $image -resize 640x $target
   convert $image -resize x100 $thumb_target
 
-  echo "$sid,${target##$RELATIVE/},${thumb_target##$RELATIVE/}"
+  echo "$sid,/${target##$RELATIVE/},/${thumb_target##$RELATIVE/}"
 done
