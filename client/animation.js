@@ -28,9 +28,13 @@ Animation.attach = function(template, selector, children) {
 };
 
 Template.products.rendered = function () {
-  Animation.attach(this, '.products', '.product');
+  Animation.attach(this, '.products.container', '.product');
 };
 
 Template.resellers.rendered = function () {
-  Animation.attach(this, '.resellers', '.reseller');
+  Animation.attach(this, '.resellers.container', '.reseller');
+};
+
+Template.productDetail.rendered = function () {
+  Animation.attach(this, '.container', '.productDetail');
 };
