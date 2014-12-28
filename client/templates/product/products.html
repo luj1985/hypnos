@@ -3,16 +3,16 @@
 </template>
 
 <template name="product">
-{{#linkTo route="productDetail" class="item product"}}
-<h3 class="header">{{name}}</h3>
-<div class="content">
-<span class="name">舍弗勒号:</span> {{sid}} <br>
-<span class="name">原厂号:</span> {{oid}} <br>
-<span class="name">制造商:</span> {{manufacturer}} <br>
-<span class="name">品牌:</span> {{brand}} <br>
-<span class="name">引擎:</span> {{engine}} <br>
-<span class="name">排量:</span> {{cc}} <br>
-</div>
-{{/linkTo}}
+<section class="ui item product">
+  <h3 class="header">{{name}}</h3>
+  <div class="content">
+    <span class="name">舍弗勒号:</span> {{sid}} <br>
+    <span class="name">原厂号:</span> {{oid}} <br>
+    <span class="name">制造商:</span> {{manufacturer}} <br>
+    <span class="name">品牌:</span> {{brand}} <br>
+    <span class="name">引擎:</span> {{engine}} <br>
+    <span class="name">排量:</span> {{cc}} <br>
+  </div>
+</section>
 </template>
 

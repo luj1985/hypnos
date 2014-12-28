@@ -9,6 +9,18 @@ function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
+Template.products.helpers({
+  items: function () {
+    return Products.find({}, {limit: 1000});
+  }
+});
+
+Template.product.events({
+  'click .product': function () {
+    Router.go('productDetail', {_id: this._id});
+  }
+});
+
 Deps.autorun(function() {
   var keyword = Session.get('product-keyword') || '';
   if(keyword) {

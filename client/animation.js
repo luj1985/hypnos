@@ -12,17 +12,22 @@ Animation.attach = function(template, selector, children) {
 
     dom._uihooks = {
       insertElement : function(node, next) {
-        var $node = $(node).addClass('slide in animate');
-        dom.insertBefore(node, next);
+        var $node = $(node).addClass('slide in animate').appendTo(dom);
         Meteor.defer(function() {
           $node.removeClass('animate');
         });
+      },
+      removeElement : function() {
+        console.log(template);
+        // FIXME: seems like element will be remove then add it again
+        // it may related to meteor-pages
+        console.log('will remove', arguments);
       }
     };
   });
 };
 
-Template.products.rendered = function() {
+Template.products.rendered = function () {
   Animation.attach(this, '.products', '.product');
 };
 
