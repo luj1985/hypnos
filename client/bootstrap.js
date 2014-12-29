@@ -1,3 +1,3 @@
 Meteor.startup(function() {
-  T9n.setLanguage('zh-cn');
+  // T9n.setLanguage('zh-cn');
 });

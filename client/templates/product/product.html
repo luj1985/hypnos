@@ -6,13 +6,14 @@
 
 <template name="content">
 <article class="productDetail">
-{{#linkTo route="products" class="ui link"}}<i class="left chevron icon"></i>返回{{/linkTo}}
-<h2 class="ui header">
+{{#linkTo route="products" class="ui link"}}
+<i class="md md-keyboard-arrow-left"></i>返回
+{{/linkTo}}
+<h2>
   {{name}}
   <span class="ui label favorite"><i class="icon star"></i>收藏</span>
 </h2>
-<div class="container">
-<table class="ui definition table unstackable">
+<table>
   <tbody>
     <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
     <tr><td>原厂号</td><td>{{oid}}</td></tr>
@@ -25,7 +26,6 @@
     <tr><td>备注</td><td>{{comment}}</td></tr>
   </tbody>
 </table>
-</div>
 {{> productImages}}
 </article>
 </template>

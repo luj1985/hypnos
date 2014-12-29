@@ -10,11 +10,8 @@ accounts-password
 meteorhacks:npm
 npm-container
 horka:swipebox
-semantic-ui
 meteor-pages
-semantic-ui-accounts
-mrt:accounts-t9n
 http
+ixdi:material-design-iconic-font
 fastclick
-jquery-waypoints
-anti:modules
+meyerweb-reset

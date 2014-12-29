@@ -1,35 +1,44 @@
 <template name="layout">
-  <aside class="ui left vertical inverted green large menu sidebar uncover">
-    <div class="item">
-      <a class="ui logo icon image">
-        <img src="/logo.png"/>
-      </a>
+
+  <aside class="sidebar {{open}}">
+    <div class="logo">
+      schaeffler
     </div>
-    <a class="item" href="{{pathFor 'home'}}">
-      <i class="home icon"></i>
-      首页
-    </a>
-    <a class="item" href="{{pathFor 'products'}}">
-      <i class="search icon"></i>
-      产品搜索
-    </a>
-    <a class="item" href="{{pathFor 'resellers'}}">
-      <i class="shop icon"></i>
-      经销商搜索
-    </a>
-    <a class="item" href="{{pathFor 'login'}}">
-      <i class="user icon"></i>
-      登录
-    </a>
-  </aside>
-  <div class="pusher">
-    <header class="ui inverted large menu green">
-      <a class="launch item" href="#">
-        <i class="content icon"></i>
-        SCHAEFFLER
+    <hr class="divider" />
+    <nav class="menu">
+      {{#linkTo route="home" class="item button"}}
+      <i class="md md-home"></i>首页
+      {{/linkTo}}
+      {{#linkTo route="products" class="item button"}}
+      <i class="md md-search"></i>产品搜索
+      {{/linkTo}}
+      {{#linkTo route="resellers" class="item button"}}
+      <i class="md md-shop"></i>经销商搜索
+      {{/linkTo}}
+      {{#linkTo route="login" class="item button"}}
+      <i class="md md-perm-identity"></i>登录
+      {{/linkTo}}
+    </nav>
+    <hr class="divider" />
+    <nav class="menu">
+      <a class="item button">
+        <i class="md md-settings"></i>配置
       </a>
-    </header>
+      <a class="item button">
+        <i class="md md-help"></i>帮助
+      </a>
+    </nav>
+  </aside>
+
+  <header>
+    <nav class="launch item">
+      <i class="md md-menu"></i>
+    </nav>
+    <h1>welcome</h1>
+  </header>
+
+  <main>
     {{> yield}}
-  </div>
+  </main>
 </template>
 

@@ -1,16 +1,25 @@
-Template.layout.rendered = function () {
-  this.$('header.menu').waypoint(function(direction) {
-  }, {
-    offset : -20
-  });
+var SIDEBAR_STATUS_KEY = 'show-sidebar';
 
-  this.$('.sidebar').sidebar('attach events', '.item.launch');
-};
+Template.layout.helpers({
+  open: function () {
+    return Session.get(SIDEBAR_STATUS_KEY) ? 'open' : '';
+  }
+});
+
+function toggleSidebar() {
+  var status = Session.get(SIDEBAR_STATUS_KEY);
+  Session.set(SIDEBAR_STATUS_KEY, !status);
+}
 
 Template.layout.events({
-  'click .sidebar > a.item' : function() {
-    Meteor.setTimeout(function() {
-      $('.sidebar:first').sidebar('toggle');
-    }, 100);
+  'click .sidebar a.item' : toggleSidebar,
+  'click .item.launch' : function(e) {
+    console.log('launch');
+    toggleSidebar();
+    e.preventDefault();
+  },
+  'click .sidebar.open + main' : function(e) {
+    toggleSidebar();
+    e.preventDefault();
   }
 });

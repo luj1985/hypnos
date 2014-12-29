@@ -1,0 +1,76 @@
+.sidebar {
+  width: @sidebar-width;
+  background-color: darken(@hypnos-green, 3%);
+  color: @hypnos-invert-color;
+
+  font-family: Helvetica, sans-serif;
+
+  .translate(-@sidebar-width);
+  .transition(transform 0.5s ease);
+  .user-select(none);
+
+  &.open {
+    .translate(0);
+    .box-shadow(2px 0 5px @hypnos-shadow-depth-1);
+  }
+
+  .logo {
+    padding-left: 1rem;
+    display: block;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: monospace;
+  }
+
+  .menu {
+    padding: .5rem 0;
+
+    .item {
+      padding: 1rem 1rem;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+
+      .display(flex);
+      .align-items(center);
+
+      .md {
+        width: 2rem;
+        padding-right: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .divider {
+    border: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.sidebar ~ main:before {
+  content : '';
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  visibility: hidden;
+  .transition(background-color .5s ease);
+}
+
+.sidebar.open ~ main {
+  &:before {
+    background-color: rgba(0,0,0,.5);
+    visibility: visible;
+    // HACK: make the masker cover the whole page
+    .translateZ(0);
+  }
+}

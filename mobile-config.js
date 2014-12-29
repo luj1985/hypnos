@@ -39,4 +39,8 @@ App.launchScreens({
 });
 
 App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarBackgroundColor', '#000000');
+App.setPreference('StatusBarStyle', 'lightcontent');
+
+App.setPreference('DisallowOverscroll', 'true');
+App.setPreference('ShowSplashScreenSpinner', 'false');
+
