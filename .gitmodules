@@ -2,9 +2,3 @@
 	path = packages/meteor-pages
 	url = https://github.com/luj1985/meteor-pages.git
 	branch = v1.7.1-p1
-[submodule "packages/semantic-ui"]
-	path = packages/semantic-ui
-	url = https://github.com/luj1985/meteor-semantic-ui.git
-[submodule "packages/semantic-ui-accounts"]
-	path = packages/semantic-ui-accounts
-	url = https://github.com/luj1985/meteor-semantic-ui-accounts.git

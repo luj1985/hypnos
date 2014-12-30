@@ -18,8 +18,14 @@ Template.layout.events({
     toggleSidebar();
     e.preventDefault();
   },
-  'click .sidebar.open + main' : function(e) {
+  'click .sidebar.open ~ main' : function(e) {
     toggleSidebar();
     e.preventDefault();
   }
 });
+
+Template.layout.rendered = function () {
+  $(window).on('scroll', function(e) {
+    console.log(e);
+  })
+};
