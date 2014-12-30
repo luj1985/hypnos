@@ -22,7 +22,6 @@
 
   .menu {
     padding: .5rem 0;
-
     .item {
       padding: 1rem 1rem;
       text-decoration: none;
@@ -46,7 +45,7 @@
   }
 }
 
-.sidebar ~ main:before, .sidebar ~ header:before {
+.sidebar ~ main:before {
   content : '';
   position: fixed;
   display: block;
@@ -57,7 +56,7 @@
   .transition(background-color @hypnos-transition-duration @hypnos-transition-time-function);
 }
 
-.sidebar.open ~ main, .sidebar.open ~ header {
+.sidebar.open ~ main {
   &:before {
     background-color: rgba(0,0,0,.5);
     visibility: visible;

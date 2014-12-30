@@ -1,0 +1,12 @@
+.sidebar a.item, header .launch.item {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  .transition(background-color @hypnos-transition-duration @hypnos-transition-time-function);
+
+  &:hover {
+    background-color: darken(@hypnos-green, 6%);
+  }
+  &:active {
+    background-color: darken(@hypnos-green, 10%);
+  }
+}

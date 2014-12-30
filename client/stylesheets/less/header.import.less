@@ -2,21 +2,29 @@ header {
   color: @hypnos-invert-color;
   background-color: @hypnos-green;
   
-  height: 3rem;
+  height: @hypnos-header-height;
 
   .display(flex);
   .align-items(center);
   .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
 }
 
-.launch.item {
-  font-size: 1.5rem;
-  line-height: 3rem;
+header ~ main {
+  border-top: 3rem;
+  .box-sizing(border-box);
+}
 
+.launch.item {
   width: 3rem;
-  height: 3rem;
+  height: @hypnos-header-height;
+  line-height: @hypnos-header-height;
+  font-size: 1.5rem;
 
   color: @hypnos-invert-color;
   background-color: transparent;
   text-align: center;
+}
+
+main {
+  box-sizing: border-box;
 }
