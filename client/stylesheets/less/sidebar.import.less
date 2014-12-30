@@ -6,8 +6,7 @@
   font-family: Helvetica, sans-serif;
 
   .translate(-@sidebar-width);
-  .transition(transform 0.5s ease);
-  .user-select(none);
+  .transition(transform @hypnos-transition-duration @hypnos-transition-time-function);
 
   &.open {
     .translate(0);
@@ -15,14 +14,10 @@
   }
 
   .logo {
-    padding-left: 1rem;
     display: block;
-    height: 4rem;
-    line-height: 4rem;
-    font-size: 2rem;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-family: monospace;
+    height: (@sidebar-width / 3);
+    background-image: url('/about.png');
+    background-size: @sidebar-width (@sidebar-width / 3);
   }
 
   .menu {
@@ -46,16 +41,12 @@
   }
 
   .divider {
-    border: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0.5rem 0 0.5rem 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
-.sidebar ~ main:before {
+.sidebar ~ main:before, .sidebar ~ header:before {
   content : '';
   position: fixed;
   display: block;
@@ -63,10 +54,10 @@
   height: 100%;
   background-color: rgba(0,0,0,0);
   visibility: hidden;
-  .transition(background-color .5s ease);
+  .transition(background-color @hypnos-transition-duration @hypnos-transition-time-function);
 }
 
-.sidebar.open ~ main {
+.sidebar.open ~ main, .sidebar.open ~ header {
   &:before {
     background-color: rgba(0,0,0,.5);
     visibility: visible;

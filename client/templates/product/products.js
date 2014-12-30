@@ -1,10 +1,3 @@
-
-Template.product.events({
-  'click .favorite' : function(e) {
-    Meteor.call('toggleFavorite', this._id);
-  }
-});
-
 function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
@@ -18,8 +11,18 @@ Template.products.helpers({
 Template.product.events({
   'click .product': function () {
     Router.go('productDetail', {_id: this._id});
+  },
+  'click .favorite' : function(e) {
+    Meteor.call('toggleFavorite', this._id);
   }
 });
+
+Template.product.helpers({
+  brand: function () {
+    return (this.brand || "").toLowerCase();
+  }
+});
+
 
 Deps.autorun(function() {
   var keyword = Session.get('product-keyword') || '';

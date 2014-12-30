@@ -3,12 +3,11 @@
 </template>
 
 <template name="product">
-<section class="product">
-  <h3>{{name}}</h3>
-  <dl>
-    <dt class="name">舍弗勒号:</dt> <dd>{{sid}} </dd>
-    <dt class="name">原厂号:</dt> <dd>{{oid}} </dd>
-  </dl>
+<section class="product brand {{brand}}">
+  <p>{{name}}</p>
+  <p>舍弗勒号:{{sid}}</p>
+  <p>原厂号:{{oid}}</p>
 </section>
+<hr class="divider">
 </template>
 
