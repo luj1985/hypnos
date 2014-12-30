@@ -8,6 +8,12 @@ Template.locationAccessor.helpers({
   ready    : function() { return Session.get(READY_FLAG); }
 });
 
+Template.reseller.helpers({
+  gps: function () {
+    var location = this.location;
+    return location ? [location.lat, location.lng].join(', ') : '';
+  }
+});
 Deps.autorun(function() {
   var coords = Session.get(LOCATION_KEY);
   if (coords) {

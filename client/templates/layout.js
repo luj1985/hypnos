@@ -1,7 +1,7 @@
 var SIDEBAR_STATUS_KEY = 'show-sidebar';
 Template.layout.rendered = function () {
   // HACK: to make sure that html body can fullfil the screen
-  // this.$('main').css('min-height', window.innerHeight);
+  this.$('main').css('min-height', window.innerHeight);
 };
 
 Template.layout.helpers({

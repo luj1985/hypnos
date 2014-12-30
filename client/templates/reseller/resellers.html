@@ -4,11 +4,12 @@
 
 <template name="reseller">
 <a href="maps:q={{address}}" class="item reseller">
-  <i class="icon location arrow"></i>
-  <div class="content">
+  <i class="md md-place"></i>
+  <div class="place">
     <h5>{{reseller}}</h5>
     <p class="address">{{address}}</p>
-    <p class="debug">lat: {{location.lat}}, lng: {{location.lng}}</p>
+    <p class="gps">{{gps}}</p>
   </div>
 </a>
+<hr class="divider" />
 </template>
