@@ -38,7 +38,7 @@ App.launchScreens({
   'android_xhdpi_landscape': 'resources/splash/splash-800x1234.jpg'
 });
 
-App.setPreference('DisallowOverscroll', 'true');
-App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarStyle', 'lightcontent');
-App.setPreference('ShowSplashScreenSpinner', 'false');
+// App.setPreference('DisallowOverscroll', 'true');
+// App.setPreference('StatusBarOverlaysWebView', 'false');
+// App.setPreference('StatusBarStyle', 'lightcontent');
+// App.setPreference('ShowSplashScreenSpinner', 'false');

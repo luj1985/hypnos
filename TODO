@@ -1,3 +1,2 @@
-- switch cordova-android wrapper with crosswalk
 - enable cordova plugin to support weibo/wexin sso login
 - use meteor-imagemagick (https://github.com/sylvaingi/meteor-imagemagick) to resize image at runtime
