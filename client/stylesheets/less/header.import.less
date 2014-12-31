@@ -34,11 +34,8 @@ header ~ main {
   header ~ main {
     margin-top: @hypnos-header-height-mobile;
   }
-  .launch.item, header > h1 {
-    height: @hypnos-header-height-mobile;
-    line-height: @hypnos-header-height-mobile;
-  }
 }
+
 @media(orientation: landscape) {
   header {
     height: @hypnos-header-height-mobile-landscape;
@@ -46,8 +43,14 @@ header ~ main {
   header ~ main {
     margin-top: @hypnos-header-height-mobile-landscape;
   }
-  .launch.item, header > h1 {
-    height: @hypnos-header-height-mobile-landscape;
-    line-height: @hypnos-header-height-mobile-landscape;
-  }
+}
+
+.launch.item, 
+header, 
+header > h1,
+main {
+  .transition(
+    height @hypnos-transition-duration @hypnos-transition-time-function,
+    padding-top @hypnos-transition-duration @hypnos-transition-time-function
+  );
 }

@@ -10,9 +10,15 @@ Template.layout.helpers({
   }
 });
 
+function toggleSidebar() {
+  var status = Session.get(SIDEBAR_STATUS_KEY);
+  Session.set(SIDEBAR_STATUS_KEY, !status);
+}
+
 Template.layout.events({
-  'click .sidebar a.item,.item.launch,.sidebar.open~main,.sidebar.open~header': function() {
-    var status = Session.get(SIDEBAR_STATUS_KEY);
-    Session.set(SIDEBAR_STATUS_KEY, !status);
+  'click .sidebar a.item' : toggleSidebar,
+  'click header .item.launch,.sidebar.open~main,.sidebar.open~header': function(e) {
+    e.preventDefault();
+    toggleSidebar();
   }
 });
