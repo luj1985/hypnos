@@ -1,7 +1,6 @@
 header {
   color: @hypnos-invert-color;
-  background-color: @hypnos-green;
-  
+  background-color: @hypnos-green;  
   height: @hypnos-header-height;
 
   .display(flex);
@@ -28,4 +27,29 @@ header ~ main {
   color: @hypnos-invert-color;
   background-color: transparent;
   text-align: center;
+}
+
+@media(orientation: portrait) { 
+  header {
+    height: @hypnos-header-height-mobile;
+  }
+  header ~ main {
+    margin-top: @hypnos-header-height-mobile;
+  }
+  .launch.item, header > h1 {
+    height: @hypnos-header-height-mobile;
+    line-height: @hypnos-header-height-mobile;
+  }
+}
+@media(orientation: landscape) {
+  header {
+    height: @hypnos-header-height-mobile-landscape;
+  }
+  header ~ main {
+    margin-top: @hypnos-header-height-mobile-landscape;
+  }
+  .launch.item, header > h1 {
+    height: @hypnos-header-height-mobile-landscape;
+    line-height: @hypnos-header-height-mobile-landscape;
+  }
 }
