@@ -1,33 +1,30 @@
 <template name="productDetail">
-<div class="container">
-  {{> content}}
-</div>
-</template>
+<nav class="toolbar">
+  {{#linkTo route="products" class="back"}}
+    <i class="md md-keyboard-arrow-left"></i>返回
+  {{/linkTo}}
+  <a class="favorite">
+    收藏<i class="md md-star"></i>
+  </a>
+</nav>
 
-<template name="content">
-<article class="productDetail">
-{{#linkTo route="products" class="ui link"}}
-<i class="md md-keyboard-arrow-left"></i>返回
-{{/linkTo}}
-<h2>
-  {{name}}
-  <span class="ui label favorite"><i class="icon star"></i>收藏</span>
-</h2>
-<table>
-  <tbody>
-    <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
-    <tr><td>原厂号</td><td>{{oid}}</td></tr>
-    <tr><td>制造商</td><td>{{manufacturer}}</td></tr>
-    <tr><td>品牌</td><td>{{brand}}</td></tr>
-    <tr><td>引擎</td><td>{{engine}}</td></tr>
-    <tr><td>排量</td><td>{{cc}}</td></tr>
-    <tr><td>生产起始年限</td><td>{{start}}</td></tr>
-    <tr><td>生产结束年限</td><td>{{end}}</td></tr>
-    <tr><td>备注</td><td>{{comment}}</td></tr>
-  </tbody>
-</table>
-{{> productImages}}
+<article>  
+  <h2>{{name}}</h2>
+  <table class="definition">
+    <tbody>
+      <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
+      <tr><td>原厂号</td><td>{{oid}}</td></tr>
+      <tr><td>制造商</td><td>{{manufacturer}}</td></tr>
+      <tr><td>品牌</td><td>{{brand}}</td></tr>
+      <tr><td>引擎</td><td>{{engine}}</td></tr>
+      <tr><td>排量</td><td>{{cc}}</td></tr>
+      <tr><td>起始年限</td><td>{{start}}</td></tr>
+      <tr><td>结束年限</td><td>{{end}}</td></tr>
+      <tr><td>备注</td><td>{{comment}}</td></tr>
+    </tbody>
+  </table>
 </article>
+{{> productImages}}
 </template>
 
 <template name="productImages">
