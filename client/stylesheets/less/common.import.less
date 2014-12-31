@@ -52,9 +52,11 @@ table.definition {
 }
 
 .toolbar {
+  position: fixed;
   padding: 0 1rem;
   height: 3rem;
-
+  width: 100%;
+  .box-sizing(border-box);
   .display(flex);
   .justify-content(space-between);
   .align-items(center);
@@ -63,6 +65,10 @@ table.definition {
     text-decoration: none;
     color: @hypnos-invert-color;
   }
+}
+
+.toolbar ~ article {
+  padding-top: 4rem;
 }
 
 body {
