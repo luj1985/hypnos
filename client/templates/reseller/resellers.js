@@ -11,7 +11,9 @@ Template.locationAccessor.helpers({
 Template.reseller.helpers({
   gps: function () {
     var location = this.location;
-    return location ? [location.lat, location.lng].join(', ') : '';
+    return location ? _.map([location.lat, location.lng], function(f) {
+      return parseFloat(f).toFixed(4);
+    }).join(', ') : '';
   }
 });
 Deps.autorun(function() {
