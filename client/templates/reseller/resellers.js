@@ -1,26 +1,29 @@
 var LOCATION_KEY = 'location',
     READY_FLAG = 'ready',
-    MESSAGE_KEY = 'locationError';
+    MESSAGE_KEY = 'locationError',
+    Funcs = {};
 
-var mapAccessor = (function(){
-  if (Meteor.isCordova) {
-    var platform = (device.platform || "").toLowerCase();
-    switch(platform) {
-      case 'android' : 
-        return function(address, location) {
-          return "geo:" + location.lat + ',' + location.lng; 
-        }
-      case 'ios' :
-        return function(address, gps) { 
-          return "maps:q=" + address; 
-        }
+// for Web/PC
+Funcs.locationAccessor = function(address, location) {
+  return "http://api.map.baidu.com/geocoder?address=" + encodeURIComponent(address) + "&output=html";
+}
+
+document.addEventListener('deviceready', function() {
+  var platform = device.platform.toLowerCase();
+  switch(platform) {
+  case 'android' : 
+    Funcs.locationAccessor = function(address, location) { 
+      var l = location || {lat:0, lng:0};
+      return "geo:" + l.lat + ',' + l.lng + "?q=" + encodeURIComponent(address);
+    };
+    break;
+  case 'ios':
+    Funcs.locationAccessor = function(address, gps) { 
+      return "maps:q=" + encodeURIComponent(address); 
     }
-  } else {
-    return function(address, location) {
-      return "http://api.map.baidu.com/geocoder?address=" + encodeURIComponent(address) + "&output=html";
-    }
+    break;
   }
-})();
+}, false);
 
 Template.locationAccessor.helpers({
   location : function() { return Session.get(LOCATION_KEY); }, 
@@ -36,7 +39,7 @@ Template.reseller.helpers({
     }).join(', ') : '';
   },
   href: function() {
-    return mapAccessor(this.address, this.location);
+    return Funcs.locationAccessor(this.address, this.location);
   }
 });
 Deps.autorun(function() {
