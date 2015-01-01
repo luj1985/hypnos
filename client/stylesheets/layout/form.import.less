@@ -3,17 +3,25 @@ form {
   .display(flex);
   .flex-direction(column);
   &> * {
-    margin: 1rem;
+    margin: 0.5rem 1rem;
+  }
+
+  .field {
+    .display(flex);
+    .align-items(center);
+    input {
+      .flex(1);
+    }
   }
   
   input {
     .appearance(none);
-    display: block;
+    display: inline-block;
     outline: none;
     border: none;
-    height: 2rem;
+    height: 3rem;
     font-size: 1rem;
-    padding: .5rem;
+    padding: 1rem 0;
     background-color: transparent;
 
     &[readonly] {
@@ -24,11 +32,12 @@ form {
   input[type="text"], 
   input[type="password"], 
   input[type="search"],
-  input[type="email"] {
+  input[type="email"],
+  input[type="tel"] {
     border-bottom: 1px solid lightgray;
-    .transition(border-color @hypnos-transition-duration @hypnos-transition-time-function);
+    .transition(border-bottom @hypnos-transition-duration @hypnos-transition-time-function);
     &:focus {
-      border-color: @hypnos-green;
+      border-bottom: 2px solid @hypnos-green;
     }
   }
 

@@ -1,11 +1,25 @@
 <template name="account">
-{{#contentFor "title"}}个人资料{{/contentFor}}
+{{#contentFor "title"}}{{user.username}}的个人资料{{/contentFor}}
 <form class="account">
-<input type="text" value="{{user.username}}" readonly>
-<input type="text" value="{{user.profile.name}}">
 {{#each user.emails}}
-  <input type="email" value="{{address}}">
+<div class="field">
+  <i class="md md-email"></i>
+  <input type="email" value="{{address}}" placeholder="电子邮件">
+  {{#unless verified}}<span>未验证</span>{{/unless}}
+</div>
 {{/each}}
+<div class="field">
+  <i class="md md-person"></i>
+  <input type="text" value="{{user.profile.name}}" placeholder="姓名">
+</div>
+<div class="field">
+  <i class="md md-phone"></i>
+  <input type="tel" value="{{user.profile.tel}}" placeholder="电话号码">
+</div>
+<div class="field">
+  <i class="md md-place"></i>
+  <input type="text" value="{{user.profile.address}}" placeholder="地址">
+</div>
 <input type="submit" value="更新">
 </form>
 </template>
