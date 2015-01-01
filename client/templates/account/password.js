@@ -45,3 +45,18 @@ Template.account.helpers({
     return Meteor.user().emails[0];
   }
 });
+
+Template.account.events({
+  'click .done.item, click input[type="submit"]': function (e, template) {
+    e.preventDefault();
+
+    var profile = {};
+    profile.name = template.$('input[name="name"]').val();
+    profile.tel = template.$('input[name="phone"]').val();
+    profile.address = template.$('input[name="address"]').val();
+
+    Meteor.call('updateProfile', profile, function (error, result) {
+      console.log(arguments);
+    });
+  }
+});

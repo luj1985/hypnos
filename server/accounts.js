@@ -10,3 +10,11 @@ Meteor.startup(function() {
     });
   }
 });
+
+Meteor.methods({
+  updateProfile : function(profile) {
+    return Meteor.users.update(Meteor.userId, {
+      $set : { profile : profile}
+    });
+  }
+});

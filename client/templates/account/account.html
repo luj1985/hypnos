@@ -1,5 +1,10 @@
 <template name="account">
 {{#contentFor "title"}}{{user.username}}的个人资料{{/contentFor}}
+{{#contentFor "tools"}}
+<a class="done item" href="#">
+  <i class="md md-done"></i>
+</a>
+{{/contentFor}}
 <form class="account">
 {{#each user.emails}}
 <div class="field">
@@ -10,15 +15,15 @@
 {{/each}}
 <div class="field">
   <i class="md md-person"></i>
-  <input type="text" value="{{user.profile.name}}" placeholder="姓名">
+  <input type="text" name="name" value="{{user.profile.name}}" placeholder="姓名">
 </div>
 <div class="field">
   <i class="md md-phone"></i>
-  <input type="tel" value="{{user.profile.tel}}" placeholder="电话号码">
+  <input type="tel" name="phone" value="{{user.profile.tel}}" placeholder="电话号码">
 </div>
 <div class="field">
   <i class="md md-place"></i>
-  <input type="text" value="{{user.profile.address}}" placeholder="地址">
+  <input type="text" name="address" value="{{user.profile.address}}" placeholder="地址">
 </div>
 <input type="submit" value="更新">
 </form>
