@@ -42,4 +42,5 @@ App.setPreference('DisallowOverscroll', 'true');
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarStyle', 'lightcontent');
 App.setPreference('ShowSplashScreenSpinner', 'false');
+App.setPreference('KeyboardShrinksView', 'false');
 // App.setPreference('SuppressesIncrementalRendering', 'true');

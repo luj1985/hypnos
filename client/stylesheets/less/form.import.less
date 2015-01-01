@@ -1,47 +1,38 @@
 form {
+  padding-top: 1rem;
   .display(flex);
   .flex-direction(column);
-  .field {
-    margin: 1rem 1rem 0 1rem;
-    label {
-      display: inline-block;
-      font-size: .9rem;
-      color: rgba(0,0,0,.8);
-      width: 4rem;
-      text-align: right;
-      margin-right: 1rem;
-      &:after {
-        content: ':';
-      }
-    }
-    input[type="search"] {
-      -webkit-appearance:textfield;
-      box-sizing: content-box;
-      border-radius: 1rem;
-      border: 1px solid rgba(0,0,0,.4);
-      padding-left: .5rem;
-      width: 60%;
-    }
-    select {
-      -webkit-appearance:textfield;
-    }
-    input[type="search"], select {
-      height: 1.5rem;
-    }
+  &> * {
+    margin: 1rem;
+  }
+  
+  input {
+    .appearance(none);
+    display: block;
+    outline: none;
+    border: none;
+    height: 2rem;
+    font-size: 1rem;
+    padding: .5rem;
+    background-color: transparent;
+  }
 
-    input[type="reset"], input[type="submit"] {
-      .appearance(none);
-      border: none;
-      float: right;
-      margin-top: 2rem;
-      margin-right: 1rem;
-      height: 2rem;
-      width: 4rem;
-      font-size: .85rem;
-      color: @hypnos-invert-color;
-      background-color: @hypnos-green;
-      border-radius: .2rem;
-      .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+  input[type="text"], 
+  input[type="password"], 
+  input[type="search"],
+  input[type="email"] {
+    border-bottom: 1px solid lightgray;
+    .transition(border-color @hypnos-transition-duration @hypnos-transition-time-function);
+    &:focus {
+      border-color: @hypnos-green;
     }
+  }
+
+  input[type="reset"], input[type="submit"] {
+    padding: 0 1.5rem;
+    border-radius: .2rem;
+    font-size: .88rem;
+    .invert-color();
+    .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
   }
 }
