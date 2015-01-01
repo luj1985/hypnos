@@ -17,7 +17,7 @@ function toggleSidebar() {
 
 Template.layout.events({
   'click .sidebar a.item' : toggleSidebar,
-  'click header .item.launch,.sidebar.open~main,.sidebar.open~header': function(e) {
+  'click header .item.launch,.sidebar.open~main': function(e) {
     e.preventDefault();
     toggleSidebar();
   }
