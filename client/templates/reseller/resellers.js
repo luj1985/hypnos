@@ -25,12 +25,6 @@ document.addEventListener('deviceready', function() {
   }
 }, false);
 
-Template.locationAccessor.helpers({
-  location : function() { return Session.get(LOCATION_KEY); }, 
-  message  : function() { return Session.get(MESSAGE_KEY); },
-  ready    : function() { return Session.get(READY_FLAG); }
-});
-
 Template.reseller.helpers({
   gps: function () {
     var location = this.location;
@@ -42,6 +36,28 @@ Template.reseller.helpers({
     return Funcs.locationAccessor(this.address, this.location);
   }
 });
+
+Template.resellers.events({
+  'click .location.item': function () {
+    if (navigator.geolocation) {   
+      Session.set('gps-error', null);
+      Session.set('gps-ready', false);
+
+      navigator.geolocation.getCurrentPosition(function(p) {
+        Session.set(LOCATION_KEY, [p.coords.latitude, p.coords.longitude]);
+        Session.set('gps-ready', true);
+      }, function(e) {
+        Session.set('gps-error', e.message);
+      }, {
+        enableHighAcuracy: true,
+        timeout: 10000
+      });
+    } else {
+      Session.set('gps-error', '不支持地理位置');
+    }
+  }
+});
+
 Deps.autorun(function() {
   var coords = Session.get(LOCATION_KEY);
   if (coords) {

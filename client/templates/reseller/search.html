@@ -1,28 +1,7 @@
 <template name="resellerSearch">
-  <div class="ui search">
-    <div class="ui icon input ">
-      <input class="prompt" type="text" id="resellerSearch" value="{{address}}" 
-      placeholder="输入地址或经销商名称">
-      <i class="search icon"></i>
-    </div>
-    <button class="ui icon button" id="useLocation">
-      <i class="map marker icon"></i>附近
-    </button>
-    <div class="ui hidden message" id="currentLocation">
-      {{> locationAccessor}}
-    </div>
-  </div>
-</template>
-
-<template name="locationAccessor">
-  {{#if ready}}
-    当前位置：{{location}}
-  {{else}}
-    {{#if message}}
-      {{message}}
-    {{else}}
-      <i class="ui inline mini active loader"></i>
-      正在获取位置...
-    {{/if}}
-  {{/if}}
+<form class="location">
+<input type="text" placeholder="省份">
+<input type="text" placeholder="城市">
+<input type="submit" value="查找">
+</form>
 </template>
