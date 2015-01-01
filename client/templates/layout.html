@@ -2,18 +2,18 @@
   <aside class="sidebar {{open}}">
     <div class="logo"></div>
     <nav class="menu">
-      {{#linkTo route="home" class="item button"}}
-      <i class="md md-home"></i>关于我们
-      {{/linkTo}}
-      {{#linkTo route="products" class="item button"}}
-      <i class="md md-search"></i>产品搜索
-      {{/linkTo}}
-      {{#linkTo route="resellers" class="item button"}}
-      <i class="md md-shop"></i>经销商搜索
-      {{/linkTo}}
-      {{#linkTo route="login" class="item button"}}
-      <i class="md md-perm-identity"></i>登录
-      {{/linkTo}}
+      <a href="{{pathFor 'home'}}" class="item button">
+        <i class="md md-home"></i>关于我们
+      </a>
+      <a href="{{pathFor 'products'}}" class="item button">
+        <i class="md md-home"></i>产品搜索
+      </a>
+      <a href="{{pathFor 'resellers'}}" class="item button">
+        <i class="md md-home"></i>经销商搜索
+      </a>
+      <a href="{{pathFor 'login'}}" class="item button">
+        <i class="md md-home"></i>登录
+      </a>
     </nav>
     <hr class="divider" />
     <nav class="menu">
@@ -27,11 +27,15 @@
   </aside>
 
   <header>
-    <a class="launch item"><i class="md md-menu"></i></a>
-    <h1>{{> yield "title"}}</h1>
+    <a class="launch item" href="#"><i class="md md-menu"></i></a>
+    <div class="context">
+      <h1>{{> yield "title"}}</h1>
+      <div class="tools">{{> yield "tools"}}</div>
+    </div>
   </header>
 
   <main>
+    <div class="header-placeholder"></div>
     {{> yield}}
   </main>
 </template>

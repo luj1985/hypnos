@@ -1,5 +1,8 @@
 <template name="resellers">
 {{#contentFor "title"}}经销商搜索{{/contentFor}}
+{{#contentFor "tools"}}
+<a class="search item" href="{{pathFor 'productSearch'}}"><i class="md md-my-location"></i></a>
+{{/contentFor}}
 {{> pages}}
 </template>
 

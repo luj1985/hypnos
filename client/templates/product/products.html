@@ -1,5 +1,8 @@
 <template name="products">
 {{#contentFor "title"}}产品搜索{{/contentFor}}
+{{#contentFor "tools"}}
+<a class="search item" href="{{pathFor 'productSearch'}}"><i class="md md-search"></i></a>
+{{/contentFor}}
 {{> pages}}
 </template>
 

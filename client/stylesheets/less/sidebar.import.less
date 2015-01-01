@@ -3,7 +3,7 @@
   background-color: darken(@hypnos-green, 3%);
   color: @hypnos-invert-color;
   width: @sidebar-width;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 3;
 
@@ -24,18 +24,13 @@
 
   .menu {
     padding: .5rem 0;
-    .item {
+    a.item {
       padding: 1rem 1rem;
-      text-decoration: none;
-      display: block;
-      color: inherit;
-
       .display(flex);
       .align-items(center);
-
       .md {
-        padding-right: 2rem;
-        font-size: 1.2rem;
+        padding-right: 1.5rem;
+        font-size: 1.5rem;
       }
     }
   }

@@ -1,19 +1,51 @@
 <template name="productSearch">
-  <div class="ui search">
-    <div class="ui icon input ">
-      <input class="prompt" type="text" id="productSearch" value="{{keyword}}" 
-      placeholder="输入舍弗勒号或原厂号">
-      <i class="search icon"></i>
-    </div>
-    <button class="ui icon button right floated" id="productFilter">
-      <i class="icon filter"></i>
-    </button>
-  </div>
+  {{#contentFor "tools"}}
+  <h1>产品搜索</h1>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  {{/contentFor}}
 
-  <div class="ui popup" id="productFilterContent">
-    <a class="ui label">FAG</a>
-    <a class="ui label">Ruville</a>
-    <a class="ui label">LuK</a>
-    <a class="ui label">INA</a>
-  </div>
+  <form class="search">
+    <div class="field">
+      <label>产品号</label>
+      <input type="search" placeholder="输入舍弗勒号或原厂号" />
+    </div>
+    <div class="field">
+      <label>选择品牌</label>
+      <select>
+        <option>FAG</option>
+        <option>Ruville</option>
+        <option>LuK</option>
+        <option>INA</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>产品名称</label>
+      <select>
+        <option>轮毂轴承</option>
+        <option>惰轮</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>制造商</label>
+      <select>
+        <option>起亚 (东风悦达起亚)</option>
+        <option>宝马 (华晨宝马)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>车型</label>
+      <select>
+        <option>千里马</option>
+        <option>5 (E60)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>排量</label>
+      <input type="range">
+    </div>
+    <div class="field">
+      <input type="submit" value="查询">
+      <input type="reset" value="清空">
+    </div>
+  </form>
 </template>

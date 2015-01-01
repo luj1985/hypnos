@@ -13,12 +13,3 @@ Template.productSearch.helpers({
     return Session.get('product-keyword') || '';
   }
 });
-
-Template.productSearch.rendered = function () {
-  $('#productFilter').popup({
-    popup : '#productFilterContent',
-    position : 'bottom right',
-    on    : 'click',
-    transition : 'fade down'
-  });
-};

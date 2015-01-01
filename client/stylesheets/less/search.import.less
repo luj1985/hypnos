@@ -1,0 +1,48 @@
+form.search{
+  .display(flex);
+  .flex-direction(column);
+
+  .field {
+    margin: 1rem 1rem 0 1rem;
+    label {
+      display: inline-block;
+      font-size: .9rem;
+      color: rgba(0,0,0,.8);
+      width: 4rem;
+      text-align: right;
+      margin-right: 1rem;
+      &:after {
+        content: ':';
+      }
+    }
+    input[type="search"] {
+      -webkit-appearance:textfield;
+      box-sizing: content-box;
+      border-radius: 1rem;
+      border: 1px solid rgba(0,0,0,.4);
+      padding-left: .5rem;
+      width: 60%;
+    }
+    select {
+      -webkit-appearance:textfield;
+    }
+    input[type="search"], select {
+      height: 1.5rem;
+    }
+
+    input[type="reset"], input[type="submit"] {
+      .appearance(none);
+      border: none;
+      float: right;
+      margin-top: 2rem;
+      margin-right: 1rem;
+      height: 2rem;
+      width: 4rem;
+      font-size: .85rem;
+      color: @hypnos-invert-color;
+      background-color: @hypnos-green;
+      border-radius: .2rem;
+      .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+    }
+  }
+}
