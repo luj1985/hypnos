@@ -1,4 +1,4 @@
-var SIDEBAR_STATUS_KEY = 'show-sidebar';
+
 Template.layout.rendered = function () {
   // HACK: to make sure that html body can fullfil the screen
   this.$('main').css('min-height', window.innerHeight);
@@ -11,29 +11,30 @@ Template.layout.rendered = function () {
     var gesture = e.gesture;
     // check that the drag event started at the edge and that the direction is to the right
     if(fromEdge && gesture.direction === 'right'){
-      Session.set(SIDEBAR_STATUS_KEY, true);
+      Session.set('show-sidebar', true);
     }
-    if (gesture.direction === 'left' && Session.get(SIDEBAR_STATUS_KEY)) {
-      Session.set(SIDEBAR_STATUS_KEY, false);
+    if (gesture.direction === 'left' && Session.get('show-sidebar')) {
+      Session.set('show-sidebar', false);
     }
   });
 };
 
 Template.layout.helpers({
   open: function () {
-    return Session.get(SIDEBAR_STATUS_KEY) ? 'open' : '';
+    return Session.get('show-sidebar') ? 'open' : '';
   }
 });
 
-function toggleSidebar() {
-  var status = Session.get(SIDEBAR_STATUS_KEY);
-  Session.set(SIDEBAR_STATUS_KEY, !status);
-}
-
 Template.layout.events({
-  'click .sidebar a.item' : toggleSidebar,
-  'click header .item.launch,.sidebar.open~main': function(e) {
+  'click .sidebar.open~main': function(e) {
     e.preventDefault();
-    toggleSidebar();
+    Session.set('show-sidebar', false);
+  }
+});
+
+Template.launcher.events({
+  'click .item.launch': function(e) {
+    e.preventDefault();
+    Session.set('show-sidebar', true);
   }
 });
