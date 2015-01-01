@@ -1,32 +1,41 @@
 <template name="sidebar">
 <div class="logo"></div>
 <nav class="menu">
-  <a href="{{pathFor 'home'}}" class="item button">
+  <a href="{{pathFor 'home'}}" class="item">
     <i class="md md-home"></i>关于我们
   </a>
-  <a href="{{pathFor 'products'}}" class="item button">
+  <a href="{{pathFor 'products'}}" class="item">
     <i class="md md-search"></i>产品搜索
   </a>
-  <a href="{{pathFor 'resellers'}}" class="item button">
+  {{#if currentUser}}
+  <a href="{{pathFor 'resellers'}}" class="item">
     <i class="md md-shop"></i>经销商搜索
   </a>
-  {{#if currentUser}}
-    <a href="{{pathFor 'account'}}" class="item button">
-      <i class="md md-perm-identity"></i>个人资料
-    </a>
-  {{else}}
-    <a href="{{pathFor 'login'}}" class="item button">
-      <i class="md md-perm-identity"></i>登录
-    </a>
   {{/if}}
+  {{> userLink}}
 </nav>
 <hr class="divider" />
 <nav class="menu">
-  <a class="item button">
+  <a class="item">
     <i class="md md-settings"></i>配置
   </a>
-  <a class="item button">
+  <a class="item">
     <i class="md md-help"></i>帮助
   </a>
 </nav>
+</template>
+
+<template name="userLink">
+{{#if currentUser}}
+  <a href="{{pathFor 'account'}}" class="item">
+    <i class="md md-perm-identity"></i>个人资料
+  </a>
+  <a href="{{pathFor 'home'}}" class="item exit">
+    <i class="md md-exit-to-app"></i>退出
+  </a>
+{{else}}
+  <a href="{{pathFor 'login'}}" class="item">
+    <i class="md md-perm-identity"></i>登录
+  </a>
+{{/if}}
 </template>

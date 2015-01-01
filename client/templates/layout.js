@@ -21,7 +21,7 @@ Template.layout.rendered = function () {
 
 Template.layout.helpers({
   open: function () {
-    return Session.get('show-sidebar') ? 'open' : '';
+    return Session.equals('show-sidebar', true) ? 'open' : '';
   }
 });
 
@@ -36,5 +36,11 @@ Template.launcher.events({
   'click .item.launch': function(e) {
     e.preventDefault();
     Session.set('show-sidebar', true);
+  }
+});
+
+Template.back.events({
+  'click .item.back': function () {
+    console.log('back');
   }
 });

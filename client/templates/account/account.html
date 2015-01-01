@@ -1,3 +1,11 @@
 <template name="account">
-
+{{#contentFor "title"}}个人资料{{/contentFor}}
+<form class="account">
+<input type="text" value="{{user.username}}" readonly>
+<input type="text" value="{{user.profile.name}}">
+{{#each user.emails}}
+  <input type="email" value="{{address}}">
+{{/each}}
+<input type="submit" value="更新">
+</form>
 </template>
