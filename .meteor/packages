@@ -9,9 +9,9 @@ less
 accounts-password
 meteorhacks:npm
 npm-container
-horka:swipebox
 meteor-pages
 http
 ixdi:material-design-iconic-font
 fastclick
 meyerweb-reset
+noorderstorm:hammer

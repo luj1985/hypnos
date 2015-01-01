@@ -1,9 +1,4 @@
 <template name="productDetail">
-{{#contentFor "title"}}{{name}}{{/contentFor}}
-{{#contentFor "tools"}}
-<a class="favorite item"><i class="md md-star"></i></a>
-{{/contentFor}}
-{{> pages}}
 <article>
   <table class="definition">
     <tbody>
@@ -18,17 +13,23 @@
       <tr><td>备注</td><td>{{comment}}</td></tr>
     </tbody>
   </table>
+  {{#if images}}
+    <div class="gallery">
+    {{#each images}}
+      <a href="{{image}}"><img src="{{thumbnail}}" alt="image"></a>
+    {{/each}}
+    </div>
+  {{/if}}
 </article>
-{{> productImages}}
+
+
+{{#contentFor "title"}}{{name}}{{/contentFor}}
+
+{{#contentFor "tools"}}
+<a class="favorite item"><i class="md md-star"></i></a>
+{{/contentFor}}
+{{> pages}}
+
 </template>
 
-<template name="productImages">
-{{#if images}}
-  <div class="gallery">
-  {{#each images}}
-    <a href="{{image}}" class="swipebox"><img src="{{thumbnail}}" alt="image"></a>
-  {{/each}}
-  </div>
-{{/if}}
-</template>
 
