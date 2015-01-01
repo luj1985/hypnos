@@ -10,6 +10,7 @@ Template.products.helpers({
 
 Template.product.events({
   'click .product': function () {
+    Session.set('selected-product', this);
     Router.go('productDetail', {_id: this._id});
   },
   'click .favorite' : function(e) {

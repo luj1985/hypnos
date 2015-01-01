@@ -1,15 +1,10 @@
 <template name="productDetail">
-<nav class="toolbar">
-  {{#linkTo route="products" class="back"}}
-    <i class="md md-keyboard-arrow-left"></i>返回
-  {{/linkTo}}
-  <a class="favorite">
-    收藏<i class="md md-star"></i>
-  </a>
-</nav>
-
-<article>  
-  <h2>{{name}}</h2>
+{{#contentFor "title"}}{{name}}{{/contentFor}}
+{{#contentFor "tools"}}
+<a class="favorite item"><i class="md md-star"></i></a>
+{{/contentFor}}
+{{> pages}}
+<article>
   <table class="definition">
     <tbody>
       <tr><td>舍弗勒号</td><td>{{sid}}</td></tr>
