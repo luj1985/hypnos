@@ -4,10 +4,11 @@ var fs = require('fs');
 var path = require('path');
 var rootdir = process.argv[2];
 
-// crosswalk doesn't work after apply 'custom_rules'
-var target = path.join(rootdir, 'platforms', 'android', 'custom_rules.xml');
+// the build folder name will change when disabled 'custom-build'
+var target = path.join(rootdir, 'platforms', 'android', 'ant-build');
+var source = path.join(rootdir, 'platforms', 'android', 'bin');
 
-if (fs.existsSync(target)) {
-  fs.unlinkSync(target);
-  console.log(target + ' has been removed');
+if (!fs.existsSync(target)) {
+  fs.symlinkSync(source, target);
+  console.log(target + ' has been created');
 }
