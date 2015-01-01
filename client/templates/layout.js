@@ -6,13 +6,15 @@ Template.layout.rendered = function () {
   var fromEdge = false;
   $(document).on('touchstart', function(e) {
      var xPos = e.originalEvent.touches[0].pageX;
-     fromEdge = xPos < 3;
-  });
-
-  $(document).hammer().on('drag', function(e){
+     fromEdge = xPos < 4;
+  }).hammer().on('swipe', function(e){
+    var gesture = e.gesture;
     // check that the drag event started at the edge and that the direction is to the right
-    if(fromEdge && e.gesture.direction === 'right'){
+    if(fromEdge && gesture.direction === 'right'){
       Session.set(SIDEBAR_STATUS_KEY, true);
+    }
+    if (gesture.direction === 'left' && Session.get(SIDEBAR_STATUS_KEY)) {
+      Session.set(SIDEBAR_STATUS_KEY, false);
     }
   });
 };
