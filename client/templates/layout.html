@@ -11,9 +11,15 @@
       <a href="{{pathFor 'resellers'}}" class="item button">
         <i class="md md-shop"></i>经销商搜索
       </a>
-      <a href="{{pathFor 'login'}}" class="item button">
-        <i class="md md-perm-identity"></i>登录
-      </a>
+      {{#if currentUser}}
+        <a href="{{pathFor 'account'}}" class="item button">
+          <i class="md md-perm-identity"></i>个人资料
+        </a>
+      {{else}}
+        <a href="{{pathFor 'login'}}" class="item button">
+          <i class="md md-perm-identity"></i>登录
+        </a>
+      {{/if}}
     </nav>
     <hr class="divider" />
     <nav class="menu">
