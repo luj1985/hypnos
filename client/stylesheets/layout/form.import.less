@@ -7,21 +7,28 @@ form {
   }
 
   .field {
+    height: 3rem;
     .display(flex);
     .align-items(center);
+    .md {
+      font-size: 1.5rem;
+      padding-right: 1.5rem;
+    }
     input {
       .flex(1);
     }
   }
   
-  input {
+  input, select {
     .appearance(none);
     .border-radius(0);
+    .box-sizing(content-box);
     display: inline-block;
     outline: none;
     border: none;
-    height: 3rem;
+    height: 1.5rem;
     font-size: 1rem;
+    padding-bottom: .5rem;
     background-color: transparent;
 
     &[readonly] {
@@ -37,8 +44,7 @@ form {
     border-bottom: 1px solid lightgray;
     .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
     &:focus {
-      border-color: @hypnos-green;
-      .box-shadow(0 1px 0 @hypnos-green);
+      border-bottom: 2px solid @hypnos-green;
     }
   }
 
