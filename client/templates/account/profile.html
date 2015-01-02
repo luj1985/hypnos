@@ -1,9 +1,7 @@
-<template name="account">
+<template name="profile">
 {{#contentFor "title"}}{{user.username}}的个人资料{{/contentFor}}
 {{#contentFor "tools"}}
-<a class="done item" href="#">
-  <i class="md md-done"></i>
-</a>
+{{> profileTools}}
 {{/contentFor}}
 <form class="account" autocomplete = "off">
 {{#each user.emails}}
@@ -25,6 +23,11 @@
   <i class="md md-place"></i>
   <input type="text" name="address" value="{{user.profile.address}}" placeholder="地址">
 </div>
-<input type="submit" value="更新">
 </form>
+</template>
+
+<template name="profileTools">
+<a class="done item" href="#">
+  <i class="md md-done"></i>
+</a>
 </template>
