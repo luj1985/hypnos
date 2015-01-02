@@ -1,7 +1,8 @@
 var em = new EventEmitter();
 
 Template.profileTools.events({
-  'click .done.item': function () {
+  'click .done.item': function (e, template) {
+    e.preventDefault();
     em.emit('save-profile');
   }
 });
@@ -19,6 +20,10 @@ Template.profile.rendered = function () {
       console.log(arguments);
     });
   });
+};
+
+Template.profile.destroyed = function () {
+  em.off('save-profile');
 };
 
 Template.profile.helpers({

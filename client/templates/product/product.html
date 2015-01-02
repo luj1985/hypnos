@@ -22,16 +22,21 @@
   {{/if}}
 </article>
 
-
 {{#contentFor "title"}}{{name}}{{/contentFor}}
 
 {{#if currentUser}}
   {{#contentFor "tools"}}
-  <a class="favorite item"><i class="md md-star"></i></a>
+    {{> productTools}}
   {{/contentFor}}
 {{/if}}
-{{> pages}}
 
+{{> pages}}
+</template>
+
+<template name="productTools">
+<a class="favorite item {{active}}">
+  <i class="md md-star"></i>
+</a>
 </template>
 
 

@@ -24,7 +24,7 @@ import android.os.Build;
 import android.webkit.WebView;
 import org.apache.cordova.*;
 
-public class hypnos extends CordovaActivity 
+public class Hypnos extends CordovaActivity 
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

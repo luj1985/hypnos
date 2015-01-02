@@ -31,7 +31,7 @@ Template.login.events({
       if (err) {
         accountService.message(err);
       } else {
-        Router.go('account');
+        Router.go('profile');
       }
     });
   }
