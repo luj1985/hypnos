@@ -7,7 +7,7 @@ Template.layout.rendered = function () {
   $(document).on('touchstart', function(e) {
      var xPos = e.originalEvent.touches[0].pageX;
      fromEdge = xPos < 4;
-  }).hammer().on('swipe', function(e){
+  }).hammer().on('drag', function(e){
     var gesture = e.gesture;
     // check that the drag event started at the edge and that the direction is to the right
     if(fromEdge && gesture.direction === 'right'){

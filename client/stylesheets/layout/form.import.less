@@ -14,7 +14,7 @@ form {
       font-size: 1.5rem;
       padding-right: 1.5rem;
     }
-    input {
+    input, select {
       .flex(1);
     }
   }
@@ -28,7 +28,7 @@ form {
     border: none;
     height: 1.5rem;
     font-size: 1rem;
-    padding-bottom: .5rem;
+    padding-bottom: .5rem 0rem;
     background-color: transparent;
 
     &[readonly] {
@@ -40,7 +40,8 @@ form {
   input[type="password"], 
   input[type="search"],
   input[type="email"],
-  input[type="tel"] {
+  input[type="tel"], 
+  select {
     border-bottom: 1px solid lightgray;
     .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
     &:focus {

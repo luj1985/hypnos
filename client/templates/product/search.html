@@ -1,12 +1,13 @@
 <template name="productSearch">
-  {{#contentFor "title"}}产品搜索{{/contentFor}}
+  {{#contentFor "title"}}查询条件{{/contentFor}}
 
   <form class="search">
     <div class="field">
       <input type="search" placeholder="输入舍弗勒号或原厂号" />
     </div>
     <div class="field">
-      <select>
+      <select name="brand">
+        <option value="" disabled selected style='display:none;'>品牌</option>
         <option>FAG</option>
         <option>Ruville</option>
         <option>LuK</option>
@@ -14,24 +15,28 @@
       </select>
     </div>
     <div class="field">
-      <select>
+      <select name="name">
+        <option value="" disabled selected style='display:none;'>产品名称</option>
         <option>轮毂轴承</option>
         <option>惰轮</option>
       </select>
     </div>
     <div class="field">
-      <select>
+      <select name="manufacturer">
+        <option value="" disabled selected style='display:none;'>制造商</option>
         <option>起亚 (东风悦达起亚)</option>
         <option>宝马 (华晨宝马)</option>
       </select>
     </div>
     <div class="field">
-      <select>
+      <select name="engine">
+        <option value="" disabled selected style='display:none;'>引擎</option>
         <option>千里马</option>
         <option>5 (E60)</option>
       </select>
     </div>
     <div class="field">
+    <label>CC: </label>
     <div id="cc"></div>
     </div>
     <input type="submit" value="查询">
