@@ -21,7 +21,6 @@ form {
     border: none;
     height: 3rem;
     font-size: 1rem;
-    padding: 1rem 0;
     background-color: transparent;
 
     &[readonly] {
@@ -35,9 +34,10 @@ form {
   input[type="email"],
   input[type="tel"] {
     border-bottom: 1px solid lightgray;
-    .transition(border-bottom @hypnos-transition-duration @hypnos-transition-time-function);
+    .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
     &:focus {
-      border-bottom: 2px solid @hypnos-green;
+      border-color: @hypnos-green;
+      .box-shadow(0 1px 0 @hypnos-green);
     }
   }
 
