@@ -8,7 +8,7 @@ var rootdir = process.argv[2];
 var target = path.join(rootdir, 'platforms', 'android', 'ant-build');
 var source = path.join(rootdir, 'platforms', 'android', 'bin');
 
-if (!fs.existsSync(target)) {
+if (fs.existsSync(source) && !fs.existsSync(target)) {
   fs.symlinkSync(source, target);
   console.log(target + ' has been created');
 }

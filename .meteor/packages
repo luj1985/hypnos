@@ -12,6 +12,6 @@ npm-container
 meteor-pages
 http
 ixdi:material-design-iconic-font
-fastclick
 meyerweb-reset
 noorderstorm:hammer
+fastclick

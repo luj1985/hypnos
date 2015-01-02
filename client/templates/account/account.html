@@ -9,7 +9,7 @@
 {{#each user.emails}}
 <div class="field">
   <i class="md md-email"></i>
-  <input type="email" value="{{address}}" placeholder="电子邮件">
+  <input type="email" value="{{address}}" placeholder="电子邮件" autofocus>
   {{#unless verified}}<span>未验证</span>{{/unless}}
 </div>
 {{/each}}
