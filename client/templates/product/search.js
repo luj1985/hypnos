@@ -13,3 +13,14 @@ Template.productSearch.helpers({
     return Session.get('product-keyword') || '';
   }
 });
+
+Template.productSearch.rendered = function () {
+  this.$("#cc").noUiSlider({
+    start: [20, 80],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 100
+    }
+  });
+};
