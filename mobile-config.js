@@ -1,4 +1,5 @@
 App.info({
+  id: 'com.schaeffler.assistant', // used as android package name
   name: 'Hypnos',
   description: '舍弗勒产品助手是一款实用的汽车零部件应用查询软件，可以帮您轻松找到舍弗勒汽车售后旗下所有乘用车产品及其车型应用信息。',
   author: 'Lu, Jun',

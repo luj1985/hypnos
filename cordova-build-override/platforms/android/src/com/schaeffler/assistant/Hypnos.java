@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.idschaeffler;
+package com.schaeffler.assistant;
 
 import android.os.Bundle;
 import android.os.Build;
