@@ -19,9 +19,21 @@ Meteor.startup(function() {
           return _.omit(image, 'sid');
         });
       }
-      // record cleanup
-      product.oid = (product.oid || '').replace(/ /g, '');
-      product.sid = (product.sid || '').replace(/ /g, '');
+      var manufacturer = product.manufacturer;
+      var names = manufacturer.split(/ +/);
+      var m1 = names[0], 
+          m2 = (names[1] || "").match(/\(([^\)]+)\)/) || [];
+
+      var cc = product.cc;
+
+      product.manufacturer = m1;
+      product.alias = m2[1] || "";
+
+      product.displayCC = cc;
+      product.cc = parseFloat(cc, 10);
+
+      product.oid = (product.oid || '').replace(/ /g, '').toUpperCase();
+      product.sid = (product.sid || '').replace(/ /g, '').toUpperCase();
       Products.insert(product);
     });
   }
