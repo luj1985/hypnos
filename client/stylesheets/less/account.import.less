@@ -10,3 +10,41 @@ form.login, form.register, form.account {
     padding-left: 1rem;
   }
 }
+
+.icon {
+  background-size: 100% 100%;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  &.weibo {
+    background-image: url('/weibo.png');
+  }
+  &.wechat {
+    background-image: url('/wechat.png');
+  }
+}
+
+.sso {
+  margin-top: 1.5rem;
+  hr {
+    padding: 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+  }
+
+  hr:after {
+      display: inline-block;
+      color: rgba(0, 0, 0, 0.3);
+      background: white;
+      content: "或选择以下方式登陆";
+      position: relative;
+      top: -0.7em;
+      padding: 0 .25rem;
+  }
+
+  .container > * {
+    margin: .5rem;
+  }
+}
