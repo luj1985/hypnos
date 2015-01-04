@@ -21,7 +21,7 @@ function changePassword(oldPassword, newPassword) {
 
 
 Template.login.events({
-  'click input[type="submit"]': function (e, template) {
+  'submit form.login': function (e, template) {
     e.preventDefault();
     var name = template.$('input[name="username"]').val(),
         password = template.$('input[name="password"]').val();

@@ -1,6 +1,7 @@
 function success(data) {
-  console.log('login success');
-  console.log(data);
+  var uid = data.uid,
+      token = data.token;
+  
 }
 
 function failure(data) {
