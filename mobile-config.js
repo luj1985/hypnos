@@ -41,8 +41,8 @@ App.launchScreens({
 
 App.configurePlugin('com.ihavekey.weibo.oauth', {
   APP_KEY: '1557510073',
-  APP_SECRET: '956ef6eb7285c75f966dab2963c7ead4',
-  APP_SCOPE: 'email'
+  REDIRECT_URL: 'https://api.weibo.com/oauth2/default.html',
+  SCOPE: 'email'
 });
 
 App.setPreference('DisallowOverscroll', 'true');
