@@ -39,6 +39,12 @@ App.launchScreens({
   'android_xhdpi_landscape': 'resources/splash/splash-800x1234.jpg'
 });
 
+App.configurePlugin('com.ihavekey.weibo.oauth', {
+  APP_KEY: '1557510073',
+  APP_SECRET: '956ef6eb7285c75f966dab2963c7ead4',
+  APP_SCOPE: 'email'
+});
+
 App.setPreference('DisallowOverscroll', 'true');
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarStyle', 'lightcontent');
