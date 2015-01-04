@@ -11,7 +11,7 @@ function failure(data) {
 Template.weibo.events({
   'click a.weibo': function () {
     if (Meteor.isCordova) {
-      weibo.login(success, failure);  
+      WeiboSso.authorize(success, failure);  
     } else {
       console.log('use web oauth to login');
     }
