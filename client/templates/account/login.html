@@ -2,7 +2,7 @@
 {{#contentFor "title"}}登录{{/contentFor}}
 <form class="login">
   <div class="field">
-    <input type="text" name="username" id="username" placeholder="用户名、电子邮箱" required autofocus/>
+    <input type="text" name="username" id="username" placeholder="用户名、电子邮箱" required />
   </div>
   <div class="field">
     <input type="password" name="password" id="password" placeholder="密码" required />
@@ -16,9 +16,17 @@
   <div class="sso">
     <hr />
     <div class="container">
-      <a class="weibo icon"></a>
-      <a class="wechat icon"></a>
+      {{> weibo }}
+      {{> wechat }}
     </div>
   </div>
 </form>
+</template>
+
+<template name="weibo">
+  <a class="weibo icon"></a>
+</template>
+
+<template name="wechat">
+  <a class="wechat icon"></a>
 </template>
