@@ -1,5 +1,5 @@
 <template name="profile">
-{{#contentFor "title"}}{{user.username}}的个人资料{{/contentFor}}
+{{#contentFor "title"}}{{user.username}}的档案{{/contentFor}}
 {{#contentFor "tools"}}
 {{> profileTools}}
 {{/contentFor}}
@@ -7,21 +7,34 @@
 {{#each user.emails}}
 <div class="field">
   <i class="md md-email"></i>
-  <input type="email" value="{{address}}" placeholder="电子邮件" autofocus>
-  {{#unless verified}}<span>未验证</span>{{/unless}}
+  <label>{{address}}</label>
+  {{#unless verified}}<span>点击验证</span>{{/unless}}
 </div>
 {{/each}}
 <div class="field">
   <i class="md md-person"></i>
-  <input type="text" name="name" value="{{user.profile.name}}" placeholder="姓名">
+  <input type="text" name="name" value="{{user.profile.name}}" placeholder="姓名" autofocus>
 </div>
 <div class="field">
-  <i class="md md-phone"></i>
-  <input type="tel" name="phone" value="{{user.profile.tel}}" placeholder="电话号码">
+  <i class="md md-stay-primary-portrait"></i>
+  <input type="tel" name="mobile" value="{{user.profile.mobile}}" placeholder="手机号码">
+</div>
+<div class="field">
+  <i class="md md-domain"></i>
+  <input type="text" name="company" value="{{user.profile.company}}" placeholder="公司名称">
+  <select name="type">
+    <option></option>
+    <option>经销商</option>
+    <option>修理厂</option>
+  </select>
 </div>
 <div class="field">
   <i class="md md-place"></i>
-  <input type="text" name="address" value="{{user.profile.address}}" placeholder="地址">
+  <input type="text" name="address" value="{{user.profile.address}}" placeholder="公司详细地址">
+</div>
+<div class="field">
+  <i class="md md-phone"></i>
+  <input type="tel" name="phone" value="{{user.profile.tel}}" placeholder="联系电话">
 </div>
 </form>
 </template>

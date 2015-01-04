@@ -12,10 +12,19 @@ form {
     .align-items(center);
     .md {
       font-size: 1.5rem;
-      padding-right: 1.5rem;
+      padding-right: 1rem;
     }
-    input, select {
-      .flex(1);
+
+    input, select, label {
+      &:nth-child(2) {
+        .flex(1);
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
     }
   }
   
@@ -40,13 +49,18 @@ form {
   input[type="password"], 
   input[type="search"],
   input[type="email"],
-  input[type="tel"], 
+  input[type="tel"],
   select {
+    padding: 1px;
+    margin: 0 .5rem;
     border-bottom: 1px solid lightgray;
     .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
     &:focus {
       border-bottom: 2px solid @hypnos-green;
     }
+  }
+  label {
+    margin: 0 .5rem;
   }
 
   input[type="button"],
