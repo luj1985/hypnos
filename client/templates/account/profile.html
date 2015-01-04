@@ -7,7 +7,7 @@
 {{#each user.emails}}
 <div class="field">
   <i class="md md-email"></i>
-  <label>{{address}}</label>
+  <input type="text" value="{{address}}" readonly>
   {{#unless verified}}<span>点击验证</span>{{/unless}}
 </div>
 {{/each}}
@@ -22,11 +22,18 @@
 <div class="field">
   <i class="md md-domain"></i>
   <input type="text" name="company" value="{{user.profile.company}}" placeholder="公司名称">
-  <select name="type">
-    <option></option>
-    <option>经销商</option>
-    <option>修理厂</option>
-  </select>
+</div>
+<div class="field">
+  <i class="md md-flag"></i>
+  <!-- TODO: Use javascript to rewrite -->
+  <div class="company type">
+    <div class="type">
+      <input type="radio" name="type" value="经销商">经销商
+    </div>
+    <div class="type">
+      <input type="radio" name="type" value="修理厂">修理厂
+    </div>
+  </div>
 </div>
 <div class="field">
   <i class="md md-place"></i>

@@ -12,64 +12,67 @@ form {
     .align-items(center);
     .md {
       font-size: 1.5rem;
-      padding-right: 1rem;
+      padding-right: 1.5rem;
     }
 
-    input, select, label {
-      &:nth-child(2) {
+    input, select {
+      padding: 1px;
+      &:nth-of-type(1) {
         .flex(1);
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-      &:first-child {
         margin-left: 0;
       }
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
-  }
-  
-  input, select {
-    .appearance(none);
-    .border-radius(0);
-    .box-sizing(content-box);
-    display: inline-block;
-    outline: none;
-    border: none;
-    height: 1.5rem;
-    font-size: 1rem;
-    padding-bottom: .5rem 0rem;
-    background-color: transparent;
 
-    &[readonly] {
-      color: lightgrey;
+    input, select {
+      .appearance(none);
+      .border-radius(0);
+      .box-sizing(content-box);
+      display: inline-block;
+      outline: none;
+      border: none;
+      height: 1.5rem;
+      font-size: 1rem;
+      padding-bottom: .5rem 0rem;
+      background-color: transparent;
     }
-  }
 
-  input[type="text"], 
-  input[type="password"], 
-  input[type="search"],
-  input[type="email"],
-  input[type="tel"],
-  select {
-    padding: 1px;
-    margin: 0 .5rem;
-    border-bottom: 1px solid lightgray;
-    .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
-    &:focus {
-      border-bottom: 2px solid @hypnos-green;
+    input[type="radio"] {
+      .appearance(radio);
     }
-  }
-  label {
-    margin: 0 .5rem;
-  }
 
-  input[type="button"],
-  input[type="reset"], 
-  input[type="submit"] {
-    height: 2.5rem;
-    padding: 0 1.5rem;
-    border-radius: .2rem;
-    .invert-color();
-    .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+    input[type="checkbox"] {
+      .appearance(checkbox);
+    }
+
+    input[type="text"], 
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      border-bottom: 1px solid lightgray;
+      .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
+      &:focus {
+        border-bottom: 2px solid @hypnos-green;
+      }
+
+      &[readonly] {
+        color: rgba(0,0,0,0.7);
+        border-color: transparent;
+      }
+    }
+
+    input[type="button"],
+    input[type="reset"], 
+    input[type="submit"] {
+      height: 2.5rem;
+      padding: 0 1.5rem;
+      border-radius: .2rem;
+      .invert-color();
+      .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+    }
   }
 }
