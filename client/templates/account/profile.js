@@ -22,6 +22,13 @@ Template.profile.rendered = function () {
   });
 };
 
+Template.profile.events({
+  'click input[name="logout"]': function () {
+    console.log('logout');
+    Meteor.logout();
+  }
+});
+
 Template.profile.destroyed = function () {
   em.off('save-profile');
 };
@@ -31,3 +38,4 @@ Template.profile.helpers({
     return Meteor.user();
   }
 });
+
