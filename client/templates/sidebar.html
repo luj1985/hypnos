@@ -1,19 +1,22 @@
 <template name="sidebar">
 <div class="logo"></div>
 <nav class="menu">
-  <a href="{{pathFor 'home'}}" class="item">
-    <i class="md md-home"></i>关于我们
-  </a>
   <a href="{{pathFor 'products'}}" class="item">
     <i class="md md-search"></i>产品搜索
   </a>
   <a href="{{pathFor 'resellers'}}" class="item">
-    <i class="md md-shop"></i>经销商搜索
+    <i class="md md-shop"></i>经销商查询
+  </a>
+  <a href="{{pathFor 'favorites'}}" class="item">
+    <i class="md md-star"></i>我的收藏
   </a>
   <a href="{{pathFor 'orders'}}" class="item">
     <i class="md md-shopping-cart"></i>我的订单
   </a>
   {{> userLink}}
+  <a href="{{pathFor 'home'}}" class="item">
+    <i class="md md-home"></i>关于我们
+  </a>
 </nav>
 <hr class="divider" />
 <nav class="menu">
@@ -30,9 +33,6 @@
 {{#if currentUser}}
   <a href="{{pathFor 'profile'}}" class="item">
     <i class="md md-perm-identity"></i>个人资料
-  </a>
-  <a href="{{pathFor 'favorites'}}" class="item">
-    <i class="md md-star"></i>我的收藏
   </a>
 {{else}}
   <a href="{{pathFor 'login'}}" class="item">
