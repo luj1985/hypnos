@@ -38,3 +38,8 @@ Meteor.startup(function() {
     });
   }
 });
+
+
+Meteor.publish('productsWithCriteria', function(criteria) {
+  return Products.find(criteria);
+});
