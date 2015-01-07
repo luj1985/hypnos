@@ -1,78 +1,72 @@
 form {
-  padding-top: 1rem;
-  .display(flex);
-  .flex-direction(column);
-  &> * {
-    margin: 0.5rem 1rem;
-  }
+  padding: 1rem;
 
   .field {
-    height: 3rem;
-    .display(flex);
-    .align-items(center);
+    height: 4rem;
+    line-height: 4rem;
+    display: block;
+    position: relative;
+
+    padding-left: 3rem;
     .md {
       font-size: 1.5rem;
       padding-right: 1.5rem;
-    }
-
-    input, select, .input {
-      padding: 1px;
-      &:nth-of-type(1) {
-        .flex(1);
-        margin-left: 0;
-      }
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-
-    input, select {
-      .appearance(none);
-      .border-radius(0);
-      .box-sizing(content-box);
-      display: inline-block;
-      outline: none;
-      border: none;
-      height: 1.5rem;
-      font-size: 1rem;
-      padding-bottom: .5rem 0rem;
-      background-color: transparent;
-    }
-
-    input[type="radio"] {
-      .appearance(radio);
-    }
-
-    input[type="checkbox"] {
-      .appearance(checkbox);
-    }
-
-    input[type="text"], 
-    input[type="password"],
-    input[type="search"],
-    input[type="email"],
-    input[type="tel"],
-    select {
-      border-bottom: 1px solid lightgray;
-      .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
-      &:focus {
-        border-bottom: 2px solid @hypnos-green;
-      }
-
-      &[readonly] {
-        color: rgba(0,0,0,0.7);
-        border-color: transparent;
-      }
-    }
-
-    input[type="button"],
-    input[type="reset"], 
-    input[type="submit"] {
-      height: 2.5rem;
-      padding: 0 1.5rem;
-      border-radius: .2rem;
-      .invert-color();
-      .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+      position: absolute;
+      left: 0;
     }
   }
+}
+
+// TODO: add media query for mobile breakpoint here
+input, select, label .field {
+  .appearance(none);
+  .border-radius(0);
+  display: inline-block;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  height: 1.5rem;
+  padding-bottom: .5rem 0rem;
+  background-color: transparent;
+  width: 100%;
+}
+
+input[type="text"], 
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+select {
+  border-bottom: 1px solid lightgray;
+  .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
+  &:focus {
+    border-bottom: 2px solid @hypnos-green;
+  }
+
+  &[readonly] {
+    color: rgba(0,0,0,0.7);
+    border-color: transparent;
+  }
+}
+
+input[type="button"],
+input[type="reset"], 
+input[type="submit"] {
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: .2rem;
+  .invert-color();
+  .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+}
+
+input[type="radio"] {
+  .appearance(radio);
+  height: 1rem;
+  width: auto;
+}
+
+input[type="checkbox"] {
+  .appearance(checkbox);
+  height: 1rem;
+  width: auto;
 }
