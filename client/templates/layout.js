@@ -1,4 +1,3 @@
-
 Template.layout.rendered = function () {
 
   var fromEdge = false;
@@ -24,7 +23,7 @@ Template.layout.helpers({
 });
 
 Template.layout.events({
-  'click .sidebar.open~main': function(e) {
+  'click .dimmer': function(e) {
     e.preventDefault();
     Session.set('show-sidebar', false);
   }
