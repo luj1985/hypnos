@@ -46,7 +46,7 @@ App.configurePlugin('com.ihavekey.weibo.oauth', {
 });
 
 App.setPreference('DisallowOverscroll', 'true');
-App.setPreference('StatusBarOverlaysWebView', 'false');
+App.setPreference('StatusBarOverlaysWebView', 'true');
 App.setPreference('StatusBarStyle', 'lightcontent');
 App.setPreference('ShowSplashScreenSpinner', 'false');
 App.setPreference('KeyboardShrinksView', 'false');

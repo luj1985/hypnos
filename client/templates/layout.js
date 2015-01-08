@@ -1,7 +1,5 @@
 
 Template.layout.rendered = function () {
-  // HACK: to make sure that html body can fullfil the screen
-  this.$('main').css('min-height', window.innerHeight);
 
   var fromEdge = false;
   $(document).on('touchstart', function(e) {
