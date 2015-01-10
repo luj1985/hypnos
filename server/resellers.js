@@ -39,3 +39,19 @@ Meteor.startup(function() {
     });
   }
 });
+
+var pageSize = 20;
+Meteor.publish('resellers', function(filters, page) {
+  if (this.userId) {
+    page = page || 1;
+    filters = filters || {};
+    var skip = (page - 1) * pageSize;
+    return Resellers.find(filters, {
+      skip: skip,
+      limit: pageSize,
+      sort: { "name": -1 }
+    });
+  } else {
+    this.ready();
+  }
+});

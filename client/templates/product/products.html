@@ -3,7 +3,11 @@
 {{#contentFor "tools"}}
 <a class="search item" href="{{pathFor 'productSearch'}}"><i class="md md-search"></i></a>
 {{/contentFor}}
-{{> pages}}
+<div class="products container">
+{{#each items}}
+  {{> product}}
+{{/each}}
+</div>
 </template>
 
 <template name="product">

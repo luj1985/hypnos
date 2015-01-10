@@ -37,6 +37,12 @@ Template.reseller.helpers({
   }
 });
 
+Template.resellers.helpers({
+  items: function () {
+    return Resellers.find({});
+  }
+});
+
 Template.resellers.events({
   'click .location.item': function () {
     if (navigator.geolocation) {   
@@ -59,8 +65,8 @@ Template.resellers.events({
 });
 
 Deps.autorun(function() {
-  var coords = Session.get(LOCATION_KEY);
-  if (coords) {
-    PagedResellers.set('filters',  { location : { $near : coords } });
-  }
+  // var coords = Session.get(LOCATION_KEY);
+  // if (coords) {
+  //   PagedResellers.set('filters',  { location : { $near : coords } });
+  // }
 });

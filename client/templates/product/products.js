@@ -4,7 +4,7 @@ function escapeRegExp(str) {
 
 Template.products.helpers({
   items: function () {
-    return Products.find({}, {limit: 1000});
+    return Products.find({});
   }
 });
 
@@ -26,14 +26,14 @@ Template.product.helpers({
 
 
 Deps.autorun(function() {
-  var keyword = Session.get('product-keyword') || '';
-  if(keyword) {
-    var pattern = '^' + escapeRegExp(keyword);
-    PagedProducts.set('filters', { $or : [ 
-      {sid: { $regex : pattern, '$options' : 'i' }}, 
-      {oid: { $regex : pattern, '$options' : 'i' }} 
-    ]});
-  } else {
-    PagedProducts.set('filters', {});
-  }
+  // var keyword = Session.get('product-keyword') || '';
+  // if(keyword) {
+  //   var pattern = '^' + escapeRegExp(keyword);
+  //   PagedProducts.set('filters', { $or : [ 
+  //     {sid: { $regex : pattern, '$options' : 'i' }}, 
+  //     {oid: { $regex : pattern, '$options' : 'i' }} 
+  //   ]});
+  // } else {
+  //   PagedProducts.set('filters', {});
+  // }
 });

@@ -39,7 +39,14 @@ Meteor.startup(function() {
   }
 });
 
-
-Meteor.publish('productsWithCriteria', function(criteria) {
-  return Products.find(criteria);
+var pageSize = 20;
+Meteor.publish('products', function(filters, page) {
+  page = page || 1;
+  filters = filters || {};
+  var skip = (page - 1) * pageSize;
+  return Products.find(filters, {
+    skip: skip,
+    limit: pageSize,
+    sort: { oid : -1 }
+  })
 });

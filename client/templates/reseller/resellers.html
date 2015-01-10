@@ -8,7 +8,11 @@
   <i class="md md-my-location"></i>
 </a>
 {{/contentFor}}
-{{> pages}}
+<div class="resellers container">
+{{#each items}}
+  {{> reseller }}
+{{/each}}
+</div>
 </template>
 
 <template name="reseller">
