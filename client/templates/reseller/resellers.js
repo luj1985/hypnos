@@ -25,17 +25,7 @@ document.addEventListener('deviceready', function() {
   }
 }, false);
 
-Template.reseller.helpers({
-  gps: function () {
-    var location = this.location;
-    return location ? _.map([location.lat, location.lng], function(f) {
-      return parseFloat(f).toFixed(4);
-    }).join(', ') : '';
-  },
-  href: function() {
-    return Funcs.locationAccessor(this.address, this.location);
-  }
-});
+
 
 Template.resellers.helpers({
   items: function () {
@@ -64,11 +54,18 @@ Template.resellers.events({
   }
 });
 
+Template.reseller.helpers({
+  gps: function () {
+    var location = this.location;
+    return location ? _.map([location.lat, location.lng], function(f) {
+      return parseFloat(f).toFixed(4);
+    }).join(', ') : '';
+  },
+  href: function() {
+    return Funcs.locationAccessor(this.address, this.location);
+  }
+});
 
-function loadNextPage() {
-  var page = Session.get('reseller-page') || 1;
-    Session.set('reseller-page', page + 1);
-}
 
 Template.resellers.rendered = function () {
   $(document).on('nextpage', loadNextPage);
@@ -78,6 +75,10 @@ Template.resellers.destroyed = function () {
   $(document).off('nextpage', loadNextPage);
 };
 
+function loadNextPage() {
+  var page = Session.get('reseller-page') || 1;
+    Session.set('reseller-page', page + 1);
+}
 
 Deps.autorun(function() {
   var page = Session.get('reseller-page'),
