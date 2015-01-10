@@ -24,8 +24,8 @@ Template.profile.rendered = function () {
 
 Template.profile.events({
   'click input[name="logout"]': function () {
-    console.log('logout');
     Meteor.logout();
+    Router.go('home');
   }
 });
 

@@ -1,8 +1,6 @@
 <template name="profile">
 {{#contentFor "title"}}{{user.username}}的个人资料{{/contentFor}}
-{{#contentFor "tools"}}
-{{> profileTools}}
-{{/contentFor}}
+{{#contentFor "tools"}}{{> profileTools}}{{/contentFor}}
 <form class="account" autocomplete = "off">
 {{#each user.emails}}
 <div class="field">

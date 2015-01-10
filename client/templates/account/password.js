@@ -30,8 +30,6 @@ Template.login.events({
     Meteor.loginWithPassword(name, password, function(err) {
       if (err) {
         accountService.message(err);
-      } else {
-        Router.go('profile');
       }
     });
   }

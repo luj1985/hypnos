@@ -31,12 +31,8 @@
 
 <template name="userLink">
 {{#if currentUser}}
-  <a href="{{pathFor 'profile'}}" class="item">
-    <i class="md md-person"></i>个人资料
-  </a>
-{{else}}
-  <a href="{{pathFor 'login'}}" class="item">
-    <i class="md md-person"></i>登录
-  </a>
+<a href="{{pathFor 'profile'}}" class="item">
+  <i class="md md-person"></i>个人资料
+</a>
 {{/if}}
 </template>
