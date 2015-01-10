@@ -48,7 +48,7 @@ Meteor.publish('products', function(filters, page, size) {
   return Products.find(filters, {
     limit: page * size,
     sort: { oid : -1 }
-  })
+  });
 });
 
 Meteor.publish('product', function(id) {
