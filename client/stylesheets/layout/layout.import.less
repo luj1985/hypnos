@@ -34,6 +34,11 @@ main {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
           overflow-scrolling: touch;
+  &.freeze {
+    overflow: hidden;
+    -webkit-overflow-scrolling: none;
+            overflow-scrolling: none;  
+  }
 }
 
 .dimmer {
