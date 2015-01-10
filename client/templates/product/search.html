@@ -1,5 +1,8 @@
 <template name="productSearch">
-  {{#contentFor "title"}}查询条件{{/contentFor}}
+  {{#contentFor "title"}}搜索条件{{/contentFor}}
+  {{#contentFor "navigator"}}
+    {{> back}}
+  {{/contentFor}}
 
   <form class="search">
     <div class="field">
