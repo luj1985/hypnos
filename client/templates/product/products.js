@@ -2,9 +2,30 @@ function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
+function infiniteSrollHandler(e) {
+  var context = $(this),
+      height = context.innerHeight(),
+      scrollTop = context.scrollTop();
+      scrollHeight = context[0].scrollHeight;
+  if ((height + scrollTop) > (scrollHeight - height)) {
+    console.log(scrollHeight, scrollTop, height);
+    loadNextPage();
+  }
+}
+
+var handler = _.debounce(infiniteSrollHandler, 300);
+
+Template.products.rendered = function () {
+  $('main').on('scroll', handler);  
+};
+
+Template.products.destroyed = function () {
+  $('main').off('scroll', handler);
+};
+
 Template.products.helpers({
   items: function () {
-    return Products.find({});
+    return Products.find({}, {sort: {oid: -1}});
   }
 });
 
@@ -24,16 +45,13 @@ Template.product.helpers({
   }
 });
 
+function loadNextPage() {
+  var page = Session.get('product-page') || 1;
+  console.log('loading next page: ' + (page + 1));
+  Session.set('product-page', page + 1);
+}
 
 Deps.autorun(function() {
-  // var keyword = Session.get('product-keyword') || '';
-  // if(keyword) {
-  //   var pattern = '^' + escapeRegExp(keyword);
-  //   PagedProducts.set('filters', { $or : [ 
-  //     {sid: { $regex : pattern, '$options' : 'i' }}, 
-  //     {oid: { $regex : pattern, '$options' : 'i' }} 
-  //   ]});
-  // } else {
-  //   PagedProducts.set('filters', {});
-  // }
+  var productPage = Session.get('product-page');
+  Meteor.subscribe('products', {}, productPage);
 });

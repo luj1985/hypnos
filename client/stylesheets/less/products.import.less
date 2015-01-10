@@ -1,8 +1,6 @@
-.products {
-  .divider {
+.product + .divider {
     margin-left: 4rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  }
 }
 
 .favorite.active {
@@ -10,8 +8,10 @@
 }
 
 .product {  
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
   height: 5rem;
+  margin-left: 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
   h5 {
     font-weight: bold;
@@ -28,20 +28,28 @@
   }
 
   &.brand {
-    padding-left: 4rem;
-    background-size: 2rem 2rem;
-    background-repeat: no-repeat;
-    background-position: 1rem center; 
-    &.fag {
+    &:before {
+      content: '';
+      left: 0rem;
+      position: absolute;
+      background-size: 2rem 2rem;
+      background-repeat: no-repeat;
+      background-position: 1rem center; 
+      width: 3rem;
+      height: 3rem;
+    }
+    &.fag:before {
       background-image: url('/brand/fag.png');
     }
-    &.luk {
+    &.luk:before {
       background-image: url('/brand/luk.png');
     }
-    &.ina {
+    &.ina:before {
       background-image: url('/brand/ina.png');
     }
   }
+
+  
 }
 
 form .field #cc {

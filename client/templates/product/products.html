@@ -3,11 +3,9 @@
 {{#contentFor "tools"}}
 <a class="search item" href="{{pathFor 'productSearch'}}"><i class="md md-search"></i></a>
 {{/contentFor}}
-<div class="products container">
 {{#each items}}
   {{> product}}
 {{/each}}
-</div>
 </template>
 
 <template name="product">
@@ -16,6 +14,5 @@
   <p>舍弗勒号:{{sid}}</p>
   <p>原厂号:{{oid}}</p>
 </section>
-<hr class="divider">
 </template>
 

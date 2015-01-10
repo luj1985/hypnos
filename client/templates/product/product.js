@@ -12,6 +12,12 @@ Template.productDetail.destroyed = function () {
   em.off('toggle-favorite', toggleFavorite);
 };
 
+Template.productDetail.helpers({
+  data: function () {
+    console.log(this.params);
+  }
+});
+
 Template.productTools.helpers({
   active: function () {
     var found = Favorites.findOne({pid : this._id});

@@ -39,14 +39,18 @@ Meteor.startup(function() {
   }
 });
 
-var pageSize = 20;
-Meteor.publish('products', function(filters, page) {
+// for business reason, there is not need to do a infinite scroll
+// just take this as a workaround to shown as incremental load
+Meteor.publish('products', function(filters, page, size) {
   page = page || 1;
+  size = size || 20;
   filters = filters || {};
-  var skip = (page - 1) * pageSize;
   return Products.find(filters, {
-    skip: skip,
-    limit: pageSize,
+    limit: page * size,
     sort: { oid : -1 }
   })
 });
+
+Meteor.publish('product', function(id) {
+  return Products.find({_id: id});
+})
