@@ -1,6 +1,6 @@
 var scrollHandler;
 
-Template.main.rendered = function () {
+Template.layout.rendered = function () {
 
   var template = this,
       fromEdge = false;
@@ -34,12 +34,12 @@ Template.main.rendered = function () {
 };
 
 
-Template.main.destroyed = function () {
+Template.layout.destroyed = function () {
   this.$('main').off('scroll', scrollHandler);
 };
 
 
-Template.main.helpers({
+Template.layout.helpers({
   open: function () {
     return Session.equals('show-sidebar', true) ? 'open' : '';
   },
@@ -50,7 +50,7 @@ Template.main.helpers({
   }
 });
 
-Template.main.events({
+Template.layout.events({
   'click .dimmer': function(e) {
     e.preventDefault();
     Session.set('show-sidebar', false);
@@ -66,6 +66,6 @@ Template.launcher.events({
 
 Template.back.events({
   'click .item.back': function () {
-    console.log('back');
+    history.back();
   }
 });

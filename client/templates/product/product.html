@@ -1,4 +1,4 @@
-<template name="productDetail">
+<template name="product">
 <article>
   <table class="definition">
     <tbody>
@@ -23,6 +23,9 @@
 </article>
 
 {{#contentFor "title"}}{{name}}{{/contentFor}}
+{{#contentFor "navigator"}}
+  {{> back}}
+{{/contentFor}}
 
 {{#if currentUser}}
   {{#contentFor "tools"}}

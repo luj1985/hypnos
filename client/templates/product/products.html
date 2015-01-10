@@ -5,16 +5,18 @@
 {{/contentFor}}
 <div class="products container">
 {{#each items}}
-  {{> product}}
+  {{> productItem}}
 {{/each}}
 </div>
 </template>
 
-<template name="product">
-<section class="product brand {{brand}}">
-  <h5>{{name}}</h5>
-  <p>舍弗勒号:{{sid}}</p>
-  <p>原厂号:{{oid}}</p>
-</section>
+<template name="productItem">
+<a href="{{pathFor route='product'}}">
+  <section class="product brand {{brand}}">
+    <h5>{{name}}</h5>
+    <p>舍弗勒号:{{sid}}</p>
+    <p>原厂号:{{oid}}</p>
+  </section>
+</a>
 </template>
 

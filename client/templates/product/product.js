@@ -4,11 +4,11 @@ function toggleFavorite(product) {
   Meteor.call('toggleFavorite', product._id);
 }
 
-Template.productDetail.rendered = function () {
+Template.product.rendered = function () {
   em.on('toggle-favorite', toggleFavorite);
 };
 
-Template.productDetail.destroyed = function () {
+Template.product.destroyed = function () {
   em.off('toggle-favorite', toggleFavorite);
 };
 
