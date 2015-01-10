@@ -50,5 +50,5 @@ App.setPreference('StatusBarOverlaysWebView', 'true');
 App.setPreference('StatusBarStyle', 'lightcontent');
 App.setPreference('ShowSplashScreenSpinner', 'false');
 App.setPreference('KeyboardShrinksView', 'false');
-App.setPreference('Fullscreen', 'true');
+// App.setPreference('Fullscreen', 'true');
 // App.setPreference('SuppressesIncrementalRendering', 'true');
