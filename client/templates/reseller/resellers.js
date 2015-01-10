@@ -64,9 +64,23 @@ Template.resellers.events({
   }
 });
 
+
+function loadNextPage() {
+  var page = Session.get('reseller-page') || 1;
+    Session.set('reseller-page', page + 1);
+}
+
+Template.resellers.rendered = function () {
+  $(document).on('nextpage', loadNextPage);
+};
+
+Template.resellers.destroyed = function () {
+  $(document).off('nextpage', loadNextPage);
+};
+
+
 Deps.autorun(function() {
-  // var coords = Session.get(LOCATION_KEY);
-  // if (coords) {
-  //   PagedResellers.set('filters',  { location : { $near : coords } });
-  // }
+  var page = Session.get('reseller-page'),
+      filters = Session.get('reseller-filter') || {};
+  Meteor.subscribe('resellers', filters, page);
 });

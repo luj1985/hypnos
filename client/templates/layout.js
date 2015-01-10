@@ -1,6 +1,10 @@
+var scrollHandler;
+
 Template.layout.rendered = function () {
 
-  var fromEdge = false;
+  var template = this,
+      fromEdge = false;
+
   $(document).on('touchstart', function(e) {
      var xPos = e.originalEvent.touches[0].pageX;
      fromEdge = xPos < 4;
@@ -14,7 +18,26 @@ Template.layout.rendered = function () {
       Session.set('show-sidebar', false);
     }
   });
+
+  function infiniteSrollHandler(e) {
+    var context = $(this),
+        height = context.innerHeight(),
+        scrollTop = context.scrollTop();
+        scrollHeight = context[0].scrollHeight;
+    if ((height + scrollTop) > (scrollHeight - height)) {
+      $.event.trigger('nextpage', template);
+    }
+  }
+
+  scrollHandler = _.debounce(infiniteSrollHandler, 300);
+  this.$('main').on('scroll', scrollHandler);
 };
+
+
+Template.layout.destroyed = function () {
+  this.$('main').off('scroll', scrollHandler);
+};
+
 
 Template.layout.helpers({
   open: function () {
