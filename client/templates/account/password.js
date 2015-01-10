@@ -26,7 +26,6 @@ Template.login.events({
     var name = template.$('input[name="username"]').val(),
         password = template.$('input[name="password"]').val();
 
-    console.log(name, password);
     // name can be username or email
     Meteor.loginWithPassword(name, password, function(err) {
       if (err) {
