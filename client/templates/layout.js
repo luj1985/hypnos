@@ -19,6 +19,11 @@ Template.layout.rendered = function () {
 Template.layout.helpers({
   open: function () {
     return Session.equals('show-sidebar', true) ? 'open' : '';
+  },
+  // Because Android 4.3 webview doesn't work well on css sibling selector
+  // use additional class as workaround
+  freeze: function() {
+    return Session.equals('show-sidebar', true) ? 'freeze' : '';
   }
 });
 

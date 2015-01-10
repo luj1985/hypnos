@@ -1,10 +1,11 @@
-.sidebar {
+aside {
   .invert-color();
   .transition(left @hypnos-transition-duration @hypnos-transition-time-function);
-
   left: -@sidebar-width;
+
   &.open {
     left: 0;
+    .box-shadow(2px 0 5px @hypnos-shadow-depth-1);
   }
 
   .logo {
@@ -34,25 +35,18 @@
   }
 }
 
-
-.dimmer {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  overflow: hidden;
-  background-color: rgba(0,0,0,0);
-  visibility: hidden;
-  z-index: 2;
-  .transition(background-color @hypnos-transition-duration @hypnos-transition-time-function);
-}
-
-.sidebar.open + .dimmer {
+aside.open + .dimmer {
   background-color: rgba(0,0,0,.5);
   visibility: visible;
+  z-index: 2;
 }
 
-.boxshadow {
-  .sidebar.open {
-    .box-shadow(2px 0 5px @hypnos-shadow-depth-1);
-  }
+header.freeze {
+  .box-shadow(none);
+}
+
+main.freeze {
+  overflow: hidden;
+  -webkit-overflow-scrolling: none;
+          overflow-scrolling: none;
 }

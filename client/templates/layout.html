@@ -1,12 +1,13 @@
 <template name="layout">
-<aside class="sidebar {{open}}">
+<aside class="{{open}}">
   {{> sidebar}}
 </aside>
 <div class="dimmer"></div>
-<header>
+
+<header class="{{freeze}}">
   {{> header }}
 </header>
-<main>
+<main class="{{freeze}}">
   {{> yield}}
 </main>
 </template>
