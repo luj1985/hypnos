@@ -1,7 +1,7 @@
 <template name="products">
 {{#contentFor "title"}}产品搜索{{/contentFor}}
 {{#contentFor "tools"}}
-<a class="search item" href="{{pathFor 'productSearch'}}"><i class="md md-search"></i></a>
+  {{> productSearchTool}}
 {{/contentFor}}
 <div class="products container">
 {{#each items}}
@@ -18,5 +18,9 @@
     <p>原厂号:{{oid}}</p>
   </section>
 </a>
+</template>
+
+<template name="productSearchTool">
+<a class="search item" href="{{pathFor 'productSearch'}}"><i class="md md-search"></i></a>
 </template>
 

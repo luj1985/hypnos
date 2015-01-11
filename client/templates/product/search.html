@@ -8,43 +8,53 @@
     <div class="field">
       <input type="search" name="serial" placeholder="输入舍弗勒号或原厂号" />
     </div>
-    <div class="field">
-      <select name="brand">
-        <option value="" disabled selected style='display:none;'>品牌</option>
-        <option>FAG</option>
-        <option>Ruville</option>
-        <option>LuK</option>
-        <option>INA</option>
-      </select>
-    </div>
-    <div class="field">
-      <select name="name">
-        <option value="" disabled selected style='display:none;'>产品名称</option>
-        <option>轮毂轴承</option>
-        <option>惰轮</option>
-      </select>
-    </div>
-    <div class="field">
-      <select name="manufacturer">
-        <option value="" disabled selected style='display:none;'>制造商</option>
-        <option>起亚 (东风悦达起亚)</option>
-        <option>宝马 (华晨宝马)</option>
-      </select>
-    </div>
-    <div class="field">
-      <select name="engine">
-        <option value="" disabled selected style='display:none;'>引擎</option>
-        <option>千里马</option>
-        <option>5 (E60)</option>
-      </select>
-    </div>
-    <div class="field">
-      <div class="field">
-        <div id="cc"></div>
-      </div>
-    </div>
+
+    {{> Template.dynamic template=form }}
+    
     <div class="field">
       <input type="submit" value="查询">
     </div>
   </form>
+</template>
+
+<template name="blank">
+  <div class="field">
+    <input type="button" value="选择车型">
+  </div>
+</template>
+
+<template name="manufacturers">
+<ul class="options">
+  {{#each options}}
+    {{> manufacturer}}
+  {{/each}}
+</ul>
+</template>
+
+<template name="manufacturer">
+  <li>{{name}}</li>
+</template>
+
+<template name="aliases">
+<ul class="options">
+  {{#each options}}
+    {{> alias}}
+  {{/each}}
+</ul>
+</template>
+
+<template name="alias">
+<li>{{name}}</li>
+</template>
+
+<template name="types">
+<ul class="options">
+  {{#each options}}
+    {{> type}}
+  {{/each}}
+</ul>
+</template>
+
+<template name="type">
+<li>{{type}} - {{engine}} - {{cc}}</li>
 </template>

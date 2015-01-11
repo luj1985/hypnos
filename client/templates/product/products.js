@@ -19,6 +19,12 @@ Template.productItem.helpers({
   }
 });
 
+Template.productSearchTool.events({
+  'click a': function () {
+    Session.set('product-search-form', null);
+  }
+});
+
 function loadNextPage() {
   var page = Session.get('product-page') || 1;
   Session.set('product-page', page + 1);

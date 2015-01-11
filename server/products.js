@@ -19,22 +19,49 @@ Meteor.startup(function() {
           return _.omit(image, 'sid');
         });
       }
-      var manufacturer = product.manufacturer;
-      var names = manufacturer.split(/ +/);
-      var m1 = names[0], 
-          m2 = (names[1] || "").match(/\(([^\)]+)\)/) || [];
+
+      var manufacturer = product.manufacturer || "";
+      var names = manufacturer.match(/([^ \(]+) ?(?:\(([^\)]+)\))?/);
 
       var cc = product.cc;
+      var engine = product.engine || '';
+      engine = engine.replace(/[\/ ]/g, '');
 
-      product.manufacturer = m1;
-      product.alias = m2[1] || "";
+      var sid = product.sid || '';
+      sid = sid.replace(/[\/ ]/g, '').toUpperCase();
+      var oid = product.oid || '';
+      oid = oid.replace(/[\/ ]/g, '').toUpperCase();
+
+      product.engine = engine;
+      product.manufacturer = names[1] || "";
+      product.alias = names[2] || "";
 
       product.displayCC = cc;
       product.cc = parseFloat(cc, 10);
 
-      product.oid = (product.oid || '').replace(/ /g, '').toUpperCase();
-      product.sid = (product.sid || '').replace(/ /g, '').toUpperCase();
+      product.oid = oid;
+      product.sid = sid;
       Products.insert(product);
+    });
+
+    // TODO: should update this collection every time when products was update/insert/delete
+    var manufacturers = Products.aggregate([{
+      $group: {
+        _id: { manufacturer : "$manufacturer", alias : "$alias" },
+        types : {
+          $addToSet : {
+            engine : "$engine",
+            cc : "$displayCC",
+            type : "$type"
+          }
+        }
+      }
+    }, {
+      $project : { _id: 0, alias: "$_id.alias", manufacturer: "$_id.manufacturer", types: 1}
+    }]);
+
+    manufacturers.forEach(function(m) {
+      Manufacturers.insert(m);
     });
   }
 });
