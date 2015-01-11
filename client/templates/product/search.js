@@ -5,6 +5,13 @@ var updateFilters = _.debounce(function(keyword) {
 Template.productSearch.events({
   'keyup #productSearch' : function(e) {
     updateFilters($(e.target).val());
+  },
+  'submit form.search' : function(e, template) {
+    e.preventDefault();
+    var sid = template.$('input[name="serial"]').val();
+    var options = { sid : sid };
+    var param = $.param(options)
+    Router.go('products', {}, {query: param});
   }
 });
 

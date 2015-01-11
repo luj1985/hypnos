@@ -8,7 +8,8 @@ Template.products.destroyed = function () {
 
 Template.products.helpers({
   items: function () {
-    return Products.find({}, {sort: {oid: -1}});
+    var filters = Session.get('products-filter');
+    return Products.find(filters, {sort: {oid: -1}});
   }
 });
 
