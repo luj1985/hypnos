@@ -46,9 +46,12 @@ App.configurePlugin('com.ihavekey.weibo.oauth', {
 });
 
 App.setPreference('DisallowOverscroll', 'true');
-App.setPreference('StatusBarOverlaysWebView', 'true');
+App.setPreference('StatusBarOverlaysWebView', 'false');
+// TODO: update ios plist settings
+// <key>UIStatusBarHidden</key>
+// <true/>
+// <key>UIViewControllerBasedStatusBarAppearance</key>
+// <false/>
 App.setPreference('StatusBarStyle', 'lightcontent');
 App.setPreference('ShowSplashScreenSpinner', 'false');
 App.setPreference('KeyboardShrinksView', 'false');
-// App.setPreference('Fullscreen', 'true');
-// App.setPreference('SuppressesIncrementalRendering', 'true');
