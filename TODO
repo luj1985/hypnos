@@ -1,3 +1,4 @@
 - enable cordova plugin to support weibo/wexin sso login
 - use meteor-imagemagick (https://github.com/sylvaingi/meteor-imagemagick) to resize image at runtime
 - login/signup form input validation
+- Handle public folder issue on cordova, meteor will send all file under public folder to corodova client
