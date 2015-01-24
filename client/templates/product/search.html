@@ -6,9 +6,7 @@
   {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
   {{#contentFor "title"}}<input type="search" class="product" placeholder="舍弗勒号或原厂号">{{/contentFor}}
   {{#contentFor "tools"}}{{> doProductSearch}}{{/contentFor}}
-  <div class="filters container">
   {{> Template.dynamic template=form }}
-  </div>
 </template>
 
 <template name="manufacturers">
@@ -20,19 +18,19 @@
 </template>
 
 <template name="manufacturer">
-  <li>{{name}}</li>
+  <li><a href="#">{{name}}</a></li>
 </template>
 
 <template name="aliases">
 <ul class="options">
-  {{#each options}}
-    {{> alias}}
-  {{/each}}
+{{#each options}}
+  {{> alias}}
+{{/each}}
 </ul>
 </template>
 
 <template name="alias">
-<li>{{name}}</li>
+<li><a href="#">{{name}}</a></li>
 </template>
 
 <template name="types">
@@ -44,5 +42,5 @@
 </template>
 
 <template name="type">
-<li>{{type}} - {{engine}} - {{cc}}</li>
+<li><a href="#">{{type}} - {{engine}} - {{cc}}</a></li>
 </template>

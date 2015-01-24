@@ -1,19 +1,18 @@
-Template.productSearch.events({
-  'submit form.search' : function(e, template) {
-    e.preventDefault();
-    var sid = template.$('input[name="serial"]').val();
-    var options = { sid : sid };
-    var param = $.param(options);
-    Router.go('products', {}, {query: param});
-  }
-});
-
 Template.productSearch.helpers({
   form: function () {
     return Session.get('product-search-form') || 'manufacturers';
   }
 });
 
+Template.doProductSearch.events({
+  'click a.item.search': function(e) {
+    e.preventDefault();
+    var val = $('input[type="search"].product').val();
+    var options = { sid : val };
+    var param = $.param(options);
+    Router.go('products', {}, {query: param});
+  }
+});
 
 Template.manufacturers.helpers({
   options: function () {
