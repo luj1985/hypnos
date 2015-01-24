@@ -4,14 +4,12 @@ input[type="search"].product {
   .placeholder(rgba(255,255,255,0.5));
   color: @hypnos-white;
   border:none;
+  outline: none;
   background-color: transparent;
   height: 2.5rem;
-  line-height: 3rem;
   font-size: 1rem;
-  border-bottom: 1px solid @hypnos-white;
-  outline: none;
+  border-bottom: 1px solid @hypnos-invert-color;
   width: 12rem;
-  padding-left: 0;
 }
 
 .item.product {
@@ -66,14 +64,30 @@ input[type="search"].product {
   color: gold;
 }
 
-ul.options {
-  padding-left: 3rem;
-  li {
-    line-height: 4rem;
-    font-size: 1.2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    &:last-child {
-      border-bottom-width: 0px;
+.filters {
+  h2 {
+    .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
+    position: fixed;
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    padding-left: 4rem;
+    color: @hypnos-invert-color;
+    background-color: @hypnos-green;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  ul.options {
+    padding-top: 3rem;
+    padding-left: 4rem;
+    li {
+      line-height: 4rem;
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      &:last-child {
+        border-bottom-width: 0px;
+      }
     }
   }
 }

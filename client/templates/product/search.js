@@ -10,16 +10,10 @@ Template.productSearch.events({
 
 Template.productSearch.helpers({
   form: function () {
-    return Session.get('product-search-form') || 'blank';
+    return Session.get('product-search-form') || 'manufacturers';
   }
 });
 
-Template.blank.events({
-  'click input[type="button"]': function (e) {
-    e.preventDefault();
-    Session.set('product-search-form', 'manufacturers');
-  }
-});
 
 Template.manufacturers.helpers({
   options: function () {
