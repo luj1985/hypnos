@@ -36,6 +36,6 @@ function escapeRegExp(str) {
 
 Deps.autorun(function() {
   var page = Session.get('product-page'),
-      filters = Session.get('product-filter') || {};
+      filters = Session.get('products-filter') || {};
   Meteor.subscribe('products', filters, page);
 });
