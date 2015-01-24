@@ -6,7 +6,6 @@
   {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
   {{#contentFor "title"}}<input type="search" class="product" placeholder="舍弗勒号或原厂号">{{/contentFor}}
   {{#contentFor "tools"}}{{> doProductSearch}}{{/contentFor}}
-  {{#contentFor "subheader"}}<h2>选择车型</h2>{{/contentFor}}
   <div class="filters container">
   {{> Template.dynamic template=form }}
   </div>
@@ -38,9 +37,9 @@
 
 <template name="types">
 <ul class="options">
-  {{#each options}}
-    {{> type}}
-  {{/each}}
+{{#each options}}
+  {{> type}}
+{{/each}}
 </ul>
 </template>
 
