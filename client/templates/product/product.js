@@ -9,14 +9,21 @@ function searchProductByType(product, conds) {
   Router.go('products', {}, {query: param});
 }
 
+function searchSuites(product) {
+  var sid = product.sid;
+  Router.go('suites', {cid: sid});
+}
+
 Template.product.rendered = function () {
   em.on('toggle-favorite', toggleFavorite);
   em.on('product-type', searchProductByType);
+  em.on('product-suites', searchSuites);
 };
 
 Template.product.destroyed = function () {
   em.off('toggle-favorite', toggleFavorite);
   em.off('product-type', searchProductByType);
+  em.off('product-suites', searchSuites);
 };
 
 Template.productTools.helpers({
@@ -41,6 +48,7 @@ Template.moreProducts.events({
   'click a.suite': function(e) {
     e.preventDefault();
     Session.set('show-more', false);
+    em.emit('product-suites', this);
   }
 });
 

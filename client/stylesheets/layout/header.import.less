@@ -22,7 +22,7 @@ header {
 
   .context {
     display: block;
-    padding-left: 4rem;
+    padding-left: @hypnos-left-align;
 
     .tools {
       display: inline-block;
@@ -44,28 +44,8 @@ header {
   }
 
   h2 {
-    height: 3rem;
-    line-height: 3rem;
-    padding-left: 4rem;
+    height: @hypnos-sub-header-height-mobile;
+    line-height: @hypnos-sub-header-height-mobile;
+    padding-left: @hypnos-left-align;
   }
 }
-
-// .ios header {
-//   height: @hypnos-header-height + 1rem;
-//   line-height: @hypnos-header-height;
-//   padding-top: 1rem;
-
-//   > * {
-//     height: @hypnos-header-height;
-//     line-height: @hypnos-header-height;
-//   }
-
-//   .transition(
-//     height @hypnos-transition-duration @hypnos-transition-time-function,
-//     line-height @hypnos-transition-duration @hypnos-transition-time-function
-//   );
-
-//   + main {
-//     top: @hypnos-header-height + 1rem;
-//   }
-// }

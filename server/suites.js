@@ -11,6 +11,10 @@ Meteor.startup(function() {
   }
 });
 
-Meteor.publish('suites', function(sid) {
-  return Suites.find({componentId : sid });
+Meteor.publish('suites', function(cid) {
+  return Suites.find({componentId : cid });
+});
+
+Meteor.publish('suite', function(sid) {
+  return Suites.find({suiteId: sid});
 });
