@@ -48,8 +48,8 @@ Template.layout.helpers({
   freeze: function() {
     return Session.equals('show-sidebar', true) ? 'freeze' : '';
   },
-  withSub: function() {
-    return 'with-sub-title';
+  more: function() {
+    return Session.equals('show-more', true) ? 'more active' : 'more';
   }
 });
 
@@ -57,6 +57,7 @@ Template.layout.events({
   'click .dimmer': function(e) {
     e.preventDefault();
     Session.set('show-sidebar', false);
+    Session.set('show-more', false);
   }
 });
 

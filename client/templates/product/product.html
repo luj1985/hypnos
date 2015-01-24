@@ -20,24 +20,25 @@
     {{/each}}
     </div>
   {{/if}}
+  <a class="find more" href="#">同车型更多产品</a>
 </article>
 
 {{#contentFor "title"}}{{name}}{{/contentFor}}
-{{#contentFor "navigator"}}
-  {{> back}}
-{{/contentFor}}
-
-{{#if currentUser}}
-  {{#contentFor "tools"}}
-    {{> productTools}}
-  {{/contentFor}}
-{{/if}}
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "tools"}}{{> productTools}}{{/contentFor}}
 </template>
 
 <template name="productTools">
-<a class="favorite item {{active}}">
-  <i class="md md-star"></i>
-</a>
+{{#if currentUser}}
+<a class="favorite item {{active}}"><i class="md md-star"></i></a>
+{{/if}}
+<a class="more item"><i class="md md-more-vert"></i></a>
+{{#contentFor "more"}}
+<ul>
+<li><a class="#">同车型更多产品</a></li>
+<li><a class="#">套装信息</a></li>
+</ul>
+{{/contentFor}}
 </template>
 
 
