@@ -5,7 +5,7 @@ Template.productSearch.helpers({
 });
 
 Template.doProductSearch.events({
-  'click li.item.search': function(e) {
+  'click a.item.search': function(e) {
     e.preventDefault();
     var val = $('input[type="search"].product').val();
     var options = { sid : val };
@@ -26,7 +26,7 @@ Template.manufacturers.helpers({
 });
 
 Template.manufacturer.events({
-  'click li': function (e) {
+  'click a': function (e) {
     e.preventDefault();
     var name = this.name;
     Session.set('manufacturer', name);
@@ -48,7 +48,7 @@ Template.aliases.helpers({
 });
 
 Template.alias.events({
-  'click li': function (e) {
+  'click a': function (e) {
     e.preventDefault();
     var name = this.name;
     Session.set('alias', name);
@@ -66,7 +66,7 @@ Template.types.helpers({
 });
 
 Template.types.events({
-  'click li': function (e) {
+  'click a': function (e) {
     e.preventDefault();
     var val = $('input[type="search"].product').val();
     var options = val ? { sid : val } : {};
