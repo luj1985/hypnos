@@ -4,7 +4,7 @@ App.info({
   description: '舍弗勒产品助手是一款实用的汽车零部件应用查询软件，可以帮您轻松找到舍弗勒汽车售后旗下所有乘用车产品及其车型应用信息。',
   author: 'Lu, Jun',
   email: 'luj1985@gmail.com',
-  website: 'http://luj1985.github.com',
+  website: 'http://121.40.34.211:3000/',
   version: '0.0.1'
 });
 
