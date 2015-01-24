@@ -13,9 +13,16 @@
 </template>
 
 <template name="header">
+<hgroup>
+<h1>{{> mainheader }}</h1>
+{{> yield "subheader"}}
+</hgroup>
+</template>
+
+<template name="mainheader">
 {{> yield "navigator"}}
 <div class="context">
-  {{> yield "title"}}
+  <span class="title">{{> yield "title"}}</span>
   <div class="tools">{{> yield "tools"}}</div>
 </div>
 </template>

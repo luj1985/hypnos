@@ -4,21 +4,19 @@
 
 <template name="productSearch">
   {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
-  {{#contentFor "title"}}
-  <input type="search" class="product" placeholder="舍弗勒号或原厂号">
-  {{/contentFor}}
+  {{#contentFor "title"}}<input type="search" class="product" placeholder="舍弗勒号或原厂号">{{/contentFor}}
   {{#contentFor "tools"}}{{> doProductSearch}}{{/contentFor}}
+  {{#contentFor "subheader"}}<h2>选择车型</h2>{{/contentFor}}
   <div class="filters container">
-  <h2>选择车型</h2>
   {{> Template.dynamic template=form }}
   </div>
 </template>
 
 <template name="manufacturers">
 <ul class="options">
-  {{#each options}}
-    {{> manufacturer}}
-  {{/each}}
+{{#each options}}
+  {{> manufacturer}}
+{{/each}}
 </ul>
 </template>
 

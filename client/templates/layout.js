@@ -47,6 +47,9 @@ Template.layout.helpers({
   // use additional class as workaround
   freeze: function() {
     return Session.equals('show-sidebar', true) ? 'freeze' : '';
+  },
+  withSub: function() {
+    return 'with-sub-title';
   }
 });
 

@@ -6,14 +6,6 @@ header {
     line-height @hypnos-transition-duration @hypnos-transition-time-function
   );
 
-  height: @hypnos-header-height;
-  line-height: @hypnos-header-height;
-
-  > * {
-    height: inherit;
-    line-height: inherit;
-  }
-
   .item {
     font-size: 1.5rem;
     text-align: center; 
@@ -32,16 +24,29 @@ header {
     display: block;
     padding-left: 4rem;
 
-    h1 {
-      display: inline-block;
-      font-size: 1.2rem;
-      clear: both;
-    }
-
     .tools {
       display: inline-block;
       float: right;
     }
+  }
+
+  h1 {
+    .title {
+      font-size: 1.2rem;
+    }
+    height: @hypnos-header-height;
+    line-height: @hypnos-header-height;
+
+    > * {
+      height: inherit;
+      line-height: inherit;
+    }
+  }
+
+  h2 {
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 4rem;
   }
 }
 
