@@ -5,4 +5,4 @@ export WEIBO_KEY="1557510073"
 export ROOT_URL="http://121.40.34.211:3000"
 export METEOR_SETTINGS="$(cat settings.json)"
 
-meteor --production $@ &
+meteor --production $@
