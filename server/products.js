@@ -36,8 +36,7 @@ Meteor.startup(function() {
       product.manufacturer = names[1] || "";
       product.alias = names[2] || "";
 
-      product.displayCC = cc;
-      product.cc = parseFloat(cc, 10);
+      product._cc = parseFloat(cc, 10);
 
       product.oid = oid;
       product.sid = sid;
@@ -51,7 +50,7 @@ Meteor.startup(function() {
         types : {
           $addToSet : {
             engine : "$engine",
-            cc : "$displayCC",
+            cc : "$cc",
             type : "$type"
           }
         }
