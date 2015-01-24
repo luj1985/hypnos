@@ -11,11 +11,16 @@
   &.active {
     display: block;
   }
-  ul {
-    li {
-      padding: 0 1rem;
-      height: 3rem;
-      line-height: 3rem;
-    }
+  ul li a {
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
   }
+}
+
+.nav.more.active + .dimmer {
+  background-color: rgba(0,0,0,0);
+  visibility: visible;
+  z-index: 2;
 }

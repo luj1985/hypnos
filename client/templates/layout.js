@@ -47,9 +47,6 @@ Template.layout.helpers({
   // use additional class as workaround
   freeze: function() {
     return Session.equals('show-sidebar', true) ? 'freeze' : '';
-  },
-  more: function() {
-    return Session.equals('show-more', true) ? 'more active' : 'more';
   }
 });
 
