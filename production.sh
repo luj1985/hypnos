@@ -1,4 +1,5 @@
 #!/bin/bash
 
 source env.sh
-meteor --production $@
+echo "mobile server: $MOBILE_SERVER_URL"
+meteor --production --mobile-server $MOBILE_SERVER_URL $@
