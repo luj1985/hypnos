@@ -15,6 +15,7 @@ meyerweb-reset
 noorderstorm:hammer
 fastclick
 raix:eventemitter
-rcy:nouislider
 monbro:mongodb-mapreduce-aggregation
 multiply:iron-router-progress
+cfs:standard-packages
+cfs:filesystem
