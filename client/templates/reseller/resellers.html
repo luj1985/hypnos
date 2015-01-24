@@ -1,5 +1,5 @@
 <template name="resellers">
-{{#contentFor "title"}}经销商查询{{/contentFor}}
+{{#contentFor "title"}}<h1>经销商查询</h1>{{/contentFor}}
 {{#contentFor "tools"}}
 <a class="search item" href="{{pathFor 'resellerSearch'}}">
   <i class="md md-search"></i>
@@ -17,7 +17,7 @@
 
 <template name="reseller">
 <a href="{{href}}" target="_blank"> 
-  <section class="reseller">
+  <section class="item reseller">
     <h5>{{reseller}}</h5>
     <address>{{address}} (GPS: {{gps}})</address>
   </section>

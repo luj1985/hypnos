@@ -1,5 +1,5 @@
 <template name="products">
-{{#contentFor "title"}}产品搜索{{/contentFor}}
+{{#contentFor "title"}}<h1>产品搜索</h1>{{/contentFor}}
 {{#contentFor "tools"}}
   {{> productSearchTool}}
 {{/contentFor}}
@@ -12,7 +12,7 @@
 
 <template name="productItem">
 <a href="{{pathFor route='product'}}">
-  <section class="product brand {{brand}}">
+  <section class="item product brand {{brand}}">
     <h5>{{name}}</h5>
     <p>舍弗勒号:{{sid}}</p>
     <p>原厂号:{{oid}}</p>
