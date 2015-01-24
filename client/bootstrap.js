@@ -8,6 +8,12 @@ Meteor.startup(function() {
   //   e.preventDefault();  
   // }, false); 
 
+  document.addEventListener('deviceready', function() {
+    $(document).on('click', 'a', function() {
+      plugins.deviceFeedback.acoustic();
+    });
+  }, false);
+
   accountService = {
     message : function(message) {
       console.log(message);

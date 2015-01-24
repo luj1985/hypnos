@@ -19,12 +19,6 @@ Template.layout.rendered = function () {
     }
   });
 
-  if (Meteor.isCordova) {
-    $(document).on('touchstart', 'a', function() {
-      window.plugins.deviceFeedback.acoustic();
-    });
-  }
-
   function infiniteSrollHandler(e) {
     var context = $(this),
         height = context.innerHeight(),
