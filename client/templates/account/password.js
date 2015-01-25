@@ -1,6 +1,11 @@
 var  accountService = {
-  message : function(message) {
-    console.log(message);
+  message : function(err) {
+    switch(err.errorType) {
+    case "Meteor.Error":
+      var reason = err.reason;
+      var message = T9n.get('error.accounts.' + reason);
+      console.log(message);
+    }
   }
 };
 

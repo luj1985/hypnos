@@ -4,17 +4,17 @@
 <form class="login">
   <div class="field">
     <i class="md md-account-box"></i>
-    <input type="text" name="username" placeholder="用户名、电子邮箱" required />
+    <input type="text" name="username" placeholder="{{t9n 'usernameOrEmail'}}" required />
   </div>
   <div class="field">
     <i class="md md-lock"></i>
-    <input type="password" name="password" placeholder="密码" required />
+    <input type="password" name="password" placeholder="{{t9n 'password'}}" required />
   </div>
   <div class="field">
-    <input type="submit" value="登陆" />
+    <input type="submit" value="{{t9n 'signIn'}}" />
   </div>
   <div class="message">
-    没有账号？<a href="{{pathFor 'register'}}">点击注册</a>
+    {{t9n "dontHaveAnAccount"}}<a href="{{pathFor 'register'}}">点击注册</a>
   </div>
   <div class="sso">
     <hr />
