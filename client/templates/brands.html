@@ -25,8 +25,15 @@
   <p>{{description}}</p>
   <ul>
   {{#each products}}
-  <li>{{name}}</li>
+    {{> line}}
   {{/each}}
   </ul>
 </article>
+</template>
+
+<template name="line">
+<li>
+  <a href="#{{name}}">{{name}}</a>
+  <p id="{{name}}">{{description}}</p>
+</li>
 </template>
