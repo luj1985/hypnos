@@ -26,13 +26,6 @@ document.addEventListener('deviceready', function() {
 }, false);
 
 
-
-Template.resellers.helpers({
-  items: function () {
-    return Resellers.find({});
-  }
-});
-
 Template.resellers.events({
   'click .location.item': function () {
     if (navigator.geolocation) {   

@@ -1,15 +1,11 @@
 <template name="resellers">
 {{#contentFor "title"}}经销商查询{{/contentFor}}
 {{#contentFor "tools"}}
-<a class="search item" href="{{pathFor 'resellerSearch'}}">
-  <i class="md md-search"></i>
-</a>
-<a class="location item" href="#">
-  <i class="md md-my-location"></i>
-</a>
+<a class="search item" href="{{pathFor 'resellerSearch'}}"><i class="md md-search"></i></a>
+<a class="location item" href="#"><i class="md md-my-location"></i></a>
 {{/contentFor}}
 <div class="resellers container">
-{{#each items}}
+{{#each this}}
   {{> reseller }}
 {{/each}}
 </div>

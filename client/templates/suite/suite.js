@@ -1,9 +1,3 @@
-Template.suite.helpers({
-  items: function () {
-    return this;
-  }
-});
-
 Template.suite.events({
   'click a': function (e) {
     e.preventDefault();

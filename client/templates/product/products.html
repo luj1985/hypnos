@@ -2,7 +2,7 @@
 {{#contentFor "title"}}产品搜索{{/contentFor}}
 {{#contentFor "tools"}}{{> productSearchTool}}{{/contentFor}}
 <div class="products container">
-{{#each items}}
+{{#each this}}
   {{> productItem}}
 {{/each}}
 </div>

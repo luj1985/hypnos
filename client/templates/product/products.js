@@ -6,13 +6,6 @@ Template.products.destroyed = function () {
   $(document).off('nextpage', loadNextPage);
 };
 
-Template.products.helpers({
-  items: function () {
-    var filters = Session.get('products-filter');
-    return Products.find(filters, {sort: {oid: -1}});
-  }
-});
-
 Template.productItem.helpers({
   brand: function () {
     return (this.brand || "").toLowerCase();
