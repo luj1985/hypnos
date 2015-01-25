@@ -36,10 +36,10 @@ var brandsData = [{
     description: "也称为离合器总泵，是离合器液压式操作系统的机构，主要储存液体。LuK离合器主缸采用动态密封圈，无粘滑运动，无噪声，持久低摩擦。"
   }, {
     name: "卡圈",
-    description: ""
+    description: "暂无描述"
   }, {
     name: "分离顶板",
-    description: ""
+    description: "暂无描述"
   }]
 }, {
   name: "INA",
