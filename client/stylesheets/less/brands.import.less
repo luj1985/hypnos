@@ -7,3 +7,52 @@ article.brand {
     }
   }
 }
+
+.brand {
+  &:before {
+    content: '';
+    left: 0rem;
+    position: absolute;
+    background-size: 2rem 2rem;
+    background-repeat: no-repeat;
+    background-position: 1rem center; 
+    width: 3rem;
+    height: 3rem;
+  }
+  &.fag:before {
+    background-image: url('/brand/fag.png');
+  }
+  &.luk:before {
+    background-image: url('/brand/luk.png');
+  }
+  &.ina:before {
+    background-image: url('/brand/ina.png');
+  }
+}
+
+.brands {
+  img.masthead {
+    width: 100%;
+  }
+  a {
+    display: block;
+  }
+  .item {
+    height: 5rem;
+    padding: 1rem 0;
+    display: block;
+    margin-left: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    p {
+      height: 3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: .9rem;
+      line-height: 1rem;
+      padding-right: 1rem;
+      display: -webkit-box;  
+      -webkit-line-clamp: 3;  
+      -webkit-box-orient: vertical; 
+    }
+  }
+}

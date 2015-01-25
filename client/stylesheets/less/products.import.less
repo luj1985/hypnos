@@ -12,11 +12,14 @@ input[type="search"].product {
   width: 12rem;
 }
 
+.products a {
+  display: block;
+}
+
 .item.product {
   padding: 1rem 1rem 1rem 0;
   margin-left: 4rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
   h5 {
     font-weight: bold;
     padding-bottom: .3rem;
@@ -29,28 +32,6 @@ input[type="search"].product {
     color: rgba(0,0,0,0.62);
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  &.brand {
-    &:before {
-      content: '';
-      left: 0rem;
-      position: absolute;
-      background-size: 2rem 2rem;
-      background-repeat: no-repeat;
-      background-position: 1rem center; 
-      width: 3rem;
-      height: 3rem;
-    }
-    &.fag:before {
-      background-image: url('/brand/fag.png');
-    }
-    &.luk:before {
-      background-image: url('/brand/luk.png');
-    }
-    &.ina:before {
-      background-image: url('/brand/ina.png');
-    }
   }
 }
 

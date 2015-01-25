@@ -1,10 +1,21 @@
 <template name="brands">
 {{#contentFor "title"}}品牌介绍{{/contentFor}}
+<div class="brands container">
+<img class="masthead" src="/brand/masthead.png" />
 <ul>
 {{#each this}}
-<li><a href="{{pathFor 'brand'}}">{{name}}</a></li>
+  {{> brandItem}}
 {{/each}}
 </ul>
+</div>
+</template>
+
+<template name="brandItem">
+<a href="{{pathFor route='brand'}}">
+  <section class="item brand {{brand}}">
+    <p>{{description}}</p>
+  </section>
+</a>
 </template>
 
 <template name="brand">
