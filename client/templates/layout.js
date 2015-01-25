@@ -3,9 +3,17 @@ var scrollHandler,
 
 Session.setDefault(SHOW_CONNECTION_ISSUE_KEY, false);
 
+var dataReadyHold = null;
+
+if (Meteor.isClient) {
+  // Keep showing the launch screen on mobile devices until we have loaded
+  // the app's data
+  dataReadyHold = LaunchScreen.hold();
+}
+
 Meteor.startup(function() {
   setTimeout(function () {
-    dataReadyHold.release();
+    dataReadyHold && dataReadyHold.release();
     Session.set(SHOW_CONNECTION_ISSUE_KEY, true);
   }, 5000);
 });
