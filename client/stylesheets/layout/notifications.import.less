@@ -1,16 +1,16 @@
-.notifications {
+.connecting {
   position: absolute;
-  background: rgba(51,51,51, .85);
+  color: @hypnos-white;
+  background: rgba(0,0,0,.7);
   bottom: 1rem;
   width: 16rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  z-index: 10;
+  display: block;
+  text-align: center;
   left: 50%;
   .transform(translate3d(-50%, 0, 0));
-
-  .connecting {
-    height: 2.5rem;
-    line-height: 2.5rem;
-    color: @hypnos-white;
-    display: block;
-    text-align: center;
-  }
+  .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
 }
