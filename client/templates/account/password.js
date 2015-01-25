@@ -1,13 +1,8 @@
-function signup(username, email, password) {
-  var user = {};
-  user.username = username;
-  user.email = email;
-  user.password = password;
-
-  Accounts.createUser(user, function (err) {
-    accountService.message(err);
-  });
-}
+var  accountService = {
+  message : function(message) {
+    console.log(message);
+  }
+};
 
 function forgotPassword() {
 
@@ -19,6 +14,26 @@ function changePassword(oldPassword, newPassword) {
   });
 }
 
+Template.register.events({
+  'submit form.register': function (e, template) {
+    e.preventDefault();
+    var username = template.$('input[name="username"]').val(),
+        email = template.$('input[name="email"]').val(),
+        password = template.$('input[name="password"]').val();
+    var user = {};
+    user.username = username;
+    user.email = email;
+    user.password = password;
+
+    Accounts.createUser(user, function (err) {
+      if (err) {
+        accountService.message(err);
+      } else {
+        Router.go('profile');
+      }
+    });
+  }
+});
 
 Template.login.events({
   'submit form.login': function (e, template) {
