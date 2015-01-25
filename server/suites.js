@@ -19,3 +19,7 @@ Meteor.publish('suites', function(filters, page, size) {
     limit: page * size
   });
 });
+
+Meteor.publish('suite', function(suiteId) {
+  return Suites.find({suiteId: suiteId});
+})

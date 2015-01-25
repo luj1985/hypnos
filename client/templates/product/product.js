@@ -10,8 +10,8 @@ function searchProductByType(product, conds) {
 }
 
 function searchSuites(product) {
-  var sid = product.sid;
-  Router.go('suites', {cid: sid});
+  var param = {componentId: product.sid};
+  Router.go('suites', {}, {query: param});
 }
 
 Template.product.rendered = function () {

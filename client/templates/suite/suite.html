@@ -1,2 +1,17 @@
 <template name="suite">
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}套装详细信息{{/contentFor}}
+<ul class="suite detail">
+{{#each items}}
+  {{> suiteDetail}}
+{{/each}}
+</ul>
+</template>
+
+<template name="suiteDetail">
+<li>
+  <a href="#">
+  {{componentName}} - {{componentId}}
+  </a>
+</li>
 </template>
