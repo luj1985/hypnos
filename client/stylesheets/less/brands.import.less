@@ -1,4 +1,26 @@
 article.brand {
+  p {
+    margin: .5rem 0;
+    text-indent: 0;
+  }
+  .logo {
+    width: 6rem;
+    height: 5rem;
+    display: inline-block;
+    float: left;
+    background-size: 5rem 5rem;
+    background-position: left center;
+    background-repeat: no-repeat;
+    &.fag {
+      background-image: url('brand/fag.png');
+    }
+    &.luk {
+      background-image: url('brand/luk.png');
+    }
+    &.ina {
+      background-image: url('brand/ina.png');
+    }
+  }
   ul li {
     a {
       display: block;
@@ -13,10 +35,8 @@ article.brand {
       display: none;
     }
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  } 
+  }
 }
-
-
 
 .brand {
   &:before {
