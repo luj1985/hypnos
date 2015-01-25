@@ -1,4 +1,21 @@
 <template name="suites">
 {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
 {{#contentFor "title"}}套装信息{{/contentFor}}
+
+<div class="suites container">
+{{#each items}}
+  {{> suiteItem}}
+{{/each}}
+</div>
+</template>
+
+<template name="suiteItem">
+<a href="{{pathFor route='suite'}}">
+  <section class="item suite">
+    <h5>{{name}}</h5>
+    <p>套装号:{{suiteId}}</p>
+    <p>组件品名:{{componentName}}</p>
+    <p>组件号:{{componentId}}</p>
+  </section>
+</a>
 </template>
