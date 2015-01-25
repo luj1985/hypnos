@@ -1,7 +1,16 @@
-var scrollHandler;
+var scrollHandler,
+    SHOW_CONNECTION_ISSUE_KEY = 'showConnectionIssue';
+
+Session.setDefault(SHOW_CONNECTION_ISSUE_KEY, false);
+
+Meteor.startup(function() {
+  setTimeout(function () {
+    dataReadyHold.release();
+    Session.set(SHOW_CONNECTION_ISSUE_KEY, true);
+  }, 5000);
+});
 
 Template.layout.rendered = function () {
-
   var template = this,
       fromEdge = false;
 
@@ -47,6 +56,13 @@ Template.layout.helpers({
   // use additional class as workaround
   freeze: function() {
     return Session.equals('show-sidebar', true) ? 'freeze' : '';
+  },
+  connected: function() {
+    if (Session.get(SHOW_CONNECTION_ISSUE_KEY)) {
+      return Meteor.status().connected;
+    } else {
+      return true;
+    }
   }
 });
 

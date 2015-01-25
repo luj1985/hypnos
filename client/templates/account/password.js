@@ -4,6 +4,7 @@ var  accountService = {
     case "Meteor.Error":
       var reason = err.reason;
       var message = T9n.get('error.accounts.' + reason);
+      console.log(err);
       console.log(message);
     }
   }

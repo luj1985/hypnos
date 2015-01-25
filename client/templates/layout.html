@@ -11,6 +11,13 @@
 <main class="{{freeze}}">
   {{> yield}}
 </main>
+
+{{#unless connected}}
+<div class="notifications">
+  <span class="connecting">正在尝试连接到网络...</span>
+</div>
+{{/unless}}
+
 </template>
 
 <template name="header">
