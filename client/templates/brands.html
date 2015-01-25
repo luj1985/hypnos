@@ -1,0 +1,21 @@
+<template name="brands">
+{{#contentFor "title"}}品牌介绍{{/contentFor}}
+<ul>
+{{#each this}}
+<li><a href="{{pathFor 'brand'}}">{{name}}</a></li>
+{{/each}}
+</ul>
+</template>
+
+<template name="brand">
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}{{name}}{{/contentFor}}
+<article class="brand">
+  <p>{{description}}</p>
+  <ul>
+  {{#each products}}
+  <li>{{name}}</li>
+  {{/each}}
+  </ul>
+</article>
+</template>

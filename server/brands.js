@@ -1,5 +1,5 @@
 var brandsData = [{
-  brand: "LuK",
+  name: "LuK",
   description: "以离合器命名的LuK致力于为全世界的车辆提供高品质的传动系统零部件。自成立初期为甲壳虫提供膜片弹簧离合器起，LuK就从未停止其创新的步伐，诸多跨时代的创新成果都成为市场上最受欢迎的产品。如今，全世界每四辆乘用车中就有一辆装配着LuK离合器，每两辆车中就有一辆使用LuK双质量飞轮。",
   products: [{
     name: "离合器套装",
@@ -42,7 +42,7 @@ var brandsData = [{
     description: ""
   }]
 }, {
-  brand: "INA",
+  name: "INA",
   description: "INA是全球众多顶级汽车和发动机制造商的原厂供应商，通过不断创新进取，为汽车售后维修领域带来诸多成就。作为发动机系统的专家，INA产品覆盖正时皮带传动系、链传动系、气门机构等各类发动机部件，其持久且精准的性能确保了发动机的每一次动力输出。",
   products: [{
     name: "水泵套装",
@@ -103,7 +103,7 @@ var brandsData = [{
     description: "INA通过不断研发，现可提供满足所有气门机构类型应用要求的挺杆、摇臂、支撑件、转换阀，精密制造的INA气门摇臂能有效降低发动机的废气排放和噪声，延长发动机使用寿命。"
   }]
 }, {
-  brand: "FAG",
+  name: "FAG",
   description: "从1883年发明世界上的第一台球研磨机开始，FAG在滚动轴承领域以其无可比拟的辉煌成就推动着人类的前进。FAG不仅着眼于保障车辆行驶的安全，更立足于轴承技术的革新和优化 ，不断拖动汽车工业的发展。秉承其对于转动艺术的精心专研，FAG致力于提供高品质的轮毂轴承产品。",
   products: [{
     name: "轮毂轴承",
@@ -119,11 +119,10 @@ var brandsData = [{
     description: "密封圈以及密封组件不仅用于轮毂轴承的修理，还可同时用于制动系统的维护。FAG为售后市场提供配套轮毂轴承使用的多种密封产品，确保轮毂轴承使用更顺畅。"
   }]
 }, {
-  brand: "Ruville",
+  name: "Ruville",
   description: "路维（RUVILLE），这个拥有80多年历史的品牌对于中国汽车后市场的资深人士来说并不陌生，路维已经成为“国际品牌”和“质量可靠”的代名词。作为舍弗勒旗下享誉全球的品牌之一，如今路维首次将经典之作——水泵系列产品正式引入中国",
   products: []
 }];
-
 
 Meteor.startup(function() {
   if (Brands.find().count() === 0) {
@@ -132,3 +131,12 @@ Meteor.startup(function() {
     });
   }
 });
+
+Meteor.publish('brand', function(id) {
+  return Brands.find({_id: id});
+});
+
+Meteor.publish('brands', function() {
+  return Brands.find();
+});
+
