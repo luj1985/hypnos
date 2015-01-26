@@ -2,16 +2,20 @@ form {
   padding: 1rem;
   .field {
     height: 4rem;
-    line-height: 4rem;
     display: block;
     position: relative;
 
     padding-left: 3rem;
     .md {
-      font-size: 1.5rem;
+      font-size: 2rem;
       padding-right: 1.5rem;
       position: absolute;
       left: 0;
+    }
+
+    .errors {
+      color: @hypnos-red;
+      padding: .5rem 0;
     }
     
     // TODO: add media query for mobile breakpoint here
@@ -21,9 +25,8 @@ form {
       display: inline-block;
       outline: none;
       border: none;
-      font-size: 1.2rem;
+      font-size: 1rem;
       height: 2rem;
-      padding-bottom: .5rem 0rem;
       background-color: transparent;
       width: 100%;
     }
@@ -38,6 +41,10 @@ form {
       .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
       &:focus {
         border-bottom: 2px solid @hypnos-green;
+      }
+
+      &.invalid {
+        border-bottom: 2px solid @hypnos-red;
       }
 
       &[readonly] {
