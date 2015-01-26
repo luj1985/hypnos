@@ -16,7 +16,9 @@ function forgotPassword() {
 
 function changePassword(oldPassword, newPassword) {
   Accounts.changePassword(oldPassword, newPassword, function(err) {
-    accountService.message(err);
+    if (err) {
+      accountService.message(err);
+    }
   });
 }
 
@@ -50,7 +52,7 @@ Template.login.events({
     // name can be username or email
     Meteor.loginWithPassword(name, password, function(err) {
       if (err) {
-        console.log(err);
+        accountService.message(err);
       }
     });
   }
