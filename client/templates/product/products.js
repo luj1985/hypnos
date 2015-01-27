@@ -19,8 +19,10 @@ Template.productSearchTool.events({
 });
 
 function loadNextPage() {
-  var page = Session.get('product-page') || 1;
-  Session.set('product-page', page + 1);
+  var filters = Session.get('product-filter') || {};
+  var page = filters.page || 1;
+  filters.page = page + 1;
+  Session.set('product-filter', filters);
 }
 
 function escapeRegExp(str) {
@@ -28,7 +30,6 @@ function escapeRegExp(str) {
 }
 
 Deps.autorun(function() {
-  var page = Session.get('product-page'),
-      filters = Session.get('products-filter') || {};
-  Meteor.subscribe('products', filters, page);
+  var conditions = Session.get('product-filter');
+  ProductSubs.subscribe('products', conditions);
 });

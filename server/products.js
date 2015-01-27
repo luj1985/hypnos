@@ -65,17 +65,35 @@ Meteor.startup(function() {
   }
 });
 
+
+function escapeRegex(text) {
+  return text.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&");
+}
+
 // for business reason, there is not need to do a infinite scroll
 // just take this as a workaround to shown as incremental load
-Meteor.publish('products', function(filters, page, size) {
-  page = page || 1;
-  size = size || 20;
-  filters = filters || {};
+var pageSize = 20;
+Meteor.publish('products', function(conditions) {
+  conditions = conditions || {};
+  var page = conditions.page || 1,
+      serial = conditions.serial || '';
+  var filters = _.omit(conditions, 'page', 'serial');
+
+  if (serial) {
+    var pattern = '^' + escapeRegex(serial);
+    filters = _.extend(filters, {
+      $or : [
+        { sid: { $regex: pattern, $options: 'i' } },
+        { oid: { $regex: pattern, $options: 'i' } }
+      ]
+    });
+  }
+
   return Products.find(filters, {
-    limit: page * size,
+    limit: page * pageSize,
     sort: { oid : -1 }
   });
-});
+}); 
 
 Meteor.publish('product', function(id) {
   return Products.find({_id: id});

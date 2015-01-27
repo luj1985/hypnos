@@ -70,7 +70,7 @@ Template.resellers.destroyed = function () {
 
 function loadNextPage() {
   var page = Session.get('reseller-page') || 1;
-    Session.set('reseller-page', page + 1);
+  Session.set('reseller-page', page + 1);
 }
 
 Deps.autorun(function() {
