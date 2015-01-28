@@ -65,13 +65,6 @@ Meteor.startup(function() {
   }
 });
 
-
-function escapeRegex(text) {
-  return text.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&");
-}
-
-// for business reason, there is not need to do a infinite scroll
-// just take this as a workaround to shown as incremental load
 var pageSize = 20;
 Meteor.publish('products', function(options) {
   options = options || {};

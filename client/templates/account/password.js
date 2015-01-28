@@ -58,7 +58,7 @@ Template.login.helpers({
     return Session.get('errors');
   },
   fieldClass: function(name) {
-    var errors = Session.get('errors');
+    var errors = Session.get('errors') || {};
     return errors[name] ? 'invalid' : '';
   }
 });
