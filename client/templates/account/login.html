@@ -1,26 +1,21 @@
+<template name="formField">
+<div class="field">
+<i class="md md-{{icon}}"></i>
+<input type="{{type}}" class="{{style name}}" name="{{name}}" placeholder="{{t9n name}}" />
+{{#if hasError name}}
+<div class="errors">
+{{#each errors name}}{{this}}{{/each}}
+</div>
+{{/if}}
+</div>
+</template>
+
 <template name="login">
 {{#contentFor "title"}}用户登录{{/contentFor}}
 {{#contentFor "navigator"}}{{> launcher }}{{/contentFor}}
 <form class="login">
-  <div class="field">
-    <i class="md md-account-box"></i>
-    <input type="text" class="{{fieldClass 'username'}}" 
-      name="username" placeholder="{{t9n 'usernameOrEmail'}}" />
-    {{#if errors.username }}
-      <div class="errors">
-      {{#each errors.username }}{{this}}{{/each}}
-      </div>
-    {{/if}}
-  </div>
-  <div class="field">
-    <i class="md md-lock"></i>
-    <input type="password" class="{{fieldClass 'password'}}"  name="password" placeholder="{{t9n 'password'}}" />
-    {{#if errors.password }}
-      <div class="errors">
-      {{#each errors.password }}{{this}}{{/each}}
-      </div>
-    {{/if}}
-  </div>
+  {{> formField type="text" name="usernameOrEmail" icon="account-box" }}
+  {{> formField type="password" name="password" icon="lock" }}
   <div class="field">
     <input type="submit" value="{{t9n 'signIn'}}" />
   </div>

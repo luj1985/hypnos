@@ -10,6 +10,22 @@ var  accountService = {
   }
 };
 
+
+Template.formField.helpers({
+  hasError: function (name) {
+    var errors = Session.get('errors') || {};
+    return errors[name];
+  },
+  errors: function(name) {
+    var errors = Session.get('errors') || {};
+    return errors[name];
+  },
+  style: function(name) {
+    var errors = Session.get('errors') || {};
+    return errors[name] ? 'invalid' : '';
+  }
+});
+
 function forgotPassword() {
 
 }
@@ -28,6 +44,7 @@ Template.register.events({
     var username = template.$('input[name="username"]').val(),
         email = template.$('input[name="email"]').val(),
         password = template.$('input[name="password"]').val();
+
     var user = {};
     user.username = username;
     user.email = email;
@@ -53,24 +70,15 @@ Template.register.events({
   }
 });
 
-Template.login.helpers({
-  errors: function() {
-    return Session.get('errors');
-  },
-  fieldClass: function(name) {
-    var errors = Session.get('errors') || {};
-    return errors[name] ? 'invalid' : '';
-  }
-});
 
 Template.login.events({
   'submit form.login': function (e, template) {
     e.preventDefault();
-    var username = template.$('input[name="username"]').val(),
+    var username = template.$('input[name="usernameOrEmail"]').val(),
         password = template.$('input[name="password"]').val();
 
     var errors = {};
-    if (!username) { errors.username = ['请输入用户名']; }
+    if (!username) { errors.usernameOrEmail = ['请输入用户名']; }
     if (!password) { errors.password = ['请输入密码']; }
     Session.set('errors', errors);
 

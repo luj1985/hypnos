@@ -1,23 +1,15 @@
 <template name="register">
 {{#contentFor "title"}}用户注册{{/contentFor}}
 <form class="register">
-<div class="field">
-  <i class="md md-account-box"></i>
-  <input type="text" name="username" placeholder="{{t9n 'username'}}" required autofocus />
-</div>
-<div class="field">
-  <i class="md md-mail"></i>
-  <input type="email" name="email" placeholder="{{t9n 'email'}}" required />
-</div>
-<div class="field">
-  <i class="md md-lock"></i>
-  <input type="password" name="password" placeholder="{{t9n 'password'}}" required />
-</div>
-<div class="field">
-  <input type="submit" value="{{t9n 'createAccount'}}" />
-</div>
-<div class="message">
-{{t9n "ifYouAlreadyHaveAnAccount"}}，<a href="{{pathFor 'login'}}">点击登陆</a>
-</div>
+  {{> formField type="text" name="username" icon="account-box" }}
+  {{> formField type="email" name="email" icon="mail" }}
+  {{> formField type="password" name="password" icon="lock" }}
+
+  <div class="field">
+    <input type="submit" value="{{t9n 'createAccount'}}" />
+  </div>
+  <div class="message">
+  {{t9n "ifYouAlreadyHaveAnAccount"}}，<a href="{{pathFor 'login'}}">点击登陆</a>
+  </div>
 </form>
 </template>
