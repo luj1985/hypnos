@@ -25,6 +25,14 @@ function changePassword(oldPassword, newPassword) {
   });
 }
 
+Template.register.destroyed = function () {
+  Session.set('errors', undefined);
+};
+
+Template.login.destroyed = function () {
+  Session.set('errors', undefined);
+};
+
 Template.register.events({
   'submit form.register': function (e, template) {
     e.preventDefault();
