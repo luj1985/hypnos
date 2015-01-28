@@ -73,21 +73,10 @@ function escapeRegex(text) {
 // for business reason, there is not need to do a infinite scroll
 // just take this as a workaround to shown as incremental load
 var pageSize = 20;
-Meteor.publish('products', function(conditions) {
-  conditions = conditions || {};
-  var page = conditions.page || 1,
-      serial = conditions.serial || '';
-  var filters = _.omit(conditions, 'page', 'serial');
-
-  if (serial) {
-    var pattern = '^' + escapeRegex(serial);
-    filters = _.extend(filters, {
-      $or : [
-        { sid: { $regex: pattern, $options: 'i' } },
-        { oid: { $regex: pattern, $options: 'i' } }
-      ]
-    });
-  }
+Meteor.publish('products', function(options) {
+  options = options || {};
+  var page = options.page || 1;
+  var filters = Hypnos.convertToQuery(options);
 
   return Products.find(filters, {
     limit: page * pageSize,
