@@ -1,4 +1,4 @@
-<template name="formField">
+<template name="field">
 <div class="field">
 <i class="md md-{{icon}}"></i>
 <input type="{{type}}" class="{{style name}}" name="{{name}}" placeholder="{{t9n name}}" />
@@ -14,8 +14,8 @@
 {{#contentFor "title"}}用户登录{{/contentFor}}
 {{#contentFor "navigator"}}{{> launcher }}{{/contentFor}}
 <form class="login">
-  {{> formField type="text" name="usernameOrEmail" icon="account-box" }}
-  {{> formField type="password" name="password" icon="lock" }}
+  {{> field type="text" name="usernameOrEmail" icon="account-box" }}
+  {{> field type="password" name="password" icon="lock" }}
   <div class="field">
     <input type="submit" value="{{t9n 'signIn'}}" />
   </div>

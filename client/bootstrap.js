@@ -1,3 +1,9 @@
+Errors = new Mongo.Collection(null);
+
+throwError = function(message) {
+  Errors.insert({message: message});
+};
+
 Meteor.startup(function() {
   T9n.setLanguage("zh-cn");
 

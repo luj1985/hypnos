@@ -1,17 +1,4 @@
-var  accountService = {
-  message : function(err) {
-    switch(err.errorType) {
-    case "Meteor.Error":
-      var reason = err.reason;
-      var message = T9n.get('error.accounts.' + reason);
-      console.log(err);
-      console.log(message);
-    }
-  }
-};
-
-
-Template.formField.helpers({
+Template.field.helpers({
   hasError: function (name) {
     var errors = Session.get('errors') || {};
     return errors[name];
@@ -33,7 +20,7 @@ function forgotPassword() {
 function changePassword(oldPassword, newPassword) {
   Accounts.changePassword(oldPassword, newPassword, function(err) {
     if (err) {
-      accountService.message(err);
+      throwError(T9n.get('error.accounts.' + err.reason));
     }
   });
 }
@@ -62,7 +49,7 @@ Template.register.events({
 
     Accounts.createUser(user, function (err) {
       if (err) {
-        accountService.message(err);
+        throwError(T9n.get('error.accounts.' + err.reason));
       } else {
         Router.go('profile');
       }
@@ -89,7 +76,7 @@ Template.login.events({
     // name can be username or email
     Meteor.loginWithPassword(username, password, function(err) {
       if (err) {
-        accountService.message(err);
+        throwError(T9n.get('error.accounts.' + err.reason));
       }
     });
   }

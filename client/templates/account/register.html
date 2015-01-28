@@ -1,9 +1,9 @@
 <template name="register">
 {{#contentFor "title"}}用户注册{{/contentFor}}
 <form class="register">
-  {{> formField type="text" name="username" icon="account-box" }}
-  {{> formField type="email" name="email" icon="mail" }}
-  {{> formField type="password" name="password" icon="lock" }}
+  {{> field type="text" name="username" icon="account-box" }}
+  {{> field type="email" name="email" icon="mail" }}
+  {{> field type="password" name="password" icon="lock" }}
 
   <div class="field">
     <input type="submit" value="{{t9n 'createAccount'}}" />

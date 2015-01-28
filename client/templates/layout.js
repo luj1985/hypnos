@@ -94,3 +94,19 @@ Template.back.events({
     history.back();
   }
 });
+
+Template.messages.helpers({
+  hasMessage: function() {
+    return Errors.find().fetch().length > 0;
+  },
+  messages: function () {
+    return Errors.find();
+  }
+});
+
+Template.message.rendered = function () {
+  var error = this.data;
+  Meteor.setTimeout(function() {
+    Errors.remove(error._id);
+  }, 3000);
+};

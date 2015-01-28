@@ -9,6 +9,7 @@
   {{> header }}
 </header>
 <main class="{{freeze}}">
+  {{> messages }}
   {{> yield}}
 </main>
 
@@ -46,4 +47,17 @@
 </template>
 
 <template name="loading">
+</template>
+
+<template name="messages">
+{{#if hasMessage}}
+<ul class="messages">
+{{#each messages}}
+  {{> message}}
+{{/each}}
+</ul>
+{{/if}}
+</template>
+<template name="message">
+<li>{{message}}</li>
 </template>
