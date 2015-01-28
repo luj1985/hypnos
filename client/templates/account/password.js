@@ -77,6 +77,12 @@ Template.login.events({
     Meteor.loginWithPassword(username, password, function(err) {
       if (err) {
         throwError(T9n.get('error.accounts.' + err.reason));
+      } else {
+        Tracker.afterFlush(function() {
+          if (Session.get('need-redirect')) {
+            Router.go('/profile');
+          }
+        });
       }
     });
   }
