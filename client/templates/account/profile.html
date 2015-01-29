@@ -10,35 +10,35 @@
 {{/each}}
 <div class="field">
   <i class="md md-person"></i>
-  <input type="text" name="name" value="{{user.profile.name}}" placeholder="姓名">
+  <input type="text" name="name" value="{{user.profile.name}}" placeholder="{{t9n 'profile.name'}}">
 </div>
 <div class="field">
   <i class="md md-stay-primary-portrait"></i>
-  <input type="tel" name="mobile" value="{{user.profile.mobile}}" placeholder="手机号码">
+  <input type="tel" name="mobile" value="{{user.profile.mobile}}" placeholder="{{t9n 'profile.mobile'}}">
 </div>
 <div class="field">
   <i class="md md-domain"></i>
-  <input type="text" name="company" value="{{user.profile.company}}" placeholder="公司名称">
+  <input type="text" name="company" value="{{user.profile.company}}" placeholder="{{t9n 'profile.company'}}">
 </div>
 <div class="field">
   <i class="md md-flag"></i>
   <!-- TODO: Use javascript to rewrite -->
   <div class="company type">
     <div class="type">
-      <input type="radio" id="reseller" name="type" value="经销商"><label for="reseller">经销商</label>
+      <input type="radio" id="reseller" name="type" value="{{t9n 'profile.reseller'}}"><label for="reseller">{{t9n 'profile.reseller'}}</label>
     </div>
     <div class="type">
-      <input type="radio" id="repair" name="type" value="修理厂"><label for="repair">修理厂</label>
+      <input type="radio" id="repair" name="type" value="{{t9n 'profile.repair'}}"><label for="repair">{{t9n 'profile.repair'}}</label>
     </div>
   </div>
 </div>
 <div class="field">
   <i class="md md-place"></i>
-  <input type="text" name="address" value="{{user.profile.address}}" placeholder="公司详细地址">
+  <input type="text" name="address" value="{{user.profile.address}}" placeholder="{{t9n 'profile.address'}}">
 </div>
 <div class="field">
   <i class="md md-phone"></i>
-  <input type="tel" name="phone" value="{{user.profile.tel}}" placeholder="联系电话">
+  <input type="tel" name="phone" value="{{user.profile.tel}}" placeholder="{{t9n 'profile.contact'}}">
 </div>
 <div class="field">
   <input type="button" name="logout" value="注销登录" >
