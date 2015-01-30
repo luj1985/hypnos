@@ -12,10 +12,13 @@ Template.profile.rendered = function () {
   em.on('save-profile', function() {
     // TODO: validate input fields here
     var profile = {};
-    profile.name = template.$('input[name="name"]').val();
-    profile.tel = template.$('input[name="phone"]').val();
-    profile.address = template.$('input[name="address"]').val();
+    profile.name = template.$('input[name="user.profile.name"]').val();
+    profile.mobile = template.$('input[name="user.profile.mobile"]').val();
+    profile.company=template.$('input[name="user.profile.company"]').val();
+    profile.address = template.$('input[name="user.profile.address"]').val();
+    profile.contact = template.$('input[name="user.profile.contact"]').val();
 
+    console.log(profile);
     Meteor.call('updateProfile', profile, function (error, result) {
       console.log(arguments);
     });

@@ -1,7 +1,7 @@
 <template name="field">
 <div class="field">
 <i class="md md-{{icon}}"></i>
-<input type="{{type}}" class="{{style name}}" name="{{name}}" placeholder="{{t9n name}}" />
+<input type="{{type}}" class="{{style name}}" name="{{name}}" value="{{value}}" placeholder="{{t9n name}}" />
 {{#if hasError name}}
 <div class="errors">
 {{#each errors name}}{{this}}{{/each}}

@@ -8,9 +8,9 @@
   <input type="text" value="{{address}}" readonly>
 </div>
 {{/each}}
-{{> field name="user.profile.name" type="text" icon="person"}}
-{{> field name="user.profile.mobile" type="tel" icon="stay-primary-portrait"}}
-{{> field name="user.profile.company" type="text" icon="domain"}}
+{{> field name="user.profile.name" type="text" value=user.profile.name icon="person"}}
+{{> field name="user.profile.mobile" type="tel" value=user.profile.mobile icon="stay-primary-portrait"}}
+{{> field name="user.profile.company" type="text" value=user.profile.company icon="domain"}}
 
 <div class="field">
   <i class="md md-flag"></i>
@@ -25,8 +25,8 @@
   </div>
 </div>
 
-{{> field name="user.profile.address" type="text" icon="place"}}
-{{> field name="user.profile.contact" type="text" icon="phone"}}
+{{> field name="user.profile.address" type="text" value=user.profile.address icon="place"}}
+{{> field name="user.profile.contact" type="text" value=user.profile.contact icon="phone"}}
 <div class="field">
   <input type="button" name="logout" value="注销登录" >
 </div>
