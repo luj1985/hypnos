@@ -25,16 +25,14 @@ Meteor.methods({
       });
 
       var identity = result.data;
-      console.log(identity);
-      
-      var account = Accounts.updateOrCreateUserFromExternalService('weibosso', {
+      var user = Accounts.updateOrCreateUserFromExternalService('weibosso', {
         id: uid + "",
         accessToken: token,
         screenName: identity.screen_name
       }, { profile: { name: identity.screen_name }});
-      console.log(account);
 
-      return account;
+      this.setUserId(user.userId);
+      return user;
     } catch(e) {
       return false;
     }
