@@ -1,6 +1,6 @@
 function success(data) {
   Meteor.call('createUserFromWeibo', data, function(err, result) {
-    console.log(arguments);
+    console.log(JSON.stringify(arguments));
   });
 }
 
