@@ -24,8 +24,13 @@ Meteor.methods({
         params: { uid: uid, access_token: token } 
       });
       console.log(result);
-      
-      return true;
+
+      var identity = result.data;
+      return Accounts.updateOrCreateUserFromExternalService('weibosso', {
+        id: uid,
+        accessToken: token,
+        screenName: identity.screen_name
+      }, { profile: { name: identity.screen_name }});
     } catch(e) {
       return false;
     }
