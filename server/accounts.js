@@ -18,3 +18,13 @@ Meteor.methods({
     });
   }
 });
+
+Meteor.methods({
+  createUserFromWeibo: function(uid, token) {
+    HTTP.get('https://api.weibo.com/2/eps/user/info.json', {
+      params: { uid: uid, access_token: token }
+    }, function(user) {
+      console.log(user);
+    });
+  }
+})

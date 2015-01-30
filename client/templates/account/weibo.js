@@ -1,11 +1,6 @@
 function success(data) {
-  console.log('uid: ' + data.uid);
-  console.log('token: ' + data.token);
-  HTTP.get('https://api.weibo.com/2/eps/user/info.json', {
-    params: { uid: data.uid, access_token: data.token }
-  }, function(user) {
-    console.log(user);
-  });
+  var uid = data.uid, token = data.token;
+  Meteor.call('createUserFromWeibo', uid, token);
 }
 
 function failure(message) {
