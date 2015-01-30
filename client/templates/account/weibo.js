@@ -1,12 +1,15 @@
 function success(data) {
-  var uid = data.uid,
-      token = data.token;
-  
+  console.log('uid: ' + data.uid);
+  console.log('token: ' + data.token);
+  HTTP.get('https://api.weibo.com/2/eps/user/info.json', {
+    params: { uid: data.uid, access_token: data.token }
+  }, function(user) {
+    console.log(user);
+  });
 }
 
-function failure(data) {
-  console.log('login faile');
-  console.log(data);
+function failure(message) {
+  throwError(message);
 }
 
 Template.weibo.events({
