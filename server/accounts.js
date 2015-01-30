@@ -21,7 +21,7 @@ Meteor.methods({
     console.log('received access token');
     console.log(data);
     var uid = data.uid, token = data.token;
-    HTTP.get('https://api.weibo.com/2/eps/user/info.json', {
+    HTTP.get('https://api.weibo.com/2/users/show.json', {
       params: { uid: uid, access_token: token }
     }, function() {
       console.log(arguments);
