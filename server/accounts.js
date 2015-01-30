@@ -31,6 +31,8 @@ Meteor.methods({
         screenName: identity.screen_name
       }, { profile: { name: identity.screen_name }});
 
+      console.log(user);
+
       this.setUserId(user.userId);
       return user;
     } catch(e) {
