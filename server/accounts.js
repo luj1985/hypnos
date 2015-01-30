@@ -23,14 +23,18 @@ Meteor.methods({
       var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
         params: { uid: uid, access_token: token } 
       });
-      console.log(result);
 
       var identity = result.data;
-      return Accounts.updateOrCreateUserFromExternalService('weibosso', {
-        id: uid,
+      console.log(identity);
+      
+      var account = Accounts.updateOrCreateUserFromExternalService('weibosso', {
+        id: uid + "",
         accessToken: token,
         screenName: identity.screen_name
       }, { profile: { name: identity.screen_name }});
+      console.log(account);
+
+      return account;
     } catch(e) {
       return false;
     }
