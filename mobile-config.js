@@ -42,7 +42,7 @@ App.launchScreens({
 App.configurePlugin('com.ihavekey.weibo.oauth', {
   APP_KEY: '1557510073',
   REDIRECT_URL: 'https://api.weibo.com/oauth2/default.html',
-  SCOPE: 'email'
+  SCOPE: 'email,follow_app_official_microblog'
 });
 
 App.setPreference('DisallowOverscroll', 'true');
