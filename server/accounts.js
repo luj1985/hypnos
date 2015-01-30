@@ -19,24 +19,17 @@ Meteor.methods({
   },
   loginOrCreateAccountViaWeibo: function(data) {
     var uid = data.uid, token = data.token;
-    try {
-      var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
-        params: { uid: uid, access_token: token } 
-      });
+    var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
+      params: { uid: uid, access_token: token } 
+    });
 
-      var identity = result.data;
-      var user = Accounts.updateOrCreateUserFromExternalService('weibosso', {
-        id: uid + "",
-        accessToken: token,
-        screenName: identity.screen_name
-      }, { profile: { name: identity.screen_name }});
-
-      console.log(user);
-
-      this.setUserId(user.userId);
-      return user;
-    } catch(e) {
-      return false;
-    }
-  }
+    var identity = result.data;
+    var user = Accounts.updateOrCreateUserFromExternalService('weibosso', {
+      id: uid + "",
+      accessToken: token,
+      screenName: identity.screen_name
+    }, { profile: { name: identity.screen_name }});
+    var userId = user.userId;
+    this.setUserId(userId);
+    return userId;  }
 });

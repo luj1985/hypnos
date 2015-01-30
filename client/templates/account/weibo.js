@@ -1,5 +1,5 @@
 function success(data) {
-  Meteor.call('loginOrCreateAccountViaWeibo', data, function(err, result) {
+  Meteor.call('loginOrCreateAccountViaWeibo', data, function(err, userId) {
     console.log(JSON.stringify(arguments));
     console.log(Meteor.user());
   });
