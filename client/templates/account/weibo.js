@@ -1,6 +1,7 @@
 function success(data) {
-  var uid = data.uid, token = data.token;
-  Meteor.call('createUserFromWeibo', uid, token);
+  Meteor.call('createUserFromWeibo', data, function(err, result) {
+    console.log(arguments);
+  });
 }
 
 function failure(message) {
