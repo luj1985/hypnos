@@ -17,11 +17,14 @@ Meteor.methods({
       $set : { profile : profile }
     });
   },
-  createUserFromWeibo: function(data) {
-    var uid = data.uid, token = data.token, context = this;
+  loginOrCreateAccountViaWeibo: function(data) {
+    var uid = data.uid, token = data.token;
     try {
-      var result = HTTP.get('https://api.weibo.com/2/users/show.json', 
-                            { params: { uid: uid, access_token: token } });
+      var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
+        params: { uid: uid, access_token: token } 
+      });
+      console.log(result);
+      
       return true;
     } catch(e) {
       return false;
