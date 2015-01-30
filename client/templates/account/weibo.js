@@ -1,20 +1,7 @@
-function success(auth) {
-  var uid = auth.uid, token = auth.token;
-  HTTP.get('https://api.weibo.com/2/users/show.json', {
-    params: { uid: uid, access_token: token }
-  }, function(error, resp) {
-    if (error) {
-      throwError(error);
-    } else {
-      var data = resp.data;
-      console.log(data);
-    }
-  });
-  HTTP.get('https://api.weibo.com/2/account/profile/email.json', {
-    params: { uid: uid, access_token: token }
-  }, function(error, resp) {
+function success(data) {
+  Meteor.call('createUserFromWeibo', data, function(err, result) {
     console.log(arguments);
-  })
+  });
 }
 
 function failure(message) {
