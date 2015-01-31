@@ -1,6 +1,9 @@
 Errors = new Mongo.Collection(null);
 
 throwError = function(message) {
+  if (_.isObject(message)) {
+    message = JSON.stringify(message);
+  }
   Errors.insert({message: message});
 };
 
