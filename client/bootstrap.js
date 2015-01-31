@@ -25,7 +25,9 @@ Meteor.startup(function() {
   };
 
   $(document).on('click', 'a:external', function(e) {
-    e.preventDefault();
-    window.open(href, '_blank', 'location=yes');
+    if (Meteor.isCordova) {
+      e.preventDefault();
+      window.open(href, '_system');
+    }
   });
 });
