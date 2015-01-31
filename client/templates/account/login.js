@@ -95,3 +95,9 @@ Template.login.events({
     });
   }
 });
+
+Template.weibo.events({
+  'click a.weibo': function () {
+    Meteor.loginWithWeiboSso();
+  }
+});
