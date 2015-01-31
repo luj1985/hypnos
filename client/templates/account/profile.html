@@ -1,5 +1,5 @@
 <template name="profile">
-{{#contentFor "title"}}{{user.username}}的个人资料{{/contentFor}}
+{{#contentFor "title"}}个人资料{{/contentFor}}
 {{#contentFor "tools"}}{{> profileTools}}{{/contentFor}}
 <form class="account" autocomplete = "off">
 {{#each user.emails}}
@@ -27,14 +27,10 @@
 
 {{> field name="user.profile.address" type="text" value=user.profile.address icon="place"}}
 {{> field name="user.profile.contact" type="text" value=user.profile.contact icon="phone"}}
-<div class="field">
-  <input type="button" name="logout" value="注销登录" >
-</div>
 </form>
 </template>
 
 <template name="profileTools">
-<a class="done item" href="#">
-  <i class="md md-done"></i>
-</a>
+<a class="done item" href="#"><i class="md md-done"></i></a>
+<a class="logout item" href="#"><i class="md md-exit-to-app"></i></a>
 </template>

@@ -8,9 +8,9 @@ Accounts.registerLoginHandler('weibosso', function(auth) {
 
   var identity = result.data;
   var account = Accounts.updateOrCreateUserFromExternalService('weibosso', {
+    // make sure uid is a string
     id: uid + "",
-    accessToken: token,
-    screenName: identity.screen_name
+    accessToken: token
   }, { profile: { name: identity.screen_name }});
 
   var userId = account.userId;
@@ -20,9 +20,5 @@ Accounts.registerLoginHandler('weibosso', function(auth) {
   Meteor.users.update(userId, 
     {$push: {'services.resume.loginTokens': hashStampedToken}}
   );
-  var user = { userId: userId, token: stampedToken.token };
-
-  console.log(user);
-
-  return user;
+  return { userId: userId, token: stampedToken.token };
 });

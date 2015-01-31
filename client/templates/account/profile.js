@@ -1,16 +1,21 @@
 var em = new EventEmitter();
 
 Template.profileTools.events({
-  'click .done.item': function (e, template) {
+  'click .done.item': function (e) {
     e.preventDefault();
     em.emit('save-profile');
+  },
+  'click .logout.item': function(e) {
+    e.preventDefault();
+    Meteor.logout();
+    Router.go('products');
   }
 });
 
 Template.profile.rendered = function () {
   var template = this;
   em.on('save-profile', function() {
-    // TODO: validate input fields here
+    // TODO: should validate input fields here
     var profile = {};
     profile.name = template.$('input[name="user.profile.name"]').val();
     profile.mobile = template.$('input[name="user.profile.mobile"]').val();
@@ -24,13 +29,6 @@ Template.profile.rendered = function () {
     });
   });
 };
-
-Template.profile.events({
-  'click input[name="logout"]': function () {
-    Meteor.logout();
-    Router.go('home');
-  }
-});
 
 Template.profile.destroyed = function () {
   em.off('save-profile');
