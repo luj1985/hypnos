@@ -6,6 +6,7 @@ function success(data) {
       throwError(error);
     } else {
       Meteor.connection.setUserId(userId);
+      Router.go('profile');
     }
   });
 }
