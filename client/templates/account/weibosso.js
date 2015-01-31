@@ -6,7 +6,6 @@ function loginCallback() {
 function success(data) {
   var uid = data.uid, token = data.token;
   Accounts.callLoginMethod({
-    methodName: 'weibosso',
     methodArguments: [uid, token],
     userCallback: loginCallback
   });
