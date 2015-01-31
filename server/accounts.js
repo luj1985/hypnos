@@ -33,6 +33,8 @@ Meteor.methods({
     }, { profile: { name: identity.screen_name }});
     var userId = user.userId;
     this.setUserId(userId);
+
+    console.log(user);
     return userId;  
   }
 });
