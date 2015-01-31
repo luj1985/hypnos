@@ -16,4 +16,16 @@ Meteor.startup(function() {
     });
   }, false);
 
+  // Creating custom :external selector
+  $.expr[':'].external = function(obj){
+    var href = obj.href;
+    return href 
+      && !href.match(/^(mailto|tel|geo|maps)\:/)
+      && (obj.hostname != location.hostname);
+  };
+
+  $(document).on('click', 'a:external', function(e) {
+    e.preventDefault();
+    window.open($(this).attr('href'), '_blank');
+  });
 });
