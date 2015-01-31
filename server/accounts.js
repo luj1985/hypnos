@@ -20,7 +20,6 @@ Meteor.methods({
   },
   loginOrCreateAccountViaWeibo: function(data) {
     // TODO: add parameter check
-    this.unblock();
     var uid = data.uid, token = data.token;
     var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
       params: { uid: uid, access_token: token } 
