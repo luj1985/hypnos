@@ -4,8 +4,14 @@ function loginCallback() {
 }
 
 function success(auth) {
+  var request = {
+    method : 'weibosso',
+    uid: auth.uid,
+    token: auth.token
+  };
+  
   Accounts.callLoginMethod({
-    methodArguments: [auth],
+    methodArguments: [request],
     userCallback: loginCallback
   });
 }
