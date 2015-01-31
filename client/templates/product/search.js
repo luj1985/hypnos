@@ -28,8 +28,7 @@ Template.manufacturers.helpers({
 Template.manufacturer.events({
   'click a': function (e) {
     e.preventDefault();
-    var name = this.name;
-    Session.set('manufacturer', name);
+    Session.set('manufacturer', this.name);
     Session.set('product-search-form', 'aliases');
   }
 });

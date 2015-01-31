@@ -12,12 +12,6 @@ Template.productItem.helpers({
   }
 });
 
-Template.productSearchTool.events({
-  'click a': function () {
-    Session.set('product-search-form', null);
-  }
-});
-
 function loadNextPage() {
   var filters = Session.get('product-filter') || {};
   var page = filters.page || 1;

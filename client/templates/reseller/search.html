@@ -1,11 +1,34 @@
+<template name="doResllerSearch">
+  <a class="search item" href="#"><i class="md md-search"></i></a>
+</template>
+
 <template name="resellerSearch">
-{{#contentFor "title"}}查询条件{{/contentFor}}
-{{#contentFor "navigator"}}
-  {{> back}}
-{{/contentFor}}
-<form class="location">
-  <select class="prov"></select>
-  <select class="city" disabled></select>
-  <input type="submit" value="查找">
-</form>
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}选择所在城市{{/contentFor}}
+{{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
+{{> Template.dynamic template=form }}
+</template>
+
+<template name="provinces">
+<ul class="options">
+{{#each provinces}}
+  {{> province}}
+{{/each}}
+</ul>
+</template>
+
+<template name="province">
+<li><a href="#">{{province}}</a></li>
+</template>
+
+<template name="cities">
+<ul class="options">
+{{#each cities}}
+  {{> city}}
+{{/each}}  
+</ul>
+</template>
+
+<template name="city">
+<li><a href="#">{{this}}</a></li>
 </template>
