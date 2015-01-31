@@ -1,6 +1,5 @@
 Accounts.registerLoginHandler('weibosso', function(auth) {
   var uid = auth.uid, token = auth.token;
-
   if(!uid || !token) return undefined;
 
   var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
@@ -21,9 +20,9 @@ Accounts.registerLoginHandler('weibosso', function(auth) {
   Meteor.users.update(userId, 
     {$push: {'services.resume.loginTokens': hashStampedToken}}
   );
+  var user = { userId: userId, token: stampedToken.token };
 
-  return {
-    id: userId,
-    token: stampedToken.token
-  };  
+  console.log(user);
+
+  return user;
 });
