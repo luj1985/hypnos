@@ -26,8 +26,6 @@ Meteor.startup(function() {
 
   $(document).on('click', 'a:external', function(e) {
     e.preventDefault();
-    var target = Meteor.isCordova ? '_system' : '_blank',
-        href = $(this).attr('href');
-    window.open(href, target);
+    window.open(href, '_blank', 'location=yes');
   });
 });
