@@ -2,7 +2,7 @@ function success(data) {
   Meteor.call('loginOrCreateAccountViaWeibo', data, function(userId) {
     // TODO: should have error handling
     console.log('client side login: ' + userId);
-    Meteor.connection.setUserId(userId);
+    // Meteor.connection.setUserId(userId);
   });
 }
 
