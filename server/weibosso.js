@@ -1,5 +1,8 @@
-Accounts.registerLoginHandler('weibosso', function(uid, token) {
-  
+Accounts.registerLoginHandler('weibosso', function(auth) {
+  var uid = auth.uid, token = auth.token;
+
+  if(!uid || !token) return undefined;
+
   var result = HTTP.get('https://api.weibo.com/2/users/show.json', {
     params: { uid: uid, access_token: token } 
   });

@@ -3,10 +3,9 @@ function loginCallback() {
   console.log(JSON.stringify(arguments))
 }
 
-function success(data) {
-  var uid = data.uid, token = data.token;
+function success(auth) {
   Accounts.callLoginMethod({
-    methodArguments: [uid, token],
+    methodArguments: [auth],
     userCallback: loginCallback
   });
 }
