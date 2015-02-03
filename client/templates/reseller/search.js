@@ -417,31 +417,6 @@ Template.resellerSearch.helpers({
   }
 });
 
-Template.provinces.helpers({
-  provinces: function () {
-    return _.map(CITIES, function(v, k) {
-      return { "province" : k, "cities" : v }
-    });
-  }
-});
-
-Template.provinces.events({
-  'click a': function (e) {
-    e.preventDefault();
-    var province = this.province;
-    Session.set('province', province);
-    Session.set('reseller-search-form', 'cities');
-  }
-});
-
-Template.cities.helpers({
-  cities: function () {
-    var province = Session.get('province');
-    var cities = CITIES[province];
-    return _.isArray(cities) ? cities : _.keys(cities);
-  }
-});
-
 Template.resellerSearch.events({
   'click input[type="submit"]': function (e, template) {
     e.preventDefault();

@@ -4,31 +4,22 @@
 
 <template name="resellerSearch">
 {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
-{{#contentFor "title"}}选择所在城市{{/contentFor}}
+{{#contentFor "title"}}选择所在省份{{/contentFor}}
 {{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
-{{> Template.dynamic template=form }}
-</template>
-
-<template name="provinces">
 <ul class="options">
-{{#each provinces}}
-  {{> province}}
+{{#each this}}
+<li><a href="{{ pathFor 'resellersCity' province=this}}">{{this}}</a></li>
 {{/each}}
 </ul>
 </template>
 
-<template name="province">
-<li><a href="#">{{province}}</a></li>
-</template>
-
 <template name="cities">
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}选择所在城市{{/contentFor}}
+{{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
 <ul class="options">
-{{#each cities}}
-  {{> city}}
-{{/each}}  
+{{#each this}}
+  <li><a href="#">{{city}}</a></li>
+{{/each}}
 </ul>
-</template>
-
-<template name="city">
-<li><a href="#">{{this}}</a></li>
 </template>
