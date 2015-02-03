@@ -414,6 +414,7 @@ CITIES = {
 Template.resellersCity.events({
   'click a': function (e) {
     e.preventDefault();
-    Router.go('resellers', {}, {query: $.param(this)});
+    var params = _.pick(this, ['province', 'city']);
+    Router.go('resellers', {}, {query: $.param(params)});
   }
 });
