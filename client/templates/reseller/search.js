@@ -411,18 +411,9 @@ CITIES = {
   "国外": []
 };
 
-Template.resellerSearch.helpers({
-  form: function () {
-    return Session.get('reseller-search-form') || 'provinces';
-  }
-});
-
-Template.resellerSearch.events({
-  'click input[type="submit"]': function (e, template) {
+Template.resellersCity.events({
+  'click a': function (e) {
     e.preventDefault();
-    var prov = template.$('[name="prov"]').val(),
-        city = template.$('[name="city"]').val();
-    console.log("province: " + prov);
-    console.log("city: " + city);
+    Router.go('resellers', {}, {query: $.param(this)});
   }
 });

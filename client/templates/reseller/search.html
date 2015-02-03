@@ -4,7 +4,7 @@
 
 <template name="resellerSearch">
 {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
-{{#contentFor "title"}}选择所在省份{{/contentFor}}
+{{#contentFor "title"}}{{t9n 'reseller.province'}}{{/contentFor}}
 {{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
 <ul class="options">
 {{#each this}}
@@ -13,13 +13,13 @@
 </ul>
 </template>
 
-<template name="cities">
+<template name="resellersCity">
 {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
-{{#contentFor "title"}}选择所在城市{{/contentFor}}
+{{#contentFor "title"}}{{t9n 'reseller.city'}}{{/contentFor}}
 {{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
 <ul class="options">
 {{#each this}}
-  <li><a href="#">{{city}}</a></li>
+<li><a href="#">{{city}}</a></li>
 {{/each}}
 </ul>
 </template>
