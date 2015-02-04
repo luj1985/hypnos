@@ -1,11 +1,7 @@
-<template name="doResllerSearch">
-  <a class="search item" href="#"><i class="md md-search"></i></a>
-</template>
 
 <template name="resellerSearch">
 {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
 {{#contentFor "title"}}{{t9n 'reseller.province'}}{{/contentFor}}
-{{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
 <ul class="options">
 {{#each this}}
 <li><a href="{{ pathFor 'resellersCity' province=this}}">{{this}}</a></li>
@@ -16,7 +12,6 @@
 <template name="resellersCity">
 {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
 {{#contentFor "title"}}{{t9n 'reseller.city'}}{{/contentFor}}
-{{#contentFor "tools"}}{{> doResllerSearch}}{{/contentFor}}
 <ul class="options">
 {{#each this}}
 <li><a href="#">{{text}}</a></li>
