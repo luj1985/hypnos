@@ -59,7 +59,6 @@ Template.reseller.helpers({
   }
 });
 
-
 Template.resellers.rendered = function () {
   $(document).on('nextpage', loadNextPage);
 };
@@ -74,7 +73,7 @@ function loadNextPage() {
 }
 
 Deps.autorun(function() {
-  var page = Session.get('reseller-page'),
+  var page = Session.get('reseller-page') || 1,
       filters = Session.get('reseller-filter') || {};
-  Meteor.subscribe('resellers', filters, page);
+  ResellerSubs.subscribe('resellers', filters, page);
 });
