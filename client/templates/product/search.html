@@ -3,44 +3,34 @@
 </template>
 
 <template name="productSearch">
-  {{#contentFor "navigator"}}{{> back}}{{/contentFor}}
-  {{#contentFor "title"}}<input type="search" class="product" placeholder="舍弗勒号或原厂号">{{/contentFor}}
-  {{#contentFor "tools"}}{{> doProductSearch}}{{/contentFor}}
-  {{> Template.dynamic template=form }}
-</template>
-
-<template name="manufacturers">
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}
+<input type="search" class="product" placeholder="舍弗勒号或原厂号">
+{{/contentFor}}
+{{#contentFor "tools"}}{{> doProductSearch}}{{/contentFor}}
 <ul class="options">
-{{#each options}}
-  {{> manufacturer}}
+{{#each this}}
+<li><a href="{{ pathFor 'productManufacturer' manufacturer=name}}">{{name}}</a></li>
 {{/each}}
 </ul>
-</template>
-
-<template name="manufacturer">
-  <li><a href="#">{{name}}</a></li>
 </template>
 
 <template name="aliases">
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}请选择生产厂商{{/contentFor}}
 <ul class="options">
-{{#each options}}
-  {{> alias}}
+{{#each this}}
+<li><a href="{{ pathFor 'productAlias' manufacturer=manufacturer alias=alias}}">{{alias}}</a></li>
 {{/each}}
 </ul>
-</template>
-
-<template name="alias">
-<li><a href="#">{{name}}</a></li>
 </template>
 
 <template name="types">
+{{#contentFor "navigator"}}{{> back}}{{/contentFor}}
+{{#contentFor "title"}}请选择车型{{/contentFor}}
 <ul class="options">
-{{#each options}}
-  {{> type}}
+{{#each this}}
+<li><a href="#">{{type}} - {{engine}} - {{cc}}</a></li>
 {{/each}}
 </ul>
-</template>
-
-<template name="type">
-<li><a href="#">{{type}} - {{engine}} - {{cc}}</a></li>
 </template>
