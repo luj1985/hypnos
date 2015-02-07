@@ -3,10 +3,7 @@
 {{#contentFor "tools"}}{{> profileTools}}{{/contentFor}}
 <form class="account" autocomplete = "off">
 {{#each emails}}
-<div class="field">
-  <i class="md md-email"></i>
-  <input type="text" value="{{address}}" readonly>
-</div>
+{{> field name="address" type="text" value=address icon="email" readonly="readonly"}}
 {{/each}}
 {{> field name="profile.name" type="text" value=profile.name icon="person"}}
 {{> field name="profile.mobile" type="tel" value=profile.mobile icon="stay-primary-portrait"}}
