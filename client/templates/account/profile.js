@@ -17,11 +17,11 @@ Template.profile.rendered = function () {
   em.on('save-profile', function() {
     // TODO: should validate input fields here
     var profile = {};
-    profile.name = template.$('input[name="user.profile.name"]').val();
-    profile.mobile = template.$('input[name="user.profile.mobile"]').val();
-    profile.company=template.$('input[name="user.profile.company"]').val();
-    profile.address = template.$('input[name="user.profile.address"]').val();
-    profile.contact = template.$('input[name="user.profile.contact"]').val();
+    profile.name = template.$('input[name="profile.name"]').val();
+    profile.mobile = template.$('input[name="profile.mobile"]').val();
+    profile.company=template.$('input[name="profile.company"]').val();
+    profile.address = template.$('input[name="profile.address"]').val();
+    profile.contact = template.$('input[name="profile.contact"]').val();
     profile.type = template.$('input[name="type"]:checked').val();
 
     Meteor.call('updateProfile', profile, function (error, result) {
@@ -35,12 +35,8 @@ Template.profile.destroyed = function () {
 };
 
 Template.profile.helpers({
-  user: function () {
-    return Meteor.user();
-  },
   checked: function (value) {
-    var user = Meteor.user() || {},
-        profile = user.profile || {};
+    var profile = this.profile || {};
     return (profile.type === value) ? "checked" : '';
   }
 });

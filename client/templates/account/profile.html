@@ -2,32 +2,30 @@
 {{#contentFor "title"}}个人资料{{/contentFor}}
 {{#contentFor "tools"}}{{> profileTools}}{{/contentFor}}
 <form class="account" autocomplete = "off">
-{{#each user.emails}}
+{{#each emails}}
 <div class="field">
   <i class="md md-email"></i>
   <input type="text" value="{{address}}" readonly>
 </div>
 {{/each}}
-{{> field name="user.profile.name" type="text" value=user.profile.name icon="person"}}
-{{> field name="user.profile.mobile" type="tel" value=user.profile.mobile icon="stay-primary-portrait"}}
-{{> field name="user.profile.company" type="text" value=user.profile.company icon="domain"}}
+{{> field name="profile.name" type="text" value=profile.name icon="person"}}
+{{> field name="profile.mobile" type="tel" value=profile.mobile icon="stay-primary-portrait"}}
+{{> field name="profile.company" type="text" value=profile.company icon="domain"}}
 
 <div class="field">
   <i class="md md-flag"></i>
   <label class="field-radio" for="reseller">
-    <i class="md md-radio-button-off"></i>
     <input type="radio" id="reseller" name="type" value="reseller" {{ checked "reseller" }}>
-    {{t9n 'user.profile.reseller'}}
+    {{t9n 'profile.reseller'}}
   </label>
   <label class="field-radio" for="repair">
-    <i class="md md-radio-button-on"></i>
     <input type="radio" id="repair" name="type" value="repair" {{ checked "repair" }}>
-    {{t9n 'user.profile.repair'}}
+    {{t9n 'profile.repair'}}
   </label>
 </div>
 
-{{> field name="user.profile.address" type="text" value=user.profile.address icon="place"}}
-{{> field name="user.profile.contact" type="tel" value=user.profile.contact icon="phone"}}
+{{> field name="profile.address" type="text" value=profile.address icon="place"}}
+{{> field name="profile.contact" type="tel" value=profile.contact icon="phone"}}
 </form>
 </template>
 
