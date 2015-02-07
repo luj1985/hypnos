@@ -14,14 +14,15 @@
 
 <div class="field">
   <i class="md md-flag"></i>
-  <!-- TODO: Use javascript to rewrite -->
   <div class="company type">
-    <div class="type">
-      <input type="radio" id="reseller" name="type" value="{{t9n 'user.profile.reseller'}}"><label for="reseller">{{t9n 'user.profile.reseller'}}</label>
-    </div>
-    <div class="type">
-      <input type="radio" id="repair" name="type" value="{{t9n 'user.profile.repair'}}"><label for="repair">{{t9n 'user.profile.repair'}}</label>
-    </div>
+    <label class="type" for="reseller">
+      <input type="radio" id="reseller" name="type" value="{{t9n 'user.profile.reseller'}}">
+      {{t9n 'user.profile.reseller'}}
+    </label>
+    <label class="type" for="repair">
+      <input type="radio" id="repair" name="type" value="{{t9n 'user.profile.repair'}}">
+      {{t9n 'user.profile.repair'}}
+    </label>
   </div>
 </div>
 
