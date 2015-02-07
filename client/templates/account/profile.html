@@ -14,20 +14,18 @@
 
 <div class="field">
   <i class="md md-flag"></i>
-  <div class="company type">
-    <label class="type" for="reseller">
-      <input type="radio" id="reseller" name="type" value="reseller" {{ checked "reseller" }}>
-      {{t9n 'user.profile.reseller'}}
-    </label>
-    <label class="type" for="repair">
-      <input type="radio" id="repair" name="type" value="repair" {{ checked "repair" }}>
-      {{t9n 'user.profile.repair'}}
-    </label>
-  </div>
+  <label class="field-radio" for="reseller">
+    <input type="radio" id="reseller" name="type" value="reseller" {{ checked "reseller" }}>
+    {{t9n 'user.profile.reseller'}}
+  </label>
+  <label class="field-radio" for="repair">
+    <input type="radio" id="repair" name="type" value="repair" {{ checked "repair" }}>
+    {{t9n 'user.profile.repair'}}
+  </label>
 </div>
 
 {{> field name="user.profile.address" type="text" value=user.profile.address icon="place"}}
-{{> field name="user.profile.contact" type="text" value=user.profile.contact icon="phone"}}
+{{> field name="user.profile.contact" type="tel" value=user.profile.contact icon="phone"}}
 </form>
 </template>
 
