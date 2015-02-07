@@ -23,7 +23,7 @@ Meteor.startup(function() {
       window.open($(this).attr('href'), '_system');
     });
 
-    $(document).on('click', 'a,button,input,select', function() {
+    $(document).on('click', 'a,button,select,input[type="button"],input[type="submit"],input[type="radio"],input[type="checkbox"]', function() {
       plugins.deviceFeedback.acoustic();
     });
   }, false);
