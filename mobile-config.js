@@ -46,6 +46,8 @@ App.configurePlugin('com.ihavekey.weibo.oauth', {
 });
 
 App.setPreference('DisallowOverscroll', 'true');
+App.setPreference('KeepRunning', 'true');
+App.setPreference('ShowTitle', 'true');
 App.setPreference('StatusBarOverlaysWebView', 'false');
 // TODO: update ios plist settings
 // <key>UIStatusBarHidden</key>
