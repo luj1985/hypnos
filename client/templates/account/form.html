@@ -1,11 +1,11 @@
 <template name="field">
-<label class="field" for="{{name}}">
+<div class="field">
 <i class="md md-{{icon}}"></i>
-<input type="{{type}}" class="{{style name}}" id="{{name}}" name="{{name}}" value="{{value}}" placeholder="{{t9n name}}" {{readonly}}/>
+<input type="{{type}}" class="{{style name}}" name="{{name}}" value="{{value}}" placeholder="{{t9n name}}" {{readonly}}/>
 {{#if hasError name}}
 <div class="errors">
 {{#each errors name}}{{this}}{{/each}}
 </div>
 {{/if}}
-</label>
+</div>
 </template>
