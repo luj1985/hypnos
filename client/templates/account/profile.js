@@ -22,8 +22,8 @@ Template.profile.rendered = function () {
     profile.company=template.$('input[name="user.profile.company"]').val();
     profile.address = template.$('input[name="user.profile.address"]').val();
     profile.contact = template.$('input[name="user.profile.contact"]').val();
+    profile.type = template.$('input[name="type"]:checked').val();
 
-    console.log(profile);
     Meteor.call('updateProfile', profile, function (error, result) {
       console.log(arguments);
     });
@@ -37,6 +37,11 @@ Template.profile.destroyed = function () {
 Template.profile.helpers({
   user: function () {
     return Meteor.user();
+  },
+  checked: function (value) {
+    var user = Meteor.user() || {},
+        profile = user.profile || {};
+    return (profile.type === value) ? "checked" : '';
   }
 });
 

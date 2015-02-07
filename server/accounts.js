@@ -13,8 +13,8 @@ Meteor.startup(function() {
 
 Meteor.methods({
   updateProfile : function(profile) {
-    // TODO: add parameter check
-    return Meteor.users.update(Meteor.userId, {
+    var userId = Meteor.userId();
+    return Meteor.users.update(userId, {
       $set : { profile : profile }
     });
   }
