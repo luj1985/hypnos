@@ -20,7 +20,6 @@ form {
     
     // TODO: add media query for mobile breakpoint here
     input, select, label .field {
-      .appearance(none);
       .border-radius(0);
       display: inline-block;
       outline: none;
@@ -37,8 +36,9 @@ form {
     input[type="email"],
     input[type="tel"],
     select {
-      border-bottom: 1px solid lightgray;
+      .appearance(none);
       .transition(all @hypnos-transition-duration @hypnos-transition-time-function);
+      border-bottom: 1px solid lightgray;
       &:focus {
         border-bottom: 2px solid @hypnos-green;
       }
@@ -63,16 +63,14 @@ form {
       .box-shadow(0 2px 5px @hypnos-shadow-depth-1);
     }
 
-    input[type="radio"] {
-      .appearance(radio);
-      height: 1rem;
-      width: auto;
-    }
-
+    input[type="radio"], 
     input[type="checkbox"] {
-      .appearance(checkbox);
+      line-height: 2rem;
       height: 1rem;
+      display: inline;
       width: auto;
+      padding: 0;
+      margin: .5rem;
     }
   }
 }
