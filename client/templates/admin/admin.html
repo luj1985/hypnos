@@ -1,3 +1,19 @@
-<template name="admin">
+<template name="adminLayout">
+<header class="admin">
+  <hgroup>
+    <h1>{{> yield "title"}}</h1>
+  </hgroup>
+</header>
+<main class="admin">
+ {{> yield}}
+</main>
+</template>
 
+<template name="adminHome">
+{{#contentFor "title"}}舍弗勒产品助手后台管理{{/contentFor}}
+<ul class="menu">
+  <li><a href="{{ pathFor 'adminProducts' }}">产品管理</a></li>
+  <li><a href="{{ pathFor 'adminResellers' }}">经销商管理</a></li>
+  <li><a href="{{ pathFor 'adminManufactures' }}">车型管理</a></li>
+</ul>
 </template>

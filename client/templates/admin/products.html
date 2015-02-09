@@ -1,0 +1,69 @@
+<template name="adminProducts">
+{{#contentFor "title"}}产品管理{{/contentFor}}
+{{#each this}}
+<a href="{{pathFor route='adminProduct'}}">
+  <section class="item product brand {{brand}}">
+    <h5>{{name}}</h5>
+    <p>舍弗勒号:{{sid}}</p>
+    <p>原厂号:{{oid}}</p>
+  </section>
+</a>{{/each}}
+</template>
+
+<template name="adminProduct">
+{{#contentFor "title"}}{{name}}{{/contentFor}}
+<article>
+  <table class="definition">
+    <tbody>
+      <tr>
+        <td>舍弗勒号</td>
+        <td><input type="text" value="{{sid}}"></td>
+      </tr>
+      <tr>
+        <td>原厂号</td>
+        <td><input type="text" value="{{oid}}"></td>
+      </tr>
+      <tr>
+        <td>品牌</td>
+        <td>
+          <select>
+            <option>LuK</option>
+            <option>FAG</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>制造商</td>
+        <td><input type="text" value="{{manufacturer}}{{#if alias}} ({{alias}}){{/if}}"></td>
+      </tr>
+      <tr>
+        <td>引擎</td>
+        <td>{{engine}}</td>
+      </tr>
+      <tr>
+        <td>排量</td>
+        <td>{{cc}}</td>
+      </tr>
+      <tr>
+        <td>起始年限</td>
+        <td>{{start}}</td>
+      </tr>
+      <tr>
+        <td>结束年限</td>
+        <td>{{end}}</td>
+      </tr>
+      <tr>
+        <td>备注</td>
+        <td>{{comment}}</td>
+      </tr>
+    </tbody>
+  </table>
+  {{#if images}}
+    <div class="gallery">
+    {{#each images}}
+      <a href="{{image}}"><img src="{{thumbnail}}" alt="image"></a>
+    {{/each}}
+    </div>
+  {{/if}}
+</article>
+</template>
